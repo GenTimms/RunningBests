@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		B45E91FD20DD63D00095FFA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E91FC20DD63D00095FFA9 /* AppDelegate.swift */; };
-		B45E91FF20DD63D00095FFA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E91FE20DD63D00095FFA9 /* ViewController.swift */; };
 		B45E920220DD63D00095FFA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45E920020DD63D00095FFA9 /* Main.storyboard */; };
 		B45E920420DD63D30095FFA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45E920320DD63D30095FFA9 /* Assets.xcassets */; };
 		B45E920720DD63D30095FFA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45E920520DD63D30095FFA9 /* LaunchScreen.storyboard */; };
 		B45E921220DD63D30095FFA9 /* StravaBestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E921120DD63D30095FFA9 /* StravaBestsTests.swift */; };
+		B45E921D20DD8A6D0095FFA9 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E921C20DD8A6D0095FFA9 /* Run.swift */; };
+		B45E921F20DD8FCF0095FFA9 /* BestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E921E20DD8FCF0095FFA9 /* BestsTableViewController.swift */; };
+		B45E922120DD92500095FFA9 /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E922020DD92500095FFA9 /* Distance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +30,6 @@
 /* Begin PBXFileReference section */
 		B45E91F920DD63D00095FFA9 /* StravaBests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StravaBests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45E91FC20DD63D00095FFA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B45E91FE20DD63D00095FFA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B45E920120DD63D00095FFA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B45E920320DD63D30095FFA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B45E920620DD63D30095FFA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +37,9 @@
 		B45E920D20DD63D30095FFA9 /* StravaBestsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StravaBestsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45E921120DD63D30095FFA9 /* StravaBestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaBestsTests.swift; sourceTree = "<group>"; };
 		B45E921320DD63D30095FFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B45E921C20DD8A6D0095FFA9 /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
+		B45E921E20DD8FCF0095FFA9 /* BestsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestsTableViewController.swift; sourceTree = "<group>"; };
+		B45E922020DD92500095FFA9 /* Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +82,13 @@
 			isa = PBXGroup;
 			children = (
 				B45E91FC20DD63D00095FFA9 /* AppDelegate.swift */,
-				B45E91FE20DD63D00095FFA9 /* ViewController.swift */,
 				B45E920020DD63D00095FFA9 /* Main.storyboard */,
+				B45E921E20DD8FCF0095FFA9 /* BestsTableViewController.swift */,
 				B45E920320DD63D30095FFA9 /* Assets.xcassets */,
 				B45E920520DD63D30095FFA9 /* LaunchScreen.storyboard */,
 				B45E920820DD63D30095FFA9 /* Info.plist */,
+				B45E921C20DD8A6D0095FFA9 /* Run.swift */,
+				B45E922020DD92500095FFA9 /* Distance.swift */,
 			);
 			path = StravaBests;
 			sourceTree = "<group>";
@@ -197,7 +203,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B45E91FF20DD63D00095FFA9 /* ViewController.swift in Sources */,
+				B45E922120DD92500095FFA9 /* Distance.swift in Sources */,
+				B45E921F20DD8FCF0095FFA9 /* BestsTableViewController.swift in Sources */,
+				B45E921D20DD8A6D0095FFA9 /* Run.swift in Sources */,
 				B45E91FD20DD63D00095FFA9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
