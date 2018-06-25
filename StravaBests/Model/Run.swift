@@ -8,12 +8,24 @@
 
 import Foundation
 
-struct Run {
+struct Run: Codable {
+    
     let name: String
     let date: Date
     
     let bests = [Distance: TimeInterval]()
 }
 
+extension Run {
+    
+    func encode(to encoder: Encoder) throws {
+        <#code#>
+    }
+    
+    init(from decoder: Decoder) throws {
+        <#code#>
+    }
+    
+}
 
 
