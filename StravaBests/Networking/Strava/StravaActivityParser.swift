@@ -6,12 +6,12 @@
 //  Copyright © 2018 GMJT. All rights reserved.
 //
 
-import Foundation
-
-struct StravaActivityParser : JSONParser {
-    
-    func parse<T>(data: Data) -> T where T : Decodable {
-        <#code#>
-    }
-    
-}
+//import Foundation
+//
+//struct StravaActivityParser : JSONParser {
+//    
+//    func parse<Run>(data: Data) -> Run {
+//       
+//    }
+//    
+//}

@@ -11,7 +11,7 @@ import Foundation
 extension URL {
     
     func addQuery(_ item : URLQueryItem) -> URL? {
-        let components = URLComponents(url: self, resolvingAgainstBaseURL: true)
+        var components = URLComponents(url: self, resolvingAgainstBaseURL: true)
         components?.queryItems?.append(item)
         return components?.url
     }

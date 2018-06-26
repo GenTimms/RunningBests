@@ -17,15 +17,15 @@ enum Strava {
 
 extension Strava: Endpoint {
     var base: String {
-        return "https://www.strava.com/api/v3/"
+        return "https://www.strava.com"
     }
     
     var path: String {
         switch self {
-        case .activities: return "athlete/activities"
-        case .activity(let id): return "activities/\(id)"
-        case .authorize: return "oauth/authorize"
-        case .token: return "oauth/token"
+        case .activities: return "/api/v3/athlete/activities"
+        case .activity(let id): return "/api/v3/activities/\(id)"
+        case .authorize: return "/api/v3/oauth/authorize"
+        case .token: return "/api/v3/oauth/token"
         }
     }
     

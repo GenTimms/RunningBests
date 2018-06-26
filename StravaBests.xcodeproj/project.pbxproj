@@ -11,7 +11,6 @@
 		B45E920220DD63D00095FFA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45E920020DD63D00095FFA9 /* Main.storyboard */; };
 		B45E920420DD63D30095FFA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45E920320DD63D30095FFA9 /* Assets.xcassets */; };
 		B45E920720DD63D30095FFA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45E920520DD63D30095FFA9 /* LaunchScreen.storyboard */; };
-		B45E921220DD63D30095FFA9 /* StravaBestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E921120DD63D30095FFA9 /* StravaBestsTests.swift */; };
 		B45E921D20DD8A6D0095FFA9 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E921C20DD8A6D0095FFA9 /* Run.swift */; };
 		B45E921F20DD8FCF0095FFA9 /* BestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E921E20DD8FCF0095FFA9 /* BestsTableViewController.swift */; };
 		B45E922120DD92500095FFA9 /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E922020DD92500095FFA9 /* Distance.swift */; };
@@ -25,6 +24,21 @@
 		B45E923920E14F7F0095FFA9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E923820E14F7F0095FFA9 /* Result.swift */; };
 		B45E923C20E1508F0095FFA9 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E923B20E1508F0095FFA9 /* APIError.swift */; };
 		B45E923E20E192A40095FFA9 /* UtilityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E923D20E192A40095FFA9 /* UtilityExtensions.swift */; };
+		B45E924020E261EE0095FFA9 /* AuthorizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E923F20E261EE0095FFA9 /* AuthorizationTests.swift */; };
+		B45E924420E263130095FFA9 /* StravaEndpointTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E924320E263130095FFA9 /* StravaEndpointTest.swift */; };
+		B45E924520E264E70095FFA9 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E923020E130E00095FFA9 /* Authorization.swift */; };
+		B45E924620E264EB0095FFA9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E923220E134CD0095FFA9 /* Endpoint.swift */; };
+		B45E924720E264EE0095FFA9 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E922820DFFE7C0095FFA9 /* JSONParser.swift */; };
+		B45E924820E264F40095FFA9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E923820E14F7F0095FFA9 /* Result.swift */; };
+		B45E924920E264F70095FFA9 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E923B20E1508F0095FFA9 /* APIError.swift */; };
+		B45E924A20E264F90095FFA9 /* StravaActivityParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E922A20DFFFE10095FFA9 /* StravaActivityParser.swift */; };
+		B45E924B20E264FB0095FFA9 /* StravaAPIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E922E20E004550095FFA9 /* StravaAPIConfig.swift */; };
+		B45E924C20E264FD0095FFA9 /* StravaEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E923520E142310095FFA9 /* StravaEndpoint.swift */; };
+		B45E924D20E265000095FFA9 /* UtilityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E923D20E192A40095FFA9 /* UtilityExtensions.swift */; };
+		B45E924E20E265020095FFA9 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E921C20DD8A6D0095FFA9 /* Run.swift */; };
+		B45E924F20E265050095FFA9 /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E922020DD92500095FFA9 /* Distance.swift */; };
+		B45E925020E265080095FFA9 /* BestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E921E20DD8FCF0095FFA9 /* BestsTableViewController.swift */; };
+		B45E925120E2650A0095FFA9 /* BestsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E922620DFD0AC0095FFA9 /* BestsTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +59,6 @@
 		B45E920620DD63D30095FFA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B45E920820DD63D30095FFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B45E920D20DD63D30095FFA9 /* StravaBestsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StravaBestsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B45E921120DD63D30095FFA9 /* StravaBestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaBestsTests.swift; sourceTree = "<group>"; };
 		B45E921320DD63D30095FFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B45E921C20DD8A6D0095FFA9 /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		B45E921E20DD8FCF0095FFA9 /* BestsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestsTableViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +73,8 @@
 		B45E923820E14F7F0095FFA9 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		B45E923B20E1508F0095FFA9 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		B45E923D20E192A40095FFA9 /* UtilityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UtilityExtensions.swift; path = StravaBests/UtilityExtensions.swift; sourceTree = SOURCE_ROOT; };
+		B45E923F20E261EE0095FFA9 /* AuthorizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationTests.swift; sourceTree = "<group>"; };
+		B45E924320E263130095FFA9 /* StravaEndpointTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaEndpointTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +119,7 @@
 		B45E91FB20DD63D00095FFA9 /* StravaBests */ = {
 			isa = PBXGroup;
 			children = (
+				B45E920820DD63D30095FFA9 /* Info.plist */,
 				B45E91FC20DD63D00095FFA9 /* AppDelegate.swift */,
 				B45E920020DD63D00095FFA9 /* Main.storyboard */,
 				B45E922220DF7D480095FFA9 /* Networking */,
@@ -117,7 +133,8 @@
 		B45E921020DD63D30095FFA9 /* StravaBestsTests */ = {
 			isa = PBXGroup;
 			children = (
-				B45E921120DD63D30095FFA9 /* StravaBestsTests.swift */,
+				B45E923F20E261EE0095FFA9 /* AuthorizationTests.swift */,
+				B45E924320E263130095FFA9 /* StravaEndpointTest.swift */,
 				B45E921320DD63D30095FFA9 /* Info.plist */,
 			);
 			path = StravaBestsTests;
@@ -157,7 +174,6 @@
 			children = (
 				B45E920320DD63D30095FFA9 /* Assets.xcassets */,
 				B45E920520DD63D30095FFA9 /* LaunchScreen.storyboard */,
-				B45E920820DD63D30095FFA9 /* Info.plist */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -257,7 +273,6 @@
 					};
 					B45E920C20DD63D30095FFA9 = {
 						CreatedOnToolsVersion = 9.3.1;
-						TestTargetID = B45E91F820DD63D00095FFA9;
 					};
 				};
 			};
@@ -326,7 +341,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B45E921220DD63D30095FFA9 /* StravaBestsTests.swift in Sources */,
+				B45E924A20E264F90095FFA9 /* StravaActivityParser.swift in Sources */,
+				B45E924E20E265020095FFA9 /* Run.swift in Sources */,
+				B45E924820E264F40095FFA9 /* Result.swift in Sources */,
+				B45E924520E264E70095FFA9 /* Authorization.swift in Sources */,
+				B45E924F20E265050095FFA9 /* Distance.swift in Sources */,
+				B45E924720E264EE0095FFA9 /* JSONParser.swift in Sources */,
+				B45E924020E261EE0095FFA9 /* AuthorizationTests.swift in Sources */,
+				B45E924B20E264FB0095FFA9 /* StravaAPIConfig.swift in Sources */,
+				B45E924620E264EB0095FFA9 /* Endpoint.swift in Sources */,
+				B45E925020E265080095FFA9 /* BestsTableViewController.swift in Sources */,
+				B45E924D20E265000095FFA9 /* UtilityExtensions.swift in Sources */,
+				B45E924C20E264FD0095FFA9 /* StravaEndpoint.swift in Sources */,
+				B45E924420E263130095FFA9 /* StravaEndpointTest.swift in Sources */,
+				B45E925120E2650A0095FFA9 /* BestsTableViewDataSource.swift in Sources */,
+				B45E924920E264F70095FFA9 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +543,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49CT65B35K;
 				INFOPLIST_FILE = StravaBestsTests/Info.plist;
@@ -527,7 +555,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StravaBests.app/StravaBests";
 			};
 			name = Debug;
 		};
@@ -535,7 +562,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49CT65B35K;
 				INFOPLIST_FILE = StravaBestsTests/Info.plist;
@@ -548,7 +574,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StravaBests.app/StravaBests";
 			};
 			name = Release;
 		};

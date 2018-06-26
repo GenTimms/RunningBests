@@ -17,22 +17,32 @@ protocol Endpoint {
 
 extension Endpoint {
 
-    var urlComponents: URLComponents {
-        var components = URLComponents(string: base)!
+    var urlComponents: URLComponents? {
+        guard var components = URLComponents(string: base) else {
+            return nil
+        }
         components.path = path
         components.queryItems = queryItems
         return components
     }
 
-    var request: URLRequest {
-        let url = urlComponents.url!
+    var request: URLRequest? {
+        guard let url = urlComponents?.url else {
+            return nil
+        }
         return URLRequest(url: url)
     }
     
-    func requestWithAuthorizationHeader(oauthToken: String) -> URLRequest {
-        var oauthRequest = request
+    func requestWithAuthorizationHeader(oauthToken: String) -> URLRequest? {
+        guard var oauthRequest = request else {
+            return nil
+        }
         oauthRequest.addValue("Bearer \(oauthToken)", forHTTPHeaderField: "Authorization")
         return oauthRequest
+    }
+    
+    var url: URL? {
+        return urlComponents?.url ?? nil
     }
 }
 
