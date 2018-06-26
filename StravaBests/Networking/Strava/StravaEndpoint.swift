@@ -12,7 +12,7 @@ enum Strava {
     case activities(before: Int?, after: Int?)
     case activity(id: String)
     case authorize
-    case token(code: String?)
+    case token
 }
 
 extension Strava: Endpoint {
@@ -44,11 +44,10 @@ extension Strava: Endpoint {
                 URLQueryItem(name: "response_type", value: "code"),
                 URLQueryItem(name: "scope", value: StravaAPIConfig.Scope)
             ]
-        case .token(let code):
+        case .token:
             return [
                 URLQueryItem(name: "client_id", value: StravaAPIConfig.ClientID),
                 URLQueryItem(name: "client_secret", value: StravaAPIConfig.ClientSecret),
-                URLQueryItem(name: "code", value: code ?? nil)
             ]
         }
     }

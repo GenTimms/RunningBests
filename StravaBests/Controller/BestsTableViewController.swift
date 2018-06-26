@@ -16,6 +16,13 @@ class BestsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = BestsTableViewDataSource()
+        let authorization = Authorization(authorizationURL: Strava.authorize.url!, tokenURL: Strava.token.url!, callback: "com.gmjt.stravabests")
+        authorization.getAuthToken { (result) in
+            switch result {
+            case.failure(let error): print("Authorization Failed With Error: \(error)")
+            case.success(let code): print("SUCCESS!!! 😁 Code = \(code)")
+            }
+        }
 
     }
 

@@ -17,7 +17,7 @@ class StravaEndpointTests: XCTestCase {
     let activitiesURL = URL(string: "https://www.strava.com/api/v3/athlete/activities?before&after")
     let activityURL = URL(string: "https://www.strava.com/api/v3/activities/\(StravaEndpointTests.ActivityID)?")
     let authorizeURL = URL(string: "https://www.strava.com/api/v3/oauth/authorize?client_id=\(StravaAPIConfig.ClientID)&redirect_uri=\(StravaAPIConfig.Redirect_URI)&response_type=code&scope=\(StravaAPIConfig.Scope)")
-    let tokenURL = URL(string: "https://www.strava.com/api/v3/oauth/token?client_id=\(StravaAPIConfig.ClientID)&client_secret=\(StravaAPIConfig.ClientSecret)&code=\(StravaEndpointTests.Token)")
+    let tokenURL = URL(string: "https://www.strava.com/api/v3/oauth/token?client_id=\(StravaAPIConfig.ClientID)&client_secret=\(StravaAPIConfig.ClientSecret)")
 
     
     func testEndpointURLs_equalStravaAPIURLs() {
@@ -35,7 +35,7 @@ class StravaEndpointTests: XCTestCase {
         XCTAssertEqual(endpointAuthorizeURL, authorizeURL)
         
         //Token
-        let endpointTokenURL = Strava.token(code: StravaEndpointTests.Token).url
+        let endpointTokenURL = Strava.token.url
         XCTAssertEqual(endpointTokenURL, tokenURL)
     }
     
