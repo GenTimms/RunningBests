@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sj1-WG-nMz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lut-BD-PXD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Bests Table View Controller-->
+        <!--Strava Bests-->
         <scene sceneID="neq-3T-KOE">
             <objects>
                 <tableViewController id="sj1-WG-nMz" customClass="BestsTableViewController" customModule="StravaBests" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,10 +33,91 @@
                             <outlet property="delegate" destination="sj1-WG-nMz" id="u6S-uc-Wjn"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Strava Bests" id="IIt-5J-tDi">
+                        <barButtonItem key="rightBarButtonItem" title="Log In" id="q0b-Lx-A0I">
+                            <connections>
+                                <action selector="login:" destination="sj1-WG-nMz" id="tXf-B4-kHG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="G96-FM-hh2" kind="presentation" identifier="auth webview" id="jJY-QX-ukf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JhN-g3-GiX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="108"/>
+            <point key="canvasLocation" x="656.79999999999995" y="115.59220389805098"/>
+        </scene>
+        <!--Auth Web View Controller-->
+        <scene sceneID="4jF-E8-azg">
+            <objects>
+                <viewController id="SRK-pG-xUj" customClass="AuthWebViewController" customModule="StravaBests" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="63t-hn-HCi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3m-7U-2qc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JxT-y1-wn1" firstAttribute="bottom" secondItem="s3m-7U-2qc" secondAttribute="bottom" id="Bi0-U0-zcT"/>
+                            <constraint firstItem="s3m-7U-2qc" firstAttribute="leading" secondItem="JxT-y1-wn1" secondAttribute="leading" id="UEq-Az-C43"/>
+                            <constraint firstItem="s3m-7U-2qc" firstAttribute="top" secondItem="JxT-y1-wn1" secondAttribute="top" id="nHn-Cm-GeS"/>
+                            <constraint firstItem="JxT-y1-wn1" firstAttribute="trailing" secondItem="s3m-7U-2qc" secondAttribute="trailing" id="nej-lA-KFg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JxT-y1-wn1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JRM-LP-ahu"/>
+                    <connections>
+                        <outlet property="webView" destination="s3m-7U-2qc" id="5ty-3S-35Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b18-yu-Rg8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2751.1999999999998" y="116.49175412293854"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jLF-qW-NNe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G96-FM-hh2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uai-Cm-kdR">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SRK-pG-xUj" kind="relationship" relationship="rootViewController" id="YSw-dw-mLO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3V7-Cd-JSP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="116.49175412293854"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nHH-S0-RJo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lut-BD-PXD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xUI-Ud-EH6">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sj1-WG-nMz" kind="relationship" relationship="rootViewController" id="Vpg-Vf-aZa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V7c-By-ZSS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-282.39999999999998" y="115.59220389805098"/>
         </scene>
     </scenes>
 </document>

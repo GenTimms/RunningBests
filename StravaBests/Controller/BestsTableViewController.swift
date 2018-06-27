@@ -12,18 +12,21 @@ class BestsTableViewController: UITableViewController {
     
     var distance = Distance.oneMile
     
+    @IBAction func login(_ sender: Any) {
+               performSegue(withIdentifier: "auth webview", sender: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = BestsTableViewDataSource()
-        let authorization = Authorization(authorizationURL: Strava.authorize.url!, tokenURL: Strava.token.url!, callback: "com.gmjt.stravabests")
-        authorization.getAuthToken { (result) in
-            switch result {
-            case.failure(let error): print("Authorization Failed With Error: \(error)")
-            case.success(let code): print("SUCCESS!!! 😁 Code = \(code)")
-            }
-        }
-
+//        let authorization = Authorization(authorizationURL: Strava.authorize.url!, tokenURL: Strava.token.url!, callback: "com.gmjt.stravabests")
+//        authorization.getAuthToken { (result) in
+//            switch result {
+//            case.failure(let error): print("Authorization Failed With Error: \(error)")
+//            case.success(let code): print("SUCCESS!!! 😁 Code = \(code)")
+//            }
+//        }
+        
     }
 
     // MARK: - Navigation
