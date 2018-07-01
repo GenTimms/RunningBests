@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SafariServices
 
 class Authorization {
     
@@ -31,6 +30,7 @@ class Authorization {
             case .failure(let error): completion(.failure(error))
             case .success(let queryItem):
                 if let url = self.tokenURL.addQuery(queryItem) {
+                    print("Access URL: \(url.absoluteString)")
                     var request = URLRequest(url: url)
                     request.httpMethod = "POST"   //create before and pass in as request then update url with code?
                     let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
@@ -56,7 +56,7 @@ class Authorization {
                                                             let successURL = callback,
                                                             let codeQueryItem = successURL.getCodeQuery() else {
                                                             
-                                                            completion(.failure(.authSessionFailure))
+                                                            completion(.failure(.authorizationFailed))
                                                             return
                                                         }
                                                         

@@ -9,6 +9,7 @@
 import Foundation
 
 enum APIError: Error {
-    case authSessionFailure
-    
+    case authorizationCancelled
+    case authorizationFailed //add more specificity?
+  
 }

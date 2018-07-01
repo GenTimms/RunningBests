@@ -12,6 +12,9 @@ import UIKit
 class AuthWebViewController: UIViewController, WKNavigationDelegate {
 
     @IBOutlet weak var webView: WKWebView!
+    var result: Result<URL,APIError> = Result.failure(APIError.authorizationCancelled)
+    
+    //TODO: - Cancel / Go Back Buttons
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +28,9 @@ class AuthWebViewController: UIViewController, WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         
         if let url = navigationAction.request.url {
-            let urlString = url.absoluteString
-            let callback = urlString.components(separatedBy: "/?")
-            if callback.first == StravaAPIConfig.Redirect_URI {
-                self.dismiss(animated: true) {
-                print("***CallbackURL Components***: \(url.absoluteString)")
+            if url.contains(string: StravaAPIConfig.Redirect_URI){
+                self.presentingViewController!.dismiss(animated: true) {
+
                 }
                 decisionHandler(.cancel)
                 return

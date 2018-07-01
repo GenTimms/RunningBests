@@ -20,4 +20,8 @@ extension URL {
         let components = URLComponents(url: self, resolvingAgainstBaseURL: true)
         return components?.queryItems?.filter({$0.name == "code"}).first
     }
+    
+    func contains(string: String) -> Bool {
+        return self.absoluteString.contains(string)
+    }
 }

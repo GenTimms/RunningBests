@@ -39,6 +39,11 @@
 		B45E925020E265080095FFA9 /* BestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E921E20DD8FCF0095FFA9 /* BestsTableViewController.swift */; };
 		B45E925120E2650A0095FFA9 /* BestsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E922620DFD0AC0095FFA9 /* BestsTableViewDataSource.swift */; };
 		B45E925320E3C3070095FFA9 /* AuthWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E925220E3C3060095FFA9 /* AuthWebViewController.swift */; };
+		B45E925720E6CA810095FFA9 /* APIAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E925620E6CA810095FFA9 /* APIAccount.swift */; };
+		B45E925820E6CA850095FFA9 /* APIAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E925620E6CA810095FFA9 /* APIAccount.swift */; };
+		B45E925C20E8F9260095FFA9 /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B45E925B20E8F9260095FFA9 /* Locksmith.framework */; };
+		B47B2BD220E93A5500E20C4A /* DistanceChooserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47B2BD120E93A5500E20C4A /* DistanceChooserTableViewController.swift */; };
+		B47B2BD420E9459900E20C4A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47B2BD320E9459900E20C4A /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,9 +77,13 @@
 		B45E923520E142310095FFA9 /* StravaEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaEndpoint.swift; sourceTree = "<group>"; };
 		B45E923820E14F7F0095FFA9 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		B45E923B20E1508F0095FFA9 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		B45E923D20E192A40095FFA9 /* UtilityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UtilityExtensions.swift; path = StravaBests/UtilityExtensions.swift; sourceTree = SOURCE_ROOT; };
+		B45E923D20E192A40095FFA9 /* UtilityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityExtensions.swift; sourceTree = SOURCE_ROOT; };
 		B45E924320E263130095FFA9 /* StravaEndpointTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaEndpointTest.swift; sourceTree = "<group>"; };
 		B45E925220E3C3060095FFA9 /* AuthWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthWebViewController.swift; sourceTree = "<group>"; };
+		B45E925620E6CA810095FFA9 /* APIAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAccount.swift; sourceTree = "<group>"; };
+		B45E925B20E8F9260095FFA9 /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = Carthage/Build/iOS/Locksmith.framework; sourceTree = "<group>"; };
+		B47B2BD120E93A5500E20C4A /* DistanceChooserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceChooserTableViewController.swift; sourceTree = "<group>"; };
+		B47B2BD320E9459900E20C4A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B45E925C20E8F9260095FFA9 /* Locksmith.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,11 +109,14 @@
 			isa = PBXGroup;
 			children = (
 				B45E91FB20DD63D00095FFA9 /* StravaBests */,
+				B47B2BD320E9459900E20C4A /* Constants.swift */,
+				B45E923D20E192A40095FFA9 /* UtilityExtensions.swift */,
 				B45E922D20E002E90095FFA9 /* ViewModel */,
 				B45E922C20E002550095FFA9 /* View */,
 				B45E922520DF7DD10095FFA9 /* Supporting */,
 				B45E921020DD63D30095FFA9 /* StravaBestsTests */,
 				B45E91FA20DD63D00095FFA9 /* Products */,
+				B45E925A20E8F9240095FFA9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,7 +136,6 @@
 				B45E91FC20DD63D00095FFA9 /* AppDelegate.swift */,
 				B45E920020DD63D00095FFA9 /* Main.storyboard */,
 				B45E922220DF7D480095FFA9 /* Networking */,
-				B45E923D20E192A40095FFA9 /* UtilityExtensions.swift */,
 				B45E922320DF7D860095FFA9 /* Model */,
 				B45E922420DF7DB80095FFA9 /* Controller */,
 			);
@@ -142,9 +154,9 @@
 		B45E922220DF7D480095FFA9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				B45E923020E130E00095FFA9 /* Authorization.swift */,
-				B45E923420E141A90095FFA9 /* Protocols */,
 				B45E923A20E150670095FFA9 /* Enums */,
+				B45E923420E141A90095FFA9 /* Protocols */,
+				B47B2BCC20E902BA00E20C4A /* Authorization */,
 				B45E923720E1428D0095FFA9 /* Strava */,
 			);
 			path = Networking;
@@ -165,6 +177,7 @@
 				B45E921E20DD8FCF0095FFA9 /* BestsTableViewController.swift */,
 				B45E922620DFD0AC0095FFA9 /* BestsTableViewDataSource.swift */,
 				B45E925220E3C3060095FFA9 /* AuthWebViewController.swift */,
+				B47B2BD120E93A5500E20C4A /* DistanceChooserTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -220,6 +233,23 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		B45E925A20E8F9240095FFA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B45E925B20E8F9260095FFA9 /* Locksmith.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B47B2BCC20E902BA00E20C4A /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				B45E923020E130E00095FFA9 /* Authorization.swift */,
+				B45E925620E6CA810095FFA9 /* APIAccount.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -230,6 +260,7 @@
 				B45E91F520DD63D00095FFA9 /* Sources */,
 				B45E91F620DD63D00095FFA9 /* Frameworks */,
 				B45E91F720DD63D00095FFA9 /* Resources */,
+				B45E925920E8F5BB0095FFA9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -316,6 +347,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B45E925920E8F5BB0095FFA9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Locksmith.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B45E91F520DD63D00095FFA9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -325,6 +373,8 @@
 				B45E921F20DD8FCF0095FFA9 /* BestsTableViewController.swift in Sources */,
 				B45E923620E142310095FFA9 /* StravaEndpoint.swift in Sources */,
 				B45E922F20E004550095FFA9 /* StravaAPIConfig.swift in Sources */,
+				B47B2BD220E93A5500E20C4A /* DistanceChooserTableViewController.swift in Sources */,
+				B45E925720E6CA810095FFA9 /* APIAccount.swift in Sources */,
 				B45E922920DFFE7D0095FFA9 /* JSONParser.swift in Sources */,
 				B45E923320E134CD0095FFA9 /* Endpoint.swift in Sources */,
 				B45E923920E14F7F0095FFA9 /* Result.swift in Sources */,
@@ -336,6 +386,7 @@
 				B45E922720DFD0AC0095FFA9 /* BestsTableViewDataSource.swift in Sources */,
 				B45E91FD20DD63D00095FFA9 /* AppDelegate.swift in Sources */,
 				B45E923C20E1508F0095FFA9 /* APIError.swift in Sources */,
+				B47B2BD420E9459900E20C4A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B45E925820E6CA850095FFA9 /* APIAccount.swift in Sources */,
 				B45E924A20E264F90095FFA9 /* StravaActivityParser.swift in Sources */,
 				B45E924E20E265020095FFA9 /* Run.swift in Sources */,
 				B45E924820E264F40095FFA9 /* Result.swift in Sources */,
@@ -510,6 +562,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49CT65B35K;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StravaBests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -528,6 +584,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49CT65B35K;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StravaBests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

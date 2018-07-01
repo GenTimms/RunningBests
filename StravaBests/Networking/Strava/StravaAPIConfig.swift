@@ -14,6 +14,7 @@ struct StravaAPIConfig {
     static var ClientSecret = "4a621ec026ee39f917c2892e26428935221b0ae6"
     static var PublicAccessToken = "bfa3fa512b9287d696c32a9f1a5b436e888f8309"
     static var Redirect_URI = "https://com.gmjt.stravabests"
+    static var HostedRedirect = "http://gentimms.com/runningbests/redirect"
     static var Scope = "view_private"
     
     
