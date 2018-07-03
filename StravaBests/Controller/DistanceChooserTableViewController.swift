@@ -12,6 +12,7 @@ class DistanceChooserTableViewController: UITableViewController {
     
     var distances: [Distance] = Distance.All
     var account: APIAccount?
+    var url: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,8 @@ class DistanceChooserTableViewController: UITableViewController {
     //MARK: - Authorization
     lazy var loginButton: UIBarButtonItem = {
         var button = UIBarButtonItem()
-        button.action = #selector(self.login)
+        button.target = self
+        button.action = #selector(login)
         return button
     }()
     
@@ -31,7 +33,7 @@ class DistanceChooserTableViewController: UITableViewController {
             account = savedAccount
             loginButton.title = "Log Out"
         } else {
-            login()
+            loginButton.title = "Log In"
         }
     }
     
@@ -43,18 +45,24 @@ class DistanceChooserTableViewController: UITableViewController {
         let authWebView = segue.source as! AuthWebViewController
         let result = authWebView.result
         switch result {
-            case .success(let url): print(url)
-            case .failure(let error): print(error)
+        case .success(let accessCodeURL):print ("RESULT: \(accessCodeURL)")
+            //account = APIAccount.createAccount(from: Constants.Service, with: accessCodeURL)
+        case .failure(let error): print("RESULT: \(error)") //Display authentication failed notification retry option?
         }
     }
     //func exchangeCodeForAccessToken // should this be here? API Account?
         
-        //TODO: - Error Handling - notification?
+        //TODO:  Error Handling - notification?
  
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == Constants.AuthSegue {
+            if let authVC = segue.destination.contents as? AuthWebViewController {
+                authVC.redirect = StravaAPIConfig.Redirect_URI
+                authVC.request = Strava.authorize.request
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -64,13 +72,10 @@ class DistanceChooserTableViewController: UITableViewController {
     }
 
     
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-//
-//        // Configure the cell...
-//
-//        return cell
-//    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        return UITableViewCell()
+    }
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

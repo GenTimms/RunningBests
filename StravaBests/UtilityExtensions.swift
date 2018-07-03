@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension URL {
     
@@ -21,7 +22,23 @@ extension URL {
         return components?.queryItems?.filter({$0.name == "code"}).first
     }
     
-    func contains(string: String) -> Bool {
-        return self.absoluteString.contains(string)
+    //getexpiration
+    //geterror
+    
+    
+    func begins(with string: String) -> Bool {
+        let start = self.absoluteString.components(separatedBy: "/?")
+        return start[0] == string
+    }
+    
+}
+    
+extension UIViewController {
+    var contents: UIViewController {
+        if let navcon = self as? UINavigationController {
+            return navcon.visibleViewController ?? navcon
+        } else {
+            return self
+        }
     }
 }

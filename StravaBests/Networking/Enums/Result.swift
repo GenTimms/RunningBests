@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Result<T, U> where U: Error {
+enum Result<T> {
     case success(T)
-    case failure(U)
+    case failure(Error)
 }

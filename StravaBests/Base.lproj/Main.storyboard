@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bVl-iI-UBb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -43,7 +43,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JhN-g3-GiX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="656.79999999999995" y="115.59220389805098"/>
+            <point key="canvasLocation" x="1596" y="115.59220389805098"/>
         </scene>
         <!--Auth Web View Controller-->
         <scene sceneID="4jF-E8-azg">
@@ -71,12 +71,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JxT-y1-wn1"/>
                     </view>
-                    <navigationItem key="navigationItem" id="JRM-LP-ahu"/>
+                    <navigationItem key="navigationItem" id="JRM-LP-ahu">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="V7f-pI-AxO">
+                            <connections>
+                                <action selector="cancel:" destination="SRK-pG-xUj" id="2Ni-vR-JV3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="webView" destination="s3m-7U-2qc" id="5ty-3S-35Y"/>
+                        <segue destination="mhw-G9-jRE" kind="unwind" identifier="unwindWithAuthResult" unwindAction="getAuthorizationResultWithSegue:" id="HHy-vs-Eth"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b18-yu-Rg8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="mhw-G9-jRE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="684" y="-729"/>
         </scene>
@@ -104,7 +112,7 @@
                 <splitViewController id="GjQ-Rr-0hM" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pH4-S0-uwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1346" y="560"/>
+            <point key="canvasLocation" x="-1836" y="564"/>
         </scene>
         <!--Distance Chooser Table View Controller-->
         <scene sceneID="gsC-lU-pLs">
@@ -129,6 +137,7 @@
                             <outlet property="delegate" destination="94H-sj-YrA" id="GFj-kn-AZV"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Bz2-gJ-j4f"/>
                     <connections>
                         <outlet property="view" destination="h2z-1X-tY4" id="5vA-KW-9Fc"/>
                         <segue destination="sj1-WG-nMz" kind="showDetail" id="eBD-LO-DqG"/>
@@ -137,7 +146,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXY-UO-Bq0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-359" y="116"/>
+            <point key="canvasLocation" x="580" y="115.59220389805098"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ecL-R2-bfj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bVl-iI-UBb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3VA-0e-mIL">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="94H-sj-YrA" kind="relationship" relationship="rootViewController" id="2cb-dX-TKI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qpr-md-chV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-359.19999999999999" y="115.59220389805098"/>
         </scene>
     </scenes>
 </document>

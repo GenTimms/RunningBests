@@ -12,6 +12,7 @@ struct Constants {
     
     static var Service = "Strava"
     static var AuthSegue = "present authwebview"
+    static var AuthUnwind = "unwindWithAuthResult"
     
     
     

@@ -15,7 +15,7 @@ enum Distance : Double  {
     case marathon = 26.219
     
    //TODO: Swift 4.2 CaseIterable - adds variable all cases
-   static let All = [.oneMile, .twoMiles, .fiveKilometers, .tenKilometers, .halfMarathon, .marathon]
+    static let All: [Distance] = [.oneMile, .twoMiles, .fiveKilometers, .tenKilometers, .halfMarathon, .marathon]
 }
 
 

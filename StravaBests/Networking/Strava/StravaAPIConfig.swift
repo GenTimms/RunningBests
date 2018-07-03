@@ -17,6 +17,8 @@ struct StravaAPIConfig {
     static var HostedRedirect = "http://gentimms.com/runningbests/redirect"
     static var Scope = "view_private"
     
+    //AUTH RESULT: https://com.gmjt.stravabests/?state=&code=2f12da642ba4fae4c9ff204c5c8524199cce2667&scope=view_private
+
     
     //$ http GET "https://www.strava.com/api/v3/athlete/activities?before=&after=&page=&per_page=" "Authorization: Bearer [[token]]"
     

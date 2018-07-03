@@ -10,7 +10,7 @@ import Foundation
 import Locksmith
 
 typealias Service = String
-typealias AccessCode = String
+typealias AccessCodeURL = URL
 
 struct Keys {
     static let token = "token"
@@ -24,7 +24,7 @@ struct APIAccount {
     let service: String
     
     let accessToken: String
-    let expiration: TimeInterval
+    let expiration: TimeInterval?
     let grantDate: Date
     
 }
@@ -32,7 +32,7 @@ struct APIAccount {
 extension APIAccount {
     
     static func isAuthorized(for service: Service) -> Bool {
-        if let _ = loadFromKeychain() {
+        if let _ = loadFromKeychain(service) {
             return true
         } else {
             return false
@@ -40,6 +40,7 @@ extension APIAccount {
     }
     
     func save() throws {
+        //TODO: - Make expiration optional or remove altogether?
         try Locksmith.saveData(data: [Keys.token: accessToken, Keys.expirationPeriod: expiration, Keys.grantDate: grantDate.timeIntervalSince1970], forUserAccount: service)
     }
     
@@ -50,12 +51,15 @@ extension APIAccount {
         
         let grantDate = Date(timeIntervalSince1970: grantDateValue)
         
-        return APIAccount(accessToken: token, expiration: expiration, grantDate: grantDate)
+        return APIAccount(service: service, accessToken: token, expiration: expiration, grantDate: grantDate)
     }
     
-    static func getAccessToken(from service: Service, for accessCode: AccessCode) -> APIAccount? {
-        
-    }
+//    static func createAccount(from service: Service, with accessCodeURL: AccessCodeURL) -> APIAccount? {
+////        if let query = accessCodeURL.  {
+////
+////        }
+//        
+//    }
 }
 
 
