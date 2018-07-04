@@ -17,9 +17,12 @@ extension URL {
         return components?.url
     }
     
-    func getCodeQuery() -> URLQueryItem? {
+    func getCode() -> String? {
         let components = URLComponents(url: self, resolvingAgainstBaseURL: true)
-        return components?.queryItems?.filter({$0.name == "code"}).first
+        if let codeQuery = components?.queryItems?.filter({$0.name == "code"}).first {
+            return codeQuery.value
+        }
+            return nil
     }
     
     //getexpiration

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bVl-iI-UBb">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="si0-3W-AU6">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,21 +9,26 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="IndieFlower.ttf">
+            <string>IndieFlower</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Strava Bests-->
         <scene sceneID="neq-3T-KOE">
             <objects>
                 <tableViewController id="sj1-WG-nMz" customClass="BestsTableViewController" customModule="StravaBests" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0nD-Hm-y8X">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="eKY-5A-adj">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eKY-5A-adj" id="m2a-nb-SN1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -43,18 +48,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JhN-g3-GiX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1596" y="115.59220389805098"/>
+            <point key="canvasLocation" x="1294" y="703"/>
         </scene>
         <!--Auth Web View Controller-->
         <scene sceneID="4jF-E8-azg">
             <objects>
                 <viewController id="SRK-pG-xUj" customClass="AuthWebViewController" customModule="StravaBests" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="63t-hn-HCi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3m-7U-2qc">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -86,7 +91,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b18-yu-Rg8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="mhw-G9-jRE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="684" y="-729"/>
+            <point key="canvasLocation" x="-665" y="-844"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jLF-qW-NNe">
@@ -94,7 +99,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G96-FM-hh2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uai-Cm-kdR">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -104,30 +109,89 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3V7-Cd-JSP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-359" y="-729"/>
+            <point key="canvasLocation" x="-1708" y="-844"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="yZG-ky-sDD">
             <objects>
-                <splitViewController id="GjQ-Rr-0hM" sceneMemberID="viewController"/>
+                <splitViewController id="GjQ-Rr-0hM" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="khW-IG-pkI" kind="relationship" relationship="masterViewController" id="wKE-55-5tH"/>
+                        <segue destination="sj1-WG-nMz" kind="relationship" relationship="detailViewController" id="M3g-bt-IvW"/>
+                    </connections>
+                </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pH4-S0-uwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1836" y="564"/>
+            <point key="canvasLocation" x="-26" y="205"/>
+        </scene>
+        <!--Initial View Controller-->
+        <scene sceneID="Gce-8V-lmE">
+            <objects>
+                <viewController id="si0-3W-AU6" customClass="InitialViewController" customModule="StravaBests" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b8F-fw-h3i">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Running Bests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSm-jK-60N">
+                                <rect key="frame" x="32" y="153" width="256" height="62.5"/>
+                                <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLa-dq-CK8">
+                                <rect key="frame" x="123" y="253.5" width="74" height="61"/>
+                                <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="25"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="login:" destination="si0-3W-AU6" eventType="touchUpInside" id="7aH-Zr-TMP"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetching Runs..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3n-vT-Qbj">
+                                <rect key="frame" x="59.5" y="260.5" width="201.5" height="47"/>
+                                <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.33635604879999997" green="0.50257998780000002" blue="0.72038424739999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="eLa-dq-CK8" firstAttribute="centerX" secondItem="b8F-fw-h3i" secondAttribute="centerX" id="HUy-8y-d2x"/>
+                            <constraint firstItem="eLa-dq-CK8" firstAttribute="centerY" secondItem="b8F-fw-h3i" secondAttribute="centerY" id="Q1n-40-EvQ"/>
+                            <constraint firstItem="P3n-vT-Qbj" firstAttribute="centerX" secondItem="b8F-fw-h3i" secondAttribute="centerX" id="Zah-Oo-zCV"/>
+                            <constraint firstItem="VSm-jK-60N" firstAttribute="centerX" secondItem="b8F-fw-h3i" secondAttribute="centerX" id="awe-Y5-7ZE"/>
+                            <constraint firstItem="P3n-vT-Qbj" firstAttribute="centerY" secondItem="b8F-fw-h3i" secondAttribute="centerY" id="hQ9-c5-AFO"/>
+                            <constraint firstItem="VSm-jK-60N" firstAttribute="centerY" secondItem="b8F-fw-h3i" secondAttribute="centerY" constant="-100" id="rYE-8E-a9g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wPI-dQ-Zzd"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pvS-mm-9r2"/>
+                    <connections>
+                        <outlet property="loginButton" destination="eLa-dq-CK8" id="Vhq-Lx-yoh"/>
+                        <outlet property="statusLabel" destination="P3n-vT-Qbj" id="hrf-be-oAG"/>
+                        <segue destination="G96-FM-hh2" kind="presentation" identifier="present authwebview" id="8UW-RF-Kzs"/>
+                        <segue destination="GjQ-Rr-0hM" kind="presentation" id="hgb-w9-dIA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LP6-i0-eQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1222" y="205"/>
         </scene>
         <!--Distance Chooser Table View Controller-->
         <scene sceneID="gsC-lU-pLs">
             <objects>
                 <tableViewController id="94H-sj-YrA" customClass="DistanceChooserTableViewController" customModule="StravaBests" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="h2z-1X-tY4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Q5p-lf-p6W">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q5p-lf-p6W" id="rrs-9V-A4G">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -141,30 +205,34 @@
                     <connections>
                         <outlet property="view" destination="h2z-1X-tY4" id="5vA-KW-9Fc"/>
                         <segue destination="sj1-WG-nMz" kind="showDetail" id="eBD-LO-DqG"/>
-                        <segue destination="G96-FM-hh2" kind="presentation" identifier="present authwebview" id="SOQ-kn-FcM"/>
+                        <segue destination="jmB-Ze-RHA" kind="unwind" identifier="logout" unwindAction="logOutUserWithSegue:" id="6YH-lN-fHG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXY-UO-Bq0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jmB-Ze-RHA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="580" y="115.59220389805098"/>
+            <point key="canvasLocation" x="2234" y="-114"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="ecL-R2-bfj">
+        <scene sceneID="6TR-jy-Tco">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bVl-iI-UBb" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="khW-IG-pkI" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3VA-0e-mIL">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V0A-8N-kHR">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="94H-sj-YrA" kind="relationship" relationship="rootViewController" id="2cb-dX-TKI"/>
+                        <segue destination="94H-sj-YrA" kind="relationship" relationship="rootViewController" id="HWu-Xi-7lE"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qpr-md-chV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xe1-2l-E13" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-359.19999999999999" y="115.59220389805098"/>
+            <point key="canvasLocation" x="1294" y="-114"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="eBD-LO-DqG"/>
+    </inferredMetricsTieBreakers>
 </document>

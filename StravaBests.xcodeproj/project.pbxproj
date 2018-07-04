@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B44888E720ECF77400C643C6 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44888E620ECF77400C643C6 /* InitialViewController.swift */; };
+		B44888E920ED010D00C643C6 /* IndieFlower.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B44888E820ED010C00C643C6 /* IndieFlower.ttf */; };
 		B45E91FD20DD63D00095FFA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E91FC20DD63D00095FFA9 /* AppDelegate.swift */; };
 		B45E920220DD63D00095FFA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45E920020DD63D00095FFA9 /* Main.storyboard */; };
 		B45E920420DD63D30095FFA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45E920320DD63D30095FFA9 /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B44888E620ECF77400C643C6 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		B44888E820ED010C00C643C6 /* IndieFlower.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = IndieFlower.ttf; path = "../../../Website/MAMP/gentimms/wp-content/themes/gentimms/library/fonts/IndieFlower/IndieFlower.ttf"; sourceTree = "<group>"; };
 		B45E91F920DD63D00095FFA9 /* StravaBests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StravaBests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45E91FC20DD63D00095FFA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B45E920120DD63D00095FFA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 		B45E91FB20DD63D00095FFA9 /* StravaBests */ = {
 			isa = PBXGroup;
 			children = (
+				B44888E820ED010C00C643C6 /* IndieFlower.ttf */,
 				B47B2BD320E9459900E20C4A /* Constants.swift */,
 				B45E923D20E192A40095FFA9 /* UtilityExtensions.swift */,
 				B45E920820DD63D30095FFA9 /* Info.plist */,
@@ -174,6 +179,7 @@
 		B45E922420DF7DB80095FFA9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B44888E620ECF77400C643C6 /* InitialViewController.swift */,
 				B45E925220E3C3060095FFA9 /* AuthWebViewController.swift */,
 				B47B2BD120E93A5500E20C4A /* DistanceChooserTableViewController.swift */,
 				B45E921E20DD8FCF0095FFA9 /* BestsTableViewController.swift */,
@@ -334,6 +340,7 @@
 				B45E920720DD63D30095FFA9 /* LaunchScreen.storyboard in Resources */,
 				B45E920420DD63D30095FFA9 /* Assets.xcassets in Resources */,
 				B45E920220DD63D00095FFA9 /* Main.storyboard in Resources */,
+				B44888E920ED010D00C643C6 /* IndieFlower.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +388,7 @@
 				B45E925320E3C3070095FFA9 /* AuthWebViewController.swift in Sources */,
 				B45E923E20E192A40095FFA9 /* UtilityExtensions.swift in Sources */,
 				B45E921D20DD8A6D0095FFA9 /* Run.swift in Sources */,
+				B44888E720ECF77400C643C6 /* InitialViewController.swift in Sources */,
 				B45E923120E130E00095FFA9 /* SFAuthorization.swift in Sources */,
 				B45E922720DFD0AC0095FFA9 /* BestsTableViewDataSource.swift in Sources */,
 				B45E91FD20DD63D00095FFA9 /* AppDelegate.swift in Sources */,

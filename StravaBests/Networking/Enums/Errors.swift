@@ -12,6 +12,7 @@ enum AuthError: Error {
     case cancelled
     case requestNil
     case redirectNil
+    case callbackURLAuthCode
     case navigation(String)
     case sessionFailed(Error)
 }

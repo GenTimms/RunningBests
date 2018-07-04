@@ -9,24 +9,24 @@
 import Foundation
 import Locksmith
 
-typealias Service = String
-typealias AccessCodeURL = URL
 
 struct Keys {
     static let token = "token"
     static let expirationPeriod = "expirationPeriod"
     static let grantDate = "grantDate"
-    static let serice = "service"
+    static let service = "service"
 }
+
+typealias Service = String
 
 struct APIAccount {
     
     let service: String
     
     let accessToken: String
-    let expiration: TimeInterval?
+    let expiration: TimeInterval
     let grantDate: Date
-    
+    //what does strava token return do we need all these variables?
 }
 
 extension APIAccount {
@@ -40,8 +40,12 @@ extension APIAccount {
     }
     
     func save() throws {
-        //TODO: - Make expiration optional or remove altogether?
+        //TODO: - Make expiration optional or remove altogether? see what you get back
         try Locksmith.saveData(data: [Keys.token: accessToken, Keys.expirationPeriod: expiration, Keys.grantDate: grantDate.timeIntervalSince1970], forUserAccount: service)
+    }
+    
+    func delete() throws {
+        try Locksmith.deleteDataForUserAccount(userAccount: service)
     }
     
     static func loadFromKeychain(_ service: Service) -> APIAccount? {
@@ -54,12 +58,7 @@ extension APIAccount {
         return APIAccount(service: service, accessToken: token, expiration: expiration, grantDate: grantDate)
     }
     
-//    static func createAccount(from service: Service, with accessCodeURL: AccessCodeURL) -> APIAccount? {
-////        if let query = accessCodeURL.  {
-////
-////        }
-//        
-//    }
+
 }
 
 

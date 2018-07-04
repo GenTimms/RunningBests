@@ -17,7 +17,7 @@ class AuthWebViewController: UIViewController, WKNavigationDelegate {
     var request: URLRequest? = nil
     var redirect: String? = nil
     
-    var result: Result<URL> = Result.failure(AuthError.cancelled)
+    var result: Result<String> = Result.failure(AuthError.cancelled)
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -52,7 +52,11 @@ class AuthWebViewController: UIViewController, WKNavigationDelegate {
         
         if let url = navigationAction.request.url {
             if url.begins(with: redirect!){
-                result = Result.success(url)
+                if let code = url.getCode() {
+                    result = Result.success(code)
+                } else {
+                    result = Result.failure(AuthError.callbackURLAuthCode)
+                }
                 performSegue(withIdentifier: unwind, sender: self)
                 decisionHandler(.cancel)
                 return
