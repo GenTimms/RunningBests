@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum AuthError: Error {
+enum AuthWebViewError: Error {
     case cancelled
     case requestNil
     case redirectNil
@@ -16,3 +16,16 @@ enum AuthError: Error {
     case navigation(String)
     case sessionFailed(Error)
 }
+
+enum RequestError: Error {
+    case responseStatusCode(Int)
+    case errorReturned(Error)
+    case invalidResponse
+    case dataNil
+}
+
+enum JSONError: Error {
+    case parseFailed
+    case noValueForKey
+}
+

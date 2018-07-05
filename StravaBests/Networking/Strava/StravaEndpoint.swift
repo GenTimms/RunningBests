@@ -16,6 +16,7 @@ enum Strava {
 }
 
 extension Strava: Endpoint {
+    
     var base: String {
         return "https://www.strava.com"
     }
@@ -39,15 +40,15 @@ extension Strava: Endpoint {
         case .activity: return []
         case .authorize:
             return [
-                URLQueryItem(name: "client_id", value: StravaAPIConfig.ClientID),
-                URLQueryItem(name: "redirect_uri", value: StravaAPIConfig.Redirect_URI),
+                URLQueryItem(name: "client_id", value: StravaAuthConfig.ClientID),
+                URLQueryItem(name: "redirect_uri", value: StravaAuthConfig.Redirect),
                 URLQueryItem(name: "response_type", value: "code"),
-                URLQueryItem(name: "scope", value: StravaAPIConfig.Scope)
+                URLQueryItem(name: "scope", value: StravaAuthConfig.Scope)
             ]
         case .token(let code):
             return [
-                URLQueryItem(name: "client_id", value: StravaAPIConfig.ClientID),
-                URLQueryItem(name: "client_secret", value: StravaAPIConfig.ClientSecret),
+                URLQueryItem(name: "client_id", value: StravaAuthConfig.ClientID),
+                URLQueryItem(name: "client_secret", value: StravaAuthConfig.ClientSecret),
                 URLQueryItem(name: "code", value: code)
             ]
         }

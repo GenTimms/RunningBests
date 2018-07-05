@@ -11,15 +11,17 @@ import UIKit
 
 extension URL {
     
+    typealias key = String
+    
     func addQuery(_ item : URLQueryItem) -> URL? {
         var components = URLComponents(url: self, resolvingAgainstBaseURL: true)
         components?.queryItems?.append(item)
         return components?.url
     }
     
-    func getCode() -> String? {
+    func getQueryValue(for key: key) -> String? {
         let components = URLComponents(url: self, resolvingAgainstBaseURL: true)
-        if let codeQuery = components?.queryItems?.filter({$0.name == "code"}).first {
+        if let codeQuery = components?.queryItems?.filter({$0.name == key}).first {
             return codeQuery.value
         }
             return nil

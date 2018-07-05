@@ -82,6 +82,11 @@
                                 <action selector="cancel:" destination="SRK-pG-xUj" id="2Ni-vR-JV3"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="RIv-W3-z6x">
+                            <connections>
+                                <action selector="refresh:" destination="SRK-pG-xUj" id="NHh-xF-ZbY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="webView" destination="s3m-7U-2qc" id="5ty-3S-35Y"/>

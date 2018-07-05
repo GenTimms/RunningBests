@@ -10,14 +10,14 @@ import WebKit
 import UIKit
 
 class AuthWebViewController: UIViewController, WKNavigationDelegate {
-
+    
     @IBOutlet weak var webView: WKWebView!
 
-    let unwind = Constants.AuthUnwind
+    let unwind = Segues.AuthUnwind
     var request: URLRequest? = nil
-    var redirect: String? = nil
+    lazy var redirect: String? = request?.url?.getQueryValue(for: URLKeys.redirect)
     
-    var result: Result<String> = Result.failure(AuthError.cancelled)
+    var result: Result<String> = Result.failure(AuthWebViewError.cancelled)
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -26,21 +26,25 @@ class AuthWebViewController: UIViewController, WKNavigationDelegate {
         loadRequest()
     }
     
+    @IBAction func refresh(_ sender: UIBarButtonItem) {
+        webView.reload()
+    }
+    
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        result = Result.failure(AuthError.cancelled)
+        result = Result.failure(AuthWebViewError.cancelled)
         performSegue(withIdentifier: unwind, sender: self)
     }
 
     //MARK: - Authorisation
     func loadRequest() {
         guard redirect != nil else {
-            result = Result.failure(AuthError.redirectNil)
+            result = Result.failure(AuthWebViewError.redirectNil)
             performSegue(withIdentifier: unwind, sender: self)
             return
         }
         
         guard let authRequest = request else {
-            result = Result.failure(AuthError.requestNil)
+            result = Result.failure(AuthWebViewError.requestNil)
             performSegue(withIdentifier: unwind, sender: self)
             return
         }
@@ -52,13 +56,14 @@ class AuthWebViewController: UIViewController, WKNavigationDelegate {
         
         if let url = navigationAction.request.url {
             if url.begins(with: redirect!){
-                if let code = url.getCode() {
+                if let code = url.getQueryValue(for: URLKeys.code){
                     result = Result.success(code)
                 } else {
-                    result = Result.failure(AuthError.callbackURLAuthCode)
+                    result = Result.failure(AuthWebViewError.callbackURLAuthCode)
                 }
-                performSegue(withIdentifier: unwind, sender: self)
                 decisionHandler(.cancel)
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                performSegue(withIdentifier: unwind, sender: self)
                 return
             }
         }
@@ -67,23 +72,15 @@ class AuthWebViewController: UIViewController, WKNavigationDelegate {
     
     //MARK: - Error Handling
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-        
         guard let statusCode = (navigationResponse.response as? HTTPURLResponse)?.statusCode else {
             decisionHandler(.allow)
             return
         }
-        
         if statusCode >= 400 {
-            result = Result.failure(AuthError.navigation(String(statusCode)))
+            result = Result.failure(AuthWebViewError.navigation(String(statusCode)))
             performSegue(withIdentifier: unwind, sender: self)
         }
-
          decisionHandler(.allow)
-    }
-    
-    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        result = Result.failure(AuthError.navigation(error.localizedDescription))
-        performSegue(withIdentifier: unwind, sender: self)
     }
     
     //MARK: - Activity Indicator

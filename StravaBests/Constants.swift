@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct Constants {
-    
-    static var Service = "Strava"
+struct Segues {
     static var AuthSegue = "present authwebview"
     static var AuthUnwind = "unwindWithAuthResult"
-    
-    
-    
+}
+
+struct URLKeys {
+    static var redirect = "redirect_uri"
+    static var code = "code"
 }

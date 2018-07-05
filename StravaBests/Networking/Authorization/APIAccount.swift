@@ -12,8 +12,6 @@ import Locksmith
 
 struct Keys {
     static let token = "token"
-    static let expirationPeriod = "expirationPeriod"
-    static let grantDate = "grantDate"
     static let service = "service"
 }
 
@@ -22,10 +20,7 @@ typealias Service = String
 struct APIAccount {
     
     let service: String
-    
     let accessToken: String
-    let expiration: TimeInterval
-    let grantDate: Date
     //what does strava token return do we need all these variables?
 }
 

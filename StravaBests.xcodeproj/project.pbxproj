@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		B44888E720ECF77400C643C6 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44888E620ECF77400C643C6 /* InitialViewController.swift */; };
 		B44888E920ED010D00C643C6 /* IndieFlower.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B44888E820ED010C00C643C6 /* IndieFlower.ttf */; };
+		B44888ED20EE441500C643C6 /* StravaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44888EC20EE441500C643C6 /* StravaClient.swift */; };
+		B44888EF20EE442100C643C6 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44888EE20EE442100C643C6 /* APIClient.swift */; };
+		B44888F020EE442600C643C6 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44888EE20EE442100C643C6 /* APIClient.swift */; };
 		B45E91FD20DD63D00095FFA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E91FC20DD63D00095FFA9 /* AppDelegate.swift */; };
 		B45E920220DD63D00095FFA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45E920020DD63D00095FFA9 /* Main.storyboard */; };
 		B45E920420DD63D30095FFA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45E920320DD63D30095FFA9 /* Assets.xcassets */; };
@@ -19,7 +22,7 @@
 		B45E922720DFD0AC0095FFA9 /* BestsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E922620DFD0AC0095FFA9 /* BestsTableViewDataSource.swift */; };
 		B45E922920DFFE7D0095FFA9 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E922820DFFE7C0095FFA9 /* JSONParser.swift */; };
 		B45E922B20DFFFE10095FFA9 /* StravaActivityParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E922A20DFFFE10095FFA9 /* StravaActivityParser.swift */; };
-		B45E922F20E004550095FFA9 /* StravaAPIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E922E20E004550095FFA9 /* StravaAPIConfig.swift */; };
+		B45E922F20E004550095FFA9 /* StravaAuthConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E922E20E004550095FFA9 /* StravaAuthConfig.swift */; };
 		B45E923120E130E00095FFA9 /* SFAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E923020E130E00095FFA9 /* SFAuthorization.swift */; };
 		B45E923320E134CD0095FFA9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E923220E134CD0095FFA9 /* Endpoint.swift */; };
 		B45E923620E142310095FFA9 /* StravaEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E923520E142310095FFA9 /* StravaEndpoint.swift */; };
@@ -33,7 +36,7 @@
 		B45E924820E264F40095FFA9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E923820E14F7F0095FFA9 /* Result.swift */; };
 		B45E924920E264F70095FFA9 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E923B20E1508F0095FFA9 /* Errors.swift */; };
 		B45E924A20E264F90095FFA9 /* StravaActivityParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E922A20DFFFE10095FFA9 /* StravaActivityParser.swift */; };
-		B45E924B20E264FB0095FFA9 /* StravaAPIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E922E20E004550095FFA9 /* StravaAPIConfig.swift */; };
+		B45E924B20E264FB0095FFA9 /* StravaAuthConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E922E20E004550095FFA9 /* StravaAuthConfig.swift */; };
 		B45E924C20E264FD0095FFA9 /* StravaEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E923520E142310095FFA9 /* StravaEndpoint.swift */; };
 		B45E924E20E265020095FFA9 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E921C20DD8A6D0095FFA9 /* Run.swift */; };
 		B45E924F20E265050095FFA9 /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E922020DD92500095FFA9 /* Distance.swift */; };
@@ -60,6 +63,8 @@
 /* Begin PBXFileReference section */
 		B44888E620ECF77400C643C6 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		B44888E820ED010C00C643C6 /* IndieFlower.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = IndieFlower.ttf; path = "../../../Website/MAMP/gentimms/wp-content/themes/gentimms/library/fonts/IndieFlower/IndieFlower.ttf"; sourceTree = "<group>"; };
+		B44888EC20EE441500C643C6 /* StravaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaClient.swift; sourceTree = "<group>"; };
+		B44888EE20EE442100C643C6 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		B45E91F920DD63D00095FFA9 /* StravaBests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StravaBests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45E91FC20DD63D00095FFA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B45E920120DD63D00095FFA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,7 +79,7 @@
 		B45E922620DFD0AC0095FFA9 /* BestsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestsTableViewDataSource.swift; sourceTree = "<group>"; };
 		B45E922820DFFE7C0095FFA9 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		B45E922A20DFFFE10095FFA9 /* StravaActivityParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaActivityParser.swift; sourceTree = "<group>"; };
-		B45E922E20E004550095FFA9 /* StravaAPIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaAPIConfig.swift; sourceTree = "<group>"; };
+		B45E922E20E004550095FFA9 /* StravaAuthConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaAuthConfig.swift; sourceTree = "<group>"; };
 		B45E923020E130E00095FFA9 /* SFAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFAuthorization.swift; sourceTree = "<group>"; };
 		B45E923220E134CD0095FFA9 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		B45E923520E142310095FFA9 /* StravaEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaEndpoint.swift; sourceTree = "<group>"; };
@@ -213,6 +218,7 @@
 		B45E923420E141A90095FFA9 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				B44888EE20EE442100C643C6 /* APIClient.swift */,
 				B45E922820DFFE7C0095FFA9 /* JSONParser.swift */,
 				B45E923220E134CD0095FFA9 /* Endpoint.swift */,
 			);
@@ -223,8 +229,9 @@
 			isa = PBXGroup;
 			children = (
 				B45E922A20DFFFE10095FFA9 /* StravaActivityParser.swift */,
-				B45E922E20E004550095FFA9 /* StravaAPIConfig.swift */,
+				B44888EC20EE441500C643C6 /* StravaClient.swift */,
 				B45E923520E142310095FFA9 /* StravaEndpoint.swift */,
+				B45E922E20E004550095FFA9 /* StravaAuthConfig.swift */,
 			);
 			path = Strava;
 			sourceTree = "<group>";
@@ -378,10 +385,12 @@
 				B45E922120DD92500095FFA9 /* Distance.swift in Sources */,
 				B45E921F20DD8FCF0095FFA9 /* BestsTableViewController.swift in Sources */,
 				B45E923620E142310095FFA9 /* StravaEndpoint.swift in Sources */,
-				B45E922F20E004550095FFA9 /* StravaAPIConfig.swift in Sources */,
+				B45E922F20E004550095FFA9 /* StravaAuthConfig.swift in Sources */,
 				B47B2BD220E93A5500E20C4A /* DistanceChooserTableViewController.swift in Sources */,
+				B44888ED20EE441500C643C6 /* StravaClient.swift in Sources */,
 				B45E925720E6CA810095FFA9 /* APIAccount.swift in Sources */,
 				B45E922920DFFE7D0095FFA9 /* JSONParser.swift in Sources */,
+				B44888EF20EE442100C643C6 /* APIClient.swift in Sources */,
 				B45E923320E134CD0095FFA9 /* Endpoint.swift in Sources */,
 				B45E923920E14F7F0095FFA9 /* Result.swift in Sources */,
 				B45E922B20DFFFE10095FFA9 /* StravaActivityParser.swift in Sources */,
@@ -408,7 +417,8 @@
 				B45E924520E264E70095FFA9 /* SFAuthorization.swift in Sources */,
 				B45E924F20E265050095FFA9 /* Distance.swift in Sources */,
 				B45E924720E264EE0095FFA9 /* JSONParser.swift in Sources */,
-				B45E924B20E264FB0095FFA9 /* StravaAPIConfig.swift in Sources */,
+				B45E924B20E264FB0095FFA9 /* StravaAuthConfig.swift in Sources */,
+				B44888F020EE442600C643C6 /* APIClient.swift in Sources */,
 				B45E924620E264EB0095FFA9 /* Endpoint.swift in Sources */,
 				B45E925020E265080095FFA9 /* BestsTableViewController.swift in Sources */,
 				B45E924C20E264FD0095FFA9 /* StravaEndpoint.swift in Sources */,

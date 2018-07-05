@@ -8,14 +8,13 @@
 
 import Foundation
 
-struct StravaAPIConfig {
+struct StravaAuthConfig {
     
     static var ClientID = "26550"
     static var ClientSecret = "4a621ec026ee39f917c2892e26428935221b0ae6"
     static var PublicAccessToken = "bfa3fa512b9287d696c32a9f1a5b436e888f8309"
-    static var Redirect_URI = "https://com.gmjt.stravabests"
-    static var HostedRedirect = "http://gentimms.com/runningbests/redirect"
     static var Scope = "view_private"
+    static var Redirect = "https://com.gmjt.stravabests"
     
     //AUTH RESULT: https://com.gmjt.stravabests/?state=&code=2f12da642ba4fae4c9ff204c5c8524199cce2667&scope=view_private
 
@@ -44,4 +43,5 @@ struct StravaAPIConfig {
         
     }
 }
+
 

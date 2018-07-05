@@ -10,66 +10,66 @@ import UIKit
 
 class InitialViewController: UIViewController {
     
+    var client: APIClient = StavaClient()
     var account: APIAccount?
-    var url: URL?
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        statusLabel.isHidden = true
+            loadAccount()
+    }
+    
+    func displayStatus() {
+        statusLabel.isHidden = false
         loginButton.isHidden = true
-        loadAccount()
+    }
+    
+    func displayLogin() {
+        statusLabel.isHidden = true
+        loginButton.isHidden = false
     }
     
     //MARK: - Authorization
     func loadAccount() {
-    
-        if let savedAccount = APIAccount.loadFromKeychain(Constants.Service)  {
+        if let savedAccount = APIAccount.loadFromKeychain(client.service)  {
             account = savedAccount
-           statusLabel.isHidden = false
+           displayStatus()
             return
         }
-        
-        loginButton.isHidden = false
+        displayLogin()
     }
     
     @IBAction func login(_ sender: UIButton) {
-        performSegue(withIdentifier: Constants.AuthSegue, sender: self)
+        performSegue(withIdentifier: Segues.AuthSegue, sender: self)
     }
-    
 
     @IBAction func getAuthorizationResult(segue: UIStoryboardSegue) {
         let authWebView = segue.source as! AuthWebViewController
         let result = authWebView.result
         switch result {
-        case .success(let accessCode): print("RESULT: \(accessCode)"); fetchToken(accessCode: accessCode, completion: {result in })
-            
+        case .success(let accessCode): print("RESULT: \(accessCode)");
+        displayStatus()
+        createAccount(accessCode: accessCode)
         case .failure(let error): print("RESULT: \(error)")
             //TODO: Display Error Notification
         }
     }
     
-    func fetchToken(accessCode: String, completion: (Result<String>) -> Void) {
-        if var request = Strava.token(code: accessCode).request {
-            request.httpMethod = "POST"
-            URLSession.shared.dataTask(with: request) { (data, response, error) in
-                print("DATA \(data)")
-                print("RESPONSE \(response)")
-                print("ERROR \(error)")
-
-                }
-                
-            }
+    func createAccount(accessCode: String) {
+        client.fetchToken(accessCode: accessCode) { (result) in
+//            switch result {
+//                case .success(let token): //creataccount
+//                case .failure(let error): //display error notification
+//            }
         }
+    }
     
-
-    
+    //put this somewhere else? APIClient?
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.AuthSegue {
+        if segue.identifier == Segues.AuthSegue {
             if let authVC = segue.destination.contents as? AuthWebViewController {
-                authVC.redirect = StravaAPIConfig.Redirect_URI
                 authVC.request = Strava.authorize.request
             }
         }
@@ -78,8 +78,6 @@ class InitialViewController: UIViewController {
     @IBAction func logOutUser(segue: UIStoryboardSegue) {
         try? account?.delete()
         account = nil
-        loginButton.isHidden = false
+        displayLogin()
     }
-
-
 }
