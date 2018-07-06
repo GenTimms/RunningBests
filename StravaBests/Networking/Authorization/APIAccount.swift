@@ -9,8 +9,7 @@
 import Foundation
 import Locksmith
 
-
-struct Keys {
+fileprivate struct Keys {
     static let token = "token"
     static let service = "service"
 }
@@ -18,10 +17,8 @@ struct Keys {
 typealias Service = String
 
 struct APIAccount {
-    
     let service: String
     let accessToken: String
-    //what does strava token return do we need all these variables?
 }
 
 extension APIAccount {
@@ -35,8 +32,7 @@ extension APIAccount {
     }
     
     func save() throws {
-        //TODO: - Make expiration optional or remove altogether? see what you get back
-        try Locksmith.saveData(data: [Keys.token: accessToken, Keys.expirationPeriod: expiration, Keys.grantDate: grantDate.timeIntervalSince1970], forUserAccount: service)
+        try Locksmith.saveData(data: [Keys.token: accessToken], forUserAccount: service)
     }
     
     func delete() throws {
@@ -44,16 +40,12 @@ extension APIAccount {
     }
     
     static func loadFromKeychain(_ service: Service) -> APIAccount? {
-        guard let dictionary = Locksmith.loadDataForUserAccount(userAccount: service), let token = dictionary[Keys.token] as? String, let expiration = dictionary[Keys.expirationPeriod] as? TimeInterval, let grantDateValue = dictionary[Keys.grantDate] as? TimeInterval else {
+        guard let dictionary = Locksmith.loadDataForUserAccount(userAccount: service), let token = dictionary[Keys.token] as? String else {
             return nil
         }
         
-        let grantDate = Date(timeIntervalSince1970: grantDateValue)
-        
-        return APIAccount(service: service, accessToken: token, expiration: expiration, grantDate: grantDate)
+        return APIAccount(service: service, accessToken: token)
     }
-    
-
 }
 
 

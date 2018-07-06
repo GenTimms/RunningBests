@@ -10,6 +10,8 @@ import UIKit
 
 class InitialViewController: UIViewController {
     
+    //TODO: How to trigger fetch? Did set on apiaccount?
+    
     var client: APIClient = StavaClient()
     var account: APIAccount?
 
@@ -52,21 +54,21 @@ class InitialViewController: UIViewController {
         case .success(let accessCode): print("RESULT: \(accessCode)");
         displayStatus()
         createAccount(accessCode: accessCode)
-        case .failure(let error): print("RESULT: \(error)")
+        case .failure(let error): print("Authorisation - User Log in/Access Code Failed: \(error)")
             //TODO: Display Error Notification
         }
     }
     
     func createAccount(accessCode: String) {
         client.fetchToken(accessCode: accessCode) { (result) in
-//            switch result {
-//                case .success(let token): //creataccount
-//                case .failure(let error): //display error notification
-//            }
+            switch result {
+            case .success(let token): self.account = APIAccount(service: self.client.service, accessToken: token)
+            case .failure(let error): print("Authorisation - Token Fetch Failed: \(error)")
+                //TODO: Handle For User - Notification
+            }
         }
     }
-    
-    //put this somewhere else? APIClient?
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segues.AuthSegue {
             if let authVC = segue.destination.contents as? AuthWebViewController {

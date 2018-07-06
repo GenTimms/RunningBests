@@ -22,6 +22,7 @@ enum RequestError: Error {
     case errorReturned(Error)
     case invalidResponse
     case dataNil
+    case invalidRequest
 }
 
 enum JSONError: Error {

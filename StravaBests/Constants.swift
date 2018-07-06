@@ -16,4 +16,5 @@ struct Segues {
 struct URLKeys {
     static var redirect = "redirect_uri"
     static var code = "code"
+    static var token = "access_token"
 }

@@ -10,13 +10,45 @@ import Foundation
 
 protocol APIClient {
     
-  var service: String { get }
+    var service: String { get }
     
-  func fetchToken(accessCode: String, completion: @escaping (Result<String>) -> Void)
-    
-
+    func fetchToken(accessCode: String, completion: @escaping (Result<String>) -> Void)
 }
 
 extension APIClient {
-    //fetch(request: URLRequest, completion: Result)
+    
+    typealias JSON = [String: AnyObject]
+    
+    func jsonTask(request: URLRequest, completion: @escaping (Result<JSON>) -> Void) -> URLSessionDataTask {
+        let task = URLSession.shared.dataTask(with: request) { (data, response , error) in
+            
+            if let fetchError = error {
+                completion(Result.failure(RequestError.errorReturned(fetchError)))
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(Result.failure(RequestError.invalidResponse))
+                return
+            }
+            guard httpResponse.statusCode == 200 else {
+                completion(Result.failure(RequestError.responseStatusCode(httpResponse.statusCode)))
+                return
+            }
+            guard let data = data else {
+                completion(Result.failure(RequestError.dataNil))
+                return
+            }
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: []) as? JSON
+                if let jsonData = json {
+                    completion(Result.success(jsonData))
+                }
+            } catch {
+                completion(Result.failure(JSONError.parseFailed))
+                return
+            }
+        }
+        return task
+    }
 }
+
