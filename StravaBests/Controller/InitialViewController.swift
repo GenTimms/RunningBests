@@ -9,11 +9,16 @@
 import UIKit
 
 class InitialViewController: UIViewController {
-    
-    //TODO: How to trigger fetch? Did set on apiaccount?
-    
+
     var client: APIClient = StavaClient()
-    var account: APIAccount?
+    var account: APIAccount? {
+        didSet {
+            if let newAccount = account {
+               client.token = newAccount.accessToken
+               //client.fetchRuns()
+            }
+        }
+    }
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
@@ -37,7 +42,7 @@ class InitialViewController: UIViewController {
     func loadAccount() {
         if let savedAccount = APIAccount.loadFromKeychain(client.service)  {
             account = savedAccount
-           displayStatus()
+            displayStatus()
             return
         }
         displayLogin()
@@ -60,7 +65,7 @@ class InitialViewController: UIViewController {
     }
     
     func createAccount(accessCode: String) {
-        client.fetchToken(accessCode: accessCode) { (result) in
+       client.fetchToken(accessCode: accessCode) { (result) in
             switch result {
             case .success(let token): self.account = APIAccount(service: self.client.service, accessToken: token)
             case .failure(let error): print("Authorisation - Token Fetch Failed: \(error)")

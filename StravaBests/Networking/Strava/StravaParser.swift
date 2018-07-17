@@ -1,54 +1,57 @@
 //
-//  Run.swift
+//  ActivityParser.swift
 //  StravaBests
 //
-//  Created by Genevieve Timms on 22/06/2018.
+//  Created by Genevieve Timms on 24/06/2018.
 //  Copyright © 2018 GMJT. All rights reserved.
 //
 
 import Foundation
 
-struct Run: Codable {
-    
-    let id: String
-    let name: String
-    let date: Date
-    let distance: Int
-    //let parser: JSONParser
-    
-    let bests = [Distance: TimeInterval]()
-    
-    mutating func addBests(from: Data) {
+extension DateFormatter {
+    func date(fromStravaString dateString: String) -> Date? {
+        self.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        return self.date(from: dateString)
     }
-    
-    init?(json: Data) {
-        if let newValue = try? JSONDecoder().decode(Run.self, from: json) {
-            self = newValue
-        } else {
+}
+
+extension Run {
+    init?(stravaJSON: [String : Any]) {
+        guard let id = stravaJSON["id"] as? String,
+        let name = stravaJSON["name"] as? String,
+        let dateString = stravaJSON["start_date_local"] as? String,
+        let date = DateFormatter().date(fromStravaString: dateString),
+        let distance = stravaJSON["distance"] as? Int else {
             return nil
         }
+        
+        self.id = id
+        self.name = name
+        self.date = date
+        self.distance = distance
     }
     
-    init?(json: Data, using: JSONParser) {
-        if let newValue = try? JSONDecoder().decode(Run.self, from: json) {
-            self = newValue
-        } else {
-            return nil
-        }
-    }
     
-    var json: Data?
-    {
-        return try? JSONEncoder().encode(self)
+}
+
+   enum CodingKeys: String, CodingKey {
+        case name
+        case distance
+        case id
+        case date = "start_date_local"
     }
+
+struct StravaParser : JSONParser {    
+    typealias codingKeysEnum = CodingKeys
+//    func parse<Run>(data: Data) -> [Run] {
+//
+//    }
     
-   
 }
 
 
-
 //extension Run {
-//    
+//
 //    private enum CodingKeys: String, CodingKey {
 //        case name
 //        case distance
@@ -68,15 +71,12 @@ struct Run: Codable {
 ////        decode your superclass too (with their decoder)
 ////        let superDecoder = try container.superDecoder()
 ////        try super.init(from: superDecoder)
-//        
+//
 ////        let values = try decoder.container(keyedBy: CodingKeys.self)
 ////        latitude = try values.decode(Double.self, forKey: .latitude)
 ////        longitude = try values.decode(Double.self, forKey: .longitude)
-////        
+////
 ////        let additionalInfo = try values.nestedContainer(keyedBy: AdditionalInfoKeys.self, forKey: .additionalInfo)
 ////        elevation = try additionalInfo.decode(Double.self, forKey: .elevation)
 //
 //    }
-
-
-

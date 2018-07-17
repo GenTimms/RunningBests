@@ -9,12 +9,12 @@
 import Foundation
 import Locksmith
 
-fileprivate struct Keys {
+typealias Service = String
+
+struct Keys {
     static let token = "token"
     static let service = "service"
 }
-
-typealias Service = String
 
 struct APIAccount {
     let service: String

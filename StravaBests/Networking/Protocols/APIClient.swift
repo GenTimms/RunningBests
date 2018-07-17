@@ -10,9 +10,11 @@ import Foundation
 
 protocol APIClient {
     
+    var token: String? {get set}
     var service: String { get }
     
-    func fetchToken(accessCode: String, completion: @escaping (Result<String>) -> Void)
+    func fetchToken(completion: @escaping (Result<String>) -> Void)
+    
 }
 
 extension APIClient {

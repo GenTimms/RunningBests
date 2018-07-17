@@ -9,7 +9,7 @@
 import Foundation
 
 enum Strava {
-    case activities(before: Int?, after: Int?)
+    case activities()
     case activity(id: String)
     case authorize
     case token(code: String)
@@ -32,10 +32,11 @@ extension Strava: Endpoint {
     
     var queryItems: [URLQueryItem] {
         switch self {
-        case .activities(let before, let after):
+        case .activities():
             return [
-                URLQueryItem(name: "before", value: before?.description),
-                URLQueryItem(name: "after", value: after?.description)
+                URLQueryItem(name: "before", value: nil),
+                URLQueryItem(name: "after", value: nil),
+                URLQueryItem(name: "per_page", value: String(200))
             ]
         case .activity: return []
         case .authorize:

@@ -9,5 +9,12 @@
 import Foundation
 
 protocol JSONParser {
-    func parse<T: Decodable>(data: Data) -> T
+    associatedtype codingKeysEnum: CodingKey
+    //func parse<T: Decodable>(data: Data) -> T
+}
+
+extension JSONParser {
+    var codingKeys: codingKeysEnum.Type {
+        return codingKeysEnum.self
+    }
 }
