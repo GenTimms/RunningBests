@@ -10,36 +10,48 @@ import Foundation
 
 struct Run: Codable {
     
-    let id: String
+    let id: Int
     let name: String
     let date: Date
-    let distance: Int
-    //let parser: JSONParser
+    let distance: Double
     
-    let bests = [Distance: TimeInterval]()
+    var bests = [Distance: TimeInterval]()
     
-    mutating func addBests(from: Data) {
-    }
-    
-    init?(json: Data) {
-        if let newValue = try? JSONDecoder().decode(Run.self, from: json) {
-            self = newValue
-        } else {
-            return nil
+        private enum CodingKeys: String, CodingKey {
+            case name
+            case distance
+            case id
+            case date = "start_date_local"
         }
-    }
     
-    init?(json: Data, using: JSONParser) {
-        if let newValue = try? JSONDecoder().decode(Run.self, from: json) {
-            self = newValue
-        } else {
-            return nil
-        }
-    }
+//    mutating func addBests(from: [Distance: TimeInterval]) {
+//        
+//    }
+    
+//    init?(json: Data) {
+//        let decoder = JSONDecoder()
+//        decoder.dateDecodingStrategy  = .iso8601
+//        if let newValue = try? decoder.decode(Run.self, from: json) {
+//            self = newValue
+//        } else {
+//            return nil
+//        }
+//    }
+    
+//    init?(json: Data, using: JSONParser) {
+//        if let newValue = try? JSONDecoder().decode(Run.self, from: json) {
+//            self = newValue
+//        } else {
+//            return nil
+//        }
+//    }
     
     var json: Data?
     {
-        return try? JSONEncoder().encode(self)
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        encoder.dateEncodingStrategy = .iso8601
+        return try? encoder.encode(self)
     }
     
    

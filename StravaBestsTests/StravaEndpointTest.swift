@@ -40,12 +40,12 @@ class StravaEndpointTests: XCTestCase {
     }
     
     func testEndpointRequest_equalsURLRequest() {
-        let endpointActivitiesRequest = Strava.activities(before: nil, after: nil).request
+        let endpointActivitiesRequest = Strava.activities().request
         XCTAssertEqual(endpointActivitiesRequest, URLRequest(url: activitiesURL!))
     }
     
     func testEndpointRequestWithAuthorizationHeader_equalsAuthRequest() {
-        let endPointActivitiesRequestWithAuthHeader = Strava.activities(before: nil, after: nil).requestWithAuthorizationHeader(oauthToken: StravaEndpointTests.Token)
+        let endPointActivitiesRequestWithAuthHeader = Strava.activities().requestWithAuthorizationHeader(oauthToken: StravaEndpointTests.Token)
         var request = URLRequest(url: activitiesURL!)
         request.addValue("Bearer \(StravaEndpointTests.Token)", forHTTPHeaderField: "Authorization")
         XCTAssertEqual(endPointActivitiesRequestWithAuthHeader, request)

@@ -13,15 +13,13 @@ protocol APIClient {
     var token: String? {get set}
     var service: String { get }
     
-    func fetchToken(completion: @escaping (Result<String>) -> Void)
+    func fetchToken(accessCode: String, completion: @escaping (Result<String>) -> Void)
     
 }
 
 extension APIClient {
     
-    typealias JSON = [String: AnyObject]
-    
-    func jsonTask(request: URLRequest, completion: @escaping (Result<JSON>) -> Void) -> URLSessionDataTask {
+    func jsonTask(request: URLRequest, completion: @escaping (Result<Data>) -> Void) -> URLSessionDataTask {
         let task = URLSession.shared.dataTask(with: request) { (data, response , error) in
             
             if let fetchError = error {
@@ -40,15 +38,7 @@ extension APIClient {
                 completion(Result.failure(RequestError.dataNil))
                 return
             }
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: []) as? JSON
-                if let jsonData = json {
-                    completion(Result.success(jsonData))
-                }
-            } catch {
-                completion(Result.failure(JSONError.parseFailed))
-                return
-            }
+            completion(Result.success(data))
         }
         return task
     }

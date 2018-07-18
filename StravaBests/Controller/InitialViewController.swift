@@ -65,7 +65,7 @@ class InitialViewController: UIViewController {
     }
     
     func createAccount(accessCode: String) {
-       client.fetchToken(accessCode: accessCode) { (result) in
+        client.fetchToken(accessCode: accessCode) { (result) in
             switch result {
             case .success(let token): self.account = APIAccount(service: self.client.service, accessToken: token)
             case .failure(let error): print("Authorisation - Token Fetch Failed: \(error)")
