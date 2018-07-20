@@ -27,17 +27,24 @@ class StavaClient: APIClient {
                 let token = try self.getToken(from: data)
                 completion(Result.success(token))
             } catch {
-                completion(Result.failure(JSONError.parseFailed))
+                completion(Result.failure(error))
                 }
             }
         }
         task.resume()
     }
     
+    private func getToken(from data: Data) throws -> String  {
+        let json = try JSONSerialization.jsonObject(with: data, options: []) as? JSON
+        guard let jsonData = json, let token = jsonData[Keys.token] as? String else {
+            throw JSONError.parseFailed
+        }
+        self.token = token
+        return token
+    }
     
-    func fetchRuns(completion: @escaping (Result<[Run]>) -> Void) {
-        
-        //TODO: Automatically Iterating until an empty page is returned?
+    func fetchActivities(completion: @escaping (Result<[Activity]>) -> Void) {
+        //TODO: Automatically Iterating until an empty page is returned
         guard let accessToken = token, let request = Strava.activities().requestWithAuthorizationHeader(oauthToken: accessToken) else {
             completion(Result.failure(RequestError.invalidRequest))
             return
@@ -48,34 +55,36 @@ class StavaClient: APIClient {
             case .failure(let error): completion(Result.failure(error))
             case .success(let data):
                 do {
-                    let runs = try self.decodeRuns(from: data)
-                    completion(Result.success(runs))
+                    let activities = try Activity.decodeActivities(from: data)
+                    completion(Result.success(activities))
                 } catch {
-                    completion(Result.failure(JSONError.parseFailed))
+                    completion(Result.failure(error))
                 }
             }
         }
         task.resume()
-        
     }
     
-    //TODO Fetch Bests - Create new type best efforts? nested dictionary decode? coding keys?
-    
-    private func decodeRuns(from data: Data) throws -> [Run]  {
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        //TODO: Filter for runs
-        let runs = try decoder.decode([Run].self, from: data)
-        return runs
-    }
-    
-    private func getToken(from data: Data) throws -> String  {
-        let json = try JSONSerialization.jsonObject(with: data, options: []) as? JSON
-        guard let jsonData = json, let token = jsonData[Keys.token] as? String else {
-            throw JSONError.parseFailed
+    func fetchRun(for activity: Activity, completion: @escaping (Result<Run>) -> Void) {
+        guard let accessToken = token, let request = Strava.activity(id: String(activity.id)).requestWithAuthorizationHeader(oauthToken: accessToken) else {
+            completion(Result.failure(RequestError.invalidRequest))
+            return
         }
-        self.token = token
-        return token
+        
+        let task = jsonTask(request: request) { result in
+            switch result {
+            case .failure(let error): completion(Result.failure(error))
+            case .success(let data):
+                do {
+                 let run = try Run(json: data)
+                 completion(Result.success(run))
+                }
+                catch {
+                 completion(Result.failure(error))
+                }
+            }
+        }
+        task.resume()
     }
 }
 

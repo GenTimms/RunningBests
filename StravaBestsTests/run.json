@@ -1,0 +1,1018 @@
+{
+    "resource_state": 3,
+    "athlete": {
+        "id": 19474797,
+        "resource_state": 1
+    },
+    "name": "Trosley 10k",
+    "distance": 10164,
+    "moving_time": 3630,
+    "elapsed_time": 3639,
+    "total_elevation_gain": 93,
+    "type": "Run",
+    "workout_type": 0,
+    "id": 1665166078,
+    "external_id": "file.fit",
+    "upload_id": 1788497020,
+    "start_date": "2018-06-27T08:24:54Z",
+    "start_date_local": "2018-06-27T09:24:54Z",
+    "timezone": "(GMT+00:00) Europe/London",
+    "utc_offset": 3600,
+    "start_latlng": [
+        51.32,
+        0.34
+    ],
+    "end_latlng": [
+        51.33,
+        0.34
+    ],
+    "location_city": null,
+    "location_state": null,
+    "location_country": "",
+    "start_latitude": 51.32,
+    "start_longitude": 0.34,
+    "achievement_count": 4,
+    "kudos_count": 0,
+    "comment_count": 0,
+    "athlete_count": 1,
+    "photo_count": 0,
+    "map": {
+        "id": "a1665166078",
+        "polyline": "kkgxHi|aAGi@WcAQwAa@yB?aAO_AO_BDeBKuACy@?_@I{@?c@UsC@]e@oBKWGa@Ac@Ow@Uy@?]M}@a@gBAa@]yBAe@OcAAYD{BK}AAqCEeAImAGa@K[SkACa@DgAA[Kq@G_AKaAMwCAaAIi@?c@FeBGaDHeCByBIaB@aFGiA?MKm@K{@GUQ?}@PM@e@NW?o@H]Lo@F[JEJBN?ZHn@^fAX~AN\\V\\Pf@H`@B`@BxAFhAC~@FhCCx@JnAA|@BjAClAHlAKdCBdBAh@F`AAbARdAHbABj@|@nEX`C?|@^jC@d@j@jDLlBLf@Vt@Z|ANxA?`ABZ^fAHZDV@f@NtAdAbGHhAVt@DPBn@J`@Xx@Hh@Bz@Np@Vn@V^JXH`@Bt@HXHPNLPVHDBC?I[oAAQQ_AIS]mBG}@k@_FIeACeBWiGGi@EuAIi@Eo@WuAQiBQkAqA_HU_C]eCE{@@q@GaAAcAHcA?UI}@IiCM{@[gA?uBOqAIsACiAKqAA}BEgBBcBCkEFyA?{EAeA@]GeCGm@G[G{@AEECQFa@@k@PQBYL_BRWLQAK@e@VGNFp@n@dBLl@X|@d@`AR|@AnAHjBEzAFjBA~@JnABfAKxB?j@D`AAnAL~EBXA`AJ`AR~@Fx@Pz@Dz@`@dCBj@FPDr@Ln@Dv@v@zEHfANf@JtAL^@TPd@Lj@NhAHZBTAb@Bn@Pl@FHNt@J`BLp@\\tADn@TjAJv@?^D`@\\pARlALVLd@F^Bh@BVj@tAFTLVHZHrAFXb@b@TLBA?Sa@_AE_@Eu@Sm@K}@GUI}@OaASgCGYCy@KaAIiD@k@QsCGg@A{@IcAQs@OgAGQKe@Iy@]_BSaBYmA[aDI]Gu@QeAGs@@m@CiBEi@F_AC]A}AE[Ag@Gs@_@aBAyBKi@M{AC{BG_A@k@QoC?]@M@o@CeAB}@?uADg@BmB?_BEqA@yBGmA@a@SuCGIC?WF[@_@J_@DYJk@BSFWBSHYBSDa@RCH?JBJJjADPR^BNV|@jA`DHp@E|FNvFAbAI~AFv@PvIF`AAlADv@L|@Bb@\\rAP|BHf@B`@Jl@RtBFbATrAH\\Fb@`@fBFp@\\xB`@|AJTNv@Dn@Cl@?j@Hb@JZPZBNDZ?^NjAl@pCF`@Bl@Jh@DpA^bBf@tBBt@F\\hA|BVr@F`@@PO`@kAdA",
+        "resource_state": 3,
+        "summary_polyline": "kkgxHi|aA{Cia@cEiW}CihA{HzAnCjLZxd@|Ll}@rF`SqKm_AoCwgAsIvBxCbK^ne@dMz}@xF|R}KiaA{B_eAwIfAvC`Mt@ri@bLtx@|D`OyAxB"
+    },
+    "trainer": false,
+    "commute": false,
+    "manual": false,
+    "private": false,
+    "flagged": false,
+    "gear_id": "g2243724",
+    "from_accepted_tag": false,
+    "average_speed": 2.8,
+    "max_speed": 5,
+    "average_cadence": 86,
+    "has_heartrate": true,
+    "average_heartrate": 166.8,
+    "max_heartrate": 182,
+    "elev_high": 218,
+    "elev_low": 194,
+    "pr_count": 3,
+    "total_photo_count": 0,
+    "has_kudoed": false,
+    "suffer_score": 135,
+    "description": "",
+    "calories": 643.5,
+    "segment_efforts": [
+        {
+            "id": 41738660574,
+            "resource_state": 2,
+            "name": "Trosley Park Lower Path: Eastwards",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 544,
+            "moving_time": 541,
+            "start_date": "2018-06-27T08:25:05Z",
+            "start_date_local": "2018-06-27T09:25:05Z",
+            "distance": 1503.8,
+            "start_index": 11,
+            "end_index": 553,
+            "average_cadence": 83,
+            "average_heartrate": 153.9,
+            "max_heartrate": 165,
+            "segment": {
+                "id": 12496650,
+                "resource_state": 2,
+                "name": "Trosley Park Lower Path: Eastwards",
+                "activity_type": "Run",
+                "distance": 1527.6,
+                "average_grade": -1.8,
+                "maximum_grade": 8.6,
+                "elevation_high": 202,
+                "elevation_low": 174,
+                "start_latlng": [
+                    51.325032,
+                    0.342801
+                ],
+                "end_latlng": [
+                    51.327459,
+                    0.364159
+                ],
+                "start_latitude": 51.325032,
+                "start_longitude": 0.342801,
+                "end_latitude": 51.327459,
+                "end_longitude": 0.364159,
+                "climb_category": 0,
+                "city": "Vigo Village",
+                "state": null,
+                "country": "United Kingdom",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": null,
+            "achievements": [],
+            "hidden": false
+        },
+        {
+            "id": 41738660583,
+            "resource_state": 2,
+            "name": "Trosley 3K Route",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 1169,
+            "moving_time": 1166,
+            "start_date": "2018-06-27T08:25:13Z",
+            "start_date_local": "2018-06-27T09:25:13Z",
+            "distance": 3190,
+            "start_index": 19,
+            "end_index": 1186,
+            "average_cadence": 84,
+            "average_heartrate": 161.2,
+            "max_heartrate": 177,
+            "segment": {
+                "id": 3592209,
+                "resource_state": 2,
+                "name": "Trosley 3K Route",
+                "activity_type": "Run",
+                "distance": 3272.05,
+                "average_grade": 0.1,
+                "maximum_grade": 33.6,
+                "elevation_high": 210.1,
+                "elevation_low": 173.7,
+                "start_latlng": [
+                    51.325144,
+                    0.343134
+                ],
+                "end_latlng": [
+                    51.325148,
+                    0.342847
+                ],
+                "start_latitude": 51.325144,
+                "start_longitude": 0.343134,
+                "end_latitude": 51.325148,
+                "end_longitude": 0.342847,
+                "climb_category": 0,
+                "city": "New Ash Green",
+                "state": "Kent",
+                "country": "United Kingdom",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": 2,
+            "achievements": [
+                {
+                    "type_id": 3,
+                    "type": "pr",
+                    "rank": 2
+                }
+            ],
+            "hidden": false
+        },
+        {
+            "id": 41738660589,
+            "resource_state": 2,
+            "name": "Trosley Park Lower Path: Eastwards",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 535,
+            "moving_time": 535,
+            "start_date": "2018-06-27T08:45:52Z",
+            "start_date_local": "2018-06-27T09:45:52Z",
+            "distance": 1509,
+            "start_index": 1256,
+            "end_index": 1790,
+            "average_cadence": 85.9,
+            "average_heartrate": 166,
+            "max_heartrate": 173,
+            "segment": {
+                "id": 12496650,
+                "resource_state": 2,
+                "name": "Trosley Park Lower Path: Eastwards",
+                "activity_type": "Run",
+                "distance": 1527.6,
+                "average_grade": -1.8,
+                "maximum_grade": 8.6,
+                "elevation_high": 202,
+                "elevation_low": 174,
+                "start_latlng": [
+                    51.325032,
+                    0.342801
+                ],
+                "end_latlng": [
+                    51.327459,
+                    0.364159
+                ],
+                "start_latitude": 51.325032,
+                "start_longitude": 0.342801,
+                "end_latitude": 51.327459,
+                "end_longitude": 0.364159,
+                "climb_category": 0,
+                "city": "Vigo Village",
+                "state": null,
+                "country": "United Kingdom",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": null,
+            "achievements": [],
+            "hidden": false
+        },
+        {
+            "id": 41738660602,
+            "resource_state": 2,
+            "name": "Trosley 3K Route",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 1182,
+            "moving_time": 1182,
+            "start_date": "2018-06-27T08:46:00Z",
+            "start_date_local": "2018-06-27T09:46:00Z",
+            "distance": 3211,
+            "start_index": 1264,
+            "end_index": 2445,
+            "average_cadence": 85.9,
+            "average_heartrate": 167.6,
+            "max_heartrate": 180,
+            "segment": {
+                "id": 3592209,
+                "resource_state": 2,
+                "name": "Trosley 3K Route",
+                "activity_type": "Run",
+                "distance": 3272.05,
+                "average_grade": 0.1,
+                "maximum_grade": 33.6,
+                "elevation_high": 210.1,
+                "elevation_low": 173.7,
+                "start_latlng": [
+                    51.325144,
+                    0.343134
+                ],
+                "end_latlng": [
+                    51.325148,
+                    0.342847
+                ],
+                "start_latitude": 51.325144,
+                "start_longitude": 0.343134,
+                "end_latitude": 51.325148,
+                "end_longitude": 0.342847,
+                "climb_category": 0,
+                "city": "New Ash Green",
+                "state": "Kent",
+                "country": "United Kingdom",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": null,
+            "achievements": [],
+            "hidden": false
+        },
+        {
+            "id": 41738660608,
+            "resource_state": 2,
+            "name": "Trosley Park Lower Path: Eastwards",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 512,
+            "moving_time": 506,
+            "start_date": "2018-06-27T09:06:52Z",
+            "start_date_local": "2018-06-27T10:06:52Z",
+            "distance": 1505,
+            "start_index": 2515,
+            "end_index": 3025,
+            "average_cadence": 87.6,
+            "average_heartrate": 170.1,
+            "max_heartrate": 175,
+            "segment": {
+                "id": 12496650,
+                "resource_state": 2,
+                "name": "Trosley Park Lower Path: Eastwards",
+                "activity_type": "Run",
+                "distance": 1527.6,
+                "average_grade": -1.8,
+                "maximum_grade": 8.6,
+                "elevation_high": 202,
+                "elevation_low": 174,
+                "start_latlng": [
+                    51.325032,
+                    0.342801
+                ],
+                "end_latlng": [
+                    51.327459,
+                    0.364159
+                ],
+                "start_latitude": 51.325032,
+                "start_longitude": 0.342801,
+                "end_latitude": 51.327459,
+                "end_longitude": 0.364159,
+                "climb_category": 0,
+                "city": "Vigo Village",
+                "state": null,
+                "country": "United Kingdom",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": 1,
+            "achievements": [
+                {
+                    "type_id": 3,
+                    "type": "pr",
+                    "rank": 1
+                }
+            ],
+            "hidden": false
+        },
+        {
+            "id": 41738660615,
+            "resource_state": 2,
+            "name": "Trosley 3K Route",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 1089,
+            "moving_time": 1083,
+            "start_date": "2018-06-27T09:06:59Z",
+            "start_date_local": "2018-06-27T10:06:59Z",
+            "distance": 3215,
+            "start_index": 2522,
+            "end_index": 3609,
+            "average_cadence": 88.1,
+            "average_heartrate": 173,
+            "max_heartrate": 182,
+            "segment": {
+                "id": 3592209,
+                "resource_state": 2,
+                "name": "Trosley 3K Route",
+                "activity_type": "Run",
+                "distance": 3272.05,
+                "average_grade": 0.1,
+                "maximum_grade": 33.6,
+                "elevation_high": 210.1,
+                "elevation_low": 173.7,
+                "start_latlng": [
+                    51.325144,
+                    0.343134
+                ],
+                "end_latlng": [
+                    51.325148,
+                    0.342847
+                ],
+                "start_latitude": 51.325144,
+                "start_longitude": 0.343134,
+                "end_latitude": 51.325148,
+                "end_longitude": 0.342847,
+                "climb_category": 0,
+                "city": "New Ash Green",
+                "state": "Kent",
+                "country": "United Kingdom",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": 1,
+            "achievements": [
+                {
+                    "type_id": 3,
+                    "type": "pr",
+                    "rank": 1
+                }
+            ],
+            "hidden": false
+        }
+    ],
+    "splits_metric": [
+        {
+            "distance": 1001,
+            "elapsed_time": 368,
+            "elevation_difference": -1,
+            "moving_time": 368,
+            "split": 1,
+            "average_heartrate": 149.86885245901638,
+            "average_speed": 2.72,
+            "pace_zone": 3
+        },
+        {
+            "distance": 1000,
+            "elapsed_time": 381,
+            "elevation_difference": -5,
+            "moving_time": 378,
+            "split": 2,
+            "average_heartrate": 163.05833333333334,
+            "average_speed": 2.65,
+            "pace_zone": 3
+        },
+        {
+            "distance": 999,
+            "elapsed_time": 354,
+            "elevation_difference": 6,
+            "moving_time": 354,
+            "split": 3,
+            "average_heartrate": 166.38636363636363,
+            "average_speed": 2.82,
+            "pace_zone": 3
+        },
+        {
+            "distance": 1000,
+            "elapsed_time": 362,
+            "elevation_difference": -8,
+            "moving_time": 362,
+            "split": 4,
+            "average_heartrate": 165.39541547277938,
+            "average_speed": 2.76,
+            "pace_zone": 3
+        },
+        {
+            "distance": 1001,
+            "elapsed_time": 369,
+            "elevation_difference": -6,
+            "moving_time": 369,
+            "split": 5,
+            "average_heartrate": 168.10174418604652,
+            "average_speed": 2.71,
+            "pace_zone": 3
+        },
+        {
+            "distance": 1000,
+            "elapsed_time": 371,
+            "elevation_difference": 7,
+            "moving_time": 371,
+            "split": 6,
+            "average_heartrate": 169.7119113573407,
+            "average_speed": 2.7,
+            "pace_zone": 3
+        },
+        {
+            "distance": 1002,
+            "elapsed_time": 370,
+            "elevation_difference": -2,
+            "moving_time": 370,
+            "split": 7,
+            "average_heartrate": 166.63333333333333,
+            "average_speed": 2.71,
+            "pace_zone": 3
+        },
+        {
+            "distance": 997,
+            "elapsed_time": 342,
+            "elevation_difference": -4,
+            "moving_time": 336,
+            "split": 8,
+            "average_heartrate": 171.4030303030303,
+            "average_speed": 2.97,
+            "pace_zone": 4
+        },
+        {
+            "distance": 1000,
+            "elapsed_time": 358,
+            "elevation_difference": -1,
+            "moving_time": 358,
+            "split": 9,
+            "average_heartrate": 171.80174927113703,
+            "average_speed": 2.79,
+            "pace_zone": 3
+        },
+        {
+            "distance": 1003,
+            "elapsed_time": 321,
+            "elevation_difference": 9,
+            "moving_time": 321,
+            "split": 10,
+            "average_heartrate": 176.4625,
+            "average_speed": 3.12,
+            "pace_zone": 4
+        },
+        {
+            "distance": 164,
+            "elapsed_time": 43,
+            "elevation_difference": 2,
+            "moving_time": 43,
+            "split": 11,
+            "average_heartrate": 180.30232558139534,
+            "average_speed": 3.81,
+            "pace_zone": 6
+        }
+    ],
+    "splits_standard": [
+        {
+            "distance": 1611,
+            "elapsed_time": 602,
+            "elevation_difference": -13,
+            "moving_time": 599,
+            "split": 1,
+            "average_heartrate": 154.2862010221465,
+            "average_speed": 2.69,
+            "pace_zone": 3
+        },
+        {
+            "distance": 1613,
+            "elapsed_time": 579,
+            "elevation_difference": 9,
+            "moving_time": 579,
+            "split": 2,
+            "average_heartrate": 166.6549295774648,
+            "average_speed": 2.79,
+            "pace_zone": 3
+        },
+        {
+            "distance": 1608,
+            "elapsed_time": 577,
+            "elevation_difference": -13,
+            "moving_time": 577,
+            "split": 3,
+            "average_heartrate": 165.91039426523298,
+            "average_speed": 2.79,
+            "pace_zone": 3
+        },
+        {
+            "distance": 1605.5,
+            "elapsed_time": 614,
+            "elevation_difference": 10,
+            "moving_time": 614,
+            "split": 4,
+            "average_heartrate": 168.68376068376068,
+            "average_speed": 2.61,
+            "pace_zone": 2
+        },
+        {
+            "distance": 1611.5,
+            "elapsed_time": 562,
+            "elevation_difference": -6,
+            "moving_time": 556,
+            "split": 5,
+            "average_heartrate": 169.88333333333333,
+            "average_speed": 2.9,
+            "pace_zone": 3
+        },
+        {
+            "distance": 1612,
+            "elapsed_time": 558,
+            "elevation_difference": 5,
+            "moving_time": 558,
+            "split": 6,
+            "average_heartrate": 172.98529411764707,
+            "average_speed": 2.89,
+            "pace_zone": 3
+        },
+        {
+            "distance": 506,
+            "elapsed_time": 147,
+            "elevation_difference": 5,
+            "moving_time": 147,
+            "split": 7,
+            "average_heartrate": 180.21917808219177,
+            "average_speed": 3.44,
+            "pace_zone": 6
+        }
+    ],
+    "laps": [
+        {
+            "id": 5358338579,
+            "resource_state": 2,
+            "name": "Lap 1",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 603,
+            "moving_time": 603,
+            "start_date": "2018-06-27T08:24:54Z",
+            "start_date_local": "2018-06-27T09:24:54Z",
+            "distance": 1608.93,
+            "start_index": 0,
+            "end_index": 599,
+            "total_elevation_gain": 12,
+            "average_speed": 2.67,
+            "max_speed": 4.9,
+            "average_cadence": 82.8,
+            "average_heartrate": 154.3,
+            "max_heartrate": 177,
+            "lap_index": 1,
+            "split": 1,
+            "pace_zone": 3
+        },
+        {
+            "id": 5358338580,
+            "resource_state": 2,
+            "name": "Lap 2",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 578,
+            "moving_time": 578,
+            "start_date": "2018-06-27T08:34:56Z",
+            "start_date_local": "2018-06-27T09:34:56Z",
+            "distance": 1608.15,
+            "start_index": 600,
+            "end_index": 1177,
+            "total_elevation_gain": 21,
+            "average_speed": 2.78,
+            "max_speed": 4.2,
+            "average_cadence": 85.1,
+            "average_heartrate": 166.7,
+            "max_heartrate": 174,
+            "lap_index": 2,
+            "split": 2,
+            "pace_zone": 3
+        },
+        {
+            "id": 5358338581,
+            "resource_state": 2,
+            "name": "Lap 3",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 577,
+            "moving_time": 577,
+            "start_date": "2018-06-27T08:44:34Z",
+            "start_date_local": "2018-06-27T09:44:34Z",
+            "distance": 1611.79,
+            "start_index": 1178,
+            "end_index": 1755,
+            "total_elevation_gain": 5,
+            "average_speed": 2.79,
+            "max_speed": 3.9,
+            "average_cadence": 86,
+            "average_heartrate": 165.9,
+            "max_heartrate": 173,
+            "lap_index": 3,
+            "split": 3,
+            "pace_zone": 3
+        },
+        {
+            "id": 5358338582,
+            "resource_state": 2,
+            "name": "Lap 4",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 614,
+            "moving_time": 614,
+            "start_date": "2018-06-27T08:54:13Z",
+            "start_date_local": "2018-06-27T09:54:13Z",
+            "distance": 1606.52,
+            "start_index": 1756,
+            "end_index": 2368,
+            "total_elevation_gain": 24,
+            "average_speed": 2.62,
+            "max_speed": 4.6,
+            "average_cadence": 85.8,
+            "average_heartrate": 168.7,
+            "max_heartrate": 180,
+            "lap_index": 4,
+            "split": 4,
+            "pace_zone": 2
+        },
+        {
+            "id": 5358338583,
+            "resource_state": 2,
+            "name": "Lap 5",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 560,
+            "moving_time": 560,
+            "start_date": "2018-06-27T09:04:26Z",
+            "start_date_local": "2018-06-27T10:04:26Z",
+            "distance": 1607.75,
+            "start_index": 2369,
+            "end_index": 2927,
+            "total_elevation_gain": 6,
+            "average_speed": 2.87,
+            "max_speed": 4.9,
+            "average_cadence": 87.2,
+            "average_heartrate": 169.9,
+            "max_heartrate": 175,
+            "lap_index": 5,
+            "split": 5,
+            "pace_zone": 3
+        },
+        {
+            "id": 5358338584,
+            "resource_state": 2,
+            "name": "Lap 6",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 558,
+            "moving_time": 558,
+            "start_date": "2018-06-27T09:13:47Z",
+            "start_date_local": "2018-06-27T10:13:47Z",
+            "distance": 1609.87,
+            "start_index": 2928,
+            "end_index": 3485,
+            "total_elevation_gain": 18,
+            "average_speed": 2.89,
+            "max_speed": 4.1,
+            "average_cadence": 87.8,
+            "average_heartrate": 173,
+            "max_heartrate": 180,
+            "lap_index": 6,
+            "split": 6,
+            "pace_zone": 3
+        },
+        {
+            "id": 5358338585,
+            "resource_state": 2,
+            "name": "Lap 7",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 149,
+            "moving_time": 149,
+            "start_date": "2018-06-27T09:23:05Z",
+            "start_date_local": "2018-06-27T10:23:05Z",
+            "distance": 514,
+            "start_index": 3486,
+            "end_index": 3634,
+            "total_elevation_gain": 6,
+            "average_speed": 3.45,
+            "max_speed": 5,
+            "average_cadence": 90.9,
+            "average_heartrate": 180.2,
+            "max_heartrate": 182,
+            "lap_index": 7,
+            "split": 7,
+            "pace_zone": 6
+        }
+    ],
+    "best_efforts": [
+        {
+            "id": 3583708069,
+            "resource_state": 2,
+            "name": "400m",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 114,
+            "moving_time": 114,
+            "start_date": "2018-06-27T09:23:32Z",
+            "start_date_local": "2018-06-27T10:23:32Z",
+            "distance": 400,
+            "start_index": 3513,
+            "end_index": 3627,
+            "pr_rank": null,
+            "achievements": []
+        },
+        {
+            "id": 3583708070,
+            "resource_state": 2,
+            "name": "1/2 mile",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 243,
+            "moving_time": 243,
+            "start_date": "2018-06-27T09:21:26Z",
+            "start_date_local": "2018-06-27T10:21:26Z",
+            "distance": 805,
+            "start_index": 3387,
+            "end_index": 3630,
+            "pr_rank": null,
+            "achievements": []
+        },
+        {
+            "id": 3583708071,
+            "resource_state": 2,
+            "name": "1k",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 308,
+            "moving_time": 308,
+            "start_date": "2018-06-27T09:20:24Z",
+            "start_date_local": "2018-06-27T10:20:24Z",
+            "distance": 1000,
+            "start_index": 3325,
+            "end_index": 3633,
+            "pr_rank": null,
+            "achievements": []
+        },
+        {
+            "id": 3583708072,
+            "resource_state": 2,
+            "name": "1 mile",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 517,
+            "moving_time": 517,
+            "start_date": "2018-06-27T09:16:54Z",
+            "start_date_local": "2018-06-27T10:16:54Z",
+            "distance": 1609,
+            "start_index": 3115,
+            "end_index": 3632,
+            "pr_rank": null,
+            "achievements": []
+        },
+        {
+            "id": 3583708073,
+            "resource_state": 2,
+            "name": "2 mile",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 1083,
+            "moving_time": 1077,
+            "start_date": "2018-06-27T09:07:27Z",
+            "start_date_local": "2018-06-27T10:07:27Z",
+            "distance": 3219,
+            "start_index": 2550,
+            "end_index": 3631,
+            "pr_rank": null,
+            "achievements": []
+        },
+        {
+            "id": 3583708074,
+            "resource_state": 2,
+            "name": "5k",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 1738,
+            "moving_time": 1732,
+            "start_date": "2018-06-27T08:56:33Z",
+            "start_date_local": "2018-06-27T09:56:33Z",
+            "distance": 5000,
+            "start_index": 1896,
+            "end_index": 3632,
+            "pr_rank": null,
+            "achievements": []
+        },
+        {
+            "id": 3583708076,
+            "resource_state": 2,
+            "name": "10k",
+            "activity": {
+                "id": 1665166078,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 19474797,
+                "resource_state": 1
+            },
+            "elapsed_time": 3581,
+            "moving_time": 3573,
+            "start_date": "2018-06-27T08:25:47Z",
+            "start_date_local": "2018-06-27T09:25:47Z",
+            "distance": 10000,
+            "start_index": 53,
+            "end_index": 3630,
+            "pr_rank": 1,
+            "achievements": [
+                {
+                    "type_id": 3,
+                    "type": "pr",
+                    "rank": 1
+                }
+            ]
+        }
+    ],
+    "gear": {
+        "id": "g2243724",
+        "primary": true,
+        "name": "Brooks Launch",
+        "resource_state": 2,
+        "distance": 526223
+    },
+    "photos": {
+        "primary": null,
+        "count": 0
+    },
+    "similar_activities": {
+        "effort_count": 3,
+        "average_speed": 2.806620677297975,
+        "min_average_speed": 2.8,
+        "mid_average_speed": 2.8069657156184404,
+        "max_average_speed": 2.813966175668303,
+        "pr_rank": 3,
+        "frequency_milestone": 3,
+        "trend": {
+            "speeds": [
+                2.813966175668303,
+                2.8099131094484773,
+                2.8066009496399085
+            ],
+            "current_activity_index": 2,
+            "min_speed": 2.8,
+            "mid_speed": 2.8069657156184404,
+            "max_speed": 2.813966175668303,
+            "direction": -1
+        },
+        "resource_state": 2
+    },
+    "device_name": "Suunto",
+    "embed_token": "f2943a0fbc53a1859c73c9c334b730da44d95103",
+    "available_zones": [
+        "heartrate",
+        "pace"
+    ]
+}
