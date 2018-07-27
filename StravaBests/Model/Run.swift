@@ -8,14 +8,16 @@
 
 import Foundation
 
-struct Run: Codable {
+class Run: Codable {
     
+    //Activity Data
     let id: Int
     let name: String
     let date: Date
     let distance: Double
     
-    let bests: [Best]
+    //Detailed Run Data
+    var bests: [Best]
     
         private enum CodingKeys: String, CodingKey {
             case name
@@ -25,10 +27,26 @@ struct Run: Codable {
             case bests = "best_efforts"
         }
     
-    init(json: Data) throws {
+    init(run: Run) {
+        self.id = run.id
+        self.name = run.name
+        self.date = run.date
+        self.distance = run.distance
+        self.bests = run.bests
+    }
+    
+    init(activity: Activity) {
+        self.id = activity.id
+        self.name = activity.name
+        self.date = activity.date
+        self.distance = activity.distance
+        self.bests = [Best]()
+    }
+    
+    convenience init(json: Data) throws {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy  = .iso8601
-        self = try decoder.decode(Run.self, from: json)
+        self.init(run: try decoder.decode(Run.self, from: json))
     }
     
     var json: Data?

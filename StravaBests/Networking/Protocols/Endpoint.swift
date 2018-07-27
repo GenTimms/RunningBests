@@ -9,7 +9,6 @@
 import Foundation
 
 protocol Endpoint {
-   
     var base: String { get }
     var path: String { get }
     var queryItems: [URLQueryItem] { get }
@@ -31,6 +30,14 @@ extension Endpoint {
             return nil
         }
         return URLRequest(url: url)
+    }
+    
+    var postRequest: URLRequest? {
+        guard var postRequest = request else {
+            return nil
+        }
+        postRequest.httpMethod = "POST"
+        return postRequest
     }
     
     func requestWithAuthorizationHeader(oauthToken: String) -> URLRequest? {

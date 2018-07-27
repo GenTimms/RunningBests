@@ -26,7 +26,7 @@ class CodableTests: XCTestCase {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 print("Data: \(data)")
-                let decoder = JSONDecoder()
+              let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .iso8601
                 let activities = try decoder.decode([Activity].self, from: data)
                 print("Runs: \(activities)")
@@ -41,14 +41,30 @@ class CodableTests: XCTestCase {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 print("Data: \(data)")
-                if let run = Run(json: data) {
-                     print("Runs: \(run)")
+                let run = try Run(json: data)
+                print("Runs: \(run.bests)")
+                
+            } catch {
+                print("Couldn't get json from file \(error)")
+            }
+        }
+    }
+    
+    func testDecodeBestsOnly() {
+        if let path = Bundle.main.path(forResource: "run", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                print("Data: \(data)")
+                  let decoder = JSONDecoder()
+                if let bests = try? decoder.decode( [String: [Best]].self, from: data) {
+                    print("Runs: \(bests)")
                 } else {
                     throw JSONError.parseFailed
                 }
             } catch {
-                print("Couldn't get json from file")
+                print("Couldn't get json from file \(error)")
             }
         }
+        
     }
 }

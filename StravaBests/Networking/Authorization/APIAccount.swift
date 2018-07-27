@@ -12,7 +12,7 @@ import Locksmith
 typealias Service = String
 
 struct Keys {
-    static let token = "token"
+    static let token = "access_token"
     static let service = "service"
 }
 

@@ -15,6 +15,7 @@ struct StravaAuthConfig {
     static var PublicAccessToken = "bfa3fa512b9287d696c32a9f1a5b436e888f8309"
     static var Scope = "view_private"
     static var Redirect = "https://com.gmjt.stravabests"
+    static var AthleteID = "19474797"
     
     //AUTH RESULT: https://com.gmjt.stravabests/?state=&code=2f12da642ba4fae4c9ff204c5c8524199cce2667&scope=view_private
 

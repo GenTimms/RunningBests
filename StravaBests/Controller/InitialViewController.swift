@@ -10,12 +10,20 @@ import UIKit
 
 class InitialViewController: UIViewController {
 
-    var client: APIClient = StavaClient()
+    var runList = [Activity]()
+    var client: APIClient = StravaClient()
     var account: APIAccount? {
         didSet {
             if let newAccount = account {
                client.token = newAccount.accessToken
-               //client.fetchRuns()
+                client.fetchRunList { result in
+                    switch result {
+                    case.success(let runs): guard !runs.isEmpty else { print("No Runs"); return } //TODO: Display Error Notification
+                    self.runList = runs
+                    self.performSegue(withIdentifier: Segues.DistanceChooserSegue, sender: self)
+                    case.failure(let error): print("Run List Fetch Failed, Error: \(error)")  //TODO: Display Error Notification
+                    }
+                }
             }
         }
     }
@@ -43,9 +51,9 @@ class InitialViewController: UIViewController {
         if let savedAccount = APIAccount.loadFromKeychain(client.service)  {
             account = savedAccount
             displayStatus()
-            return
-        }
+        } else {
         displayLogin()
+        }
     }
     
     @IBAction func login(_ sender: UIButton) {
@@ -58,26 +66,45 @@ class InitialViewController: UIViewController {
         switch result {
         case .success(let accessCode): print("RESULT: \(accessCode)");
         displayStatus()
-        createAccount(accessCode: accessCode)
+        getToken(for: accessCode)
         case .failure(let error): print("Authorisation - User Log in/Access Code Failed: \(error)")
             //TODO: Display Error Notification
         }
     }
     
-    func createAccount(accessCode: String) {
+    func getToken(for accessCode: String) {
         client.fetchToken(accessCode: accessCode) { (result) in
             switch result {
-            case .success(let token): self.account = APIAccount(service: self.client.service, accessToken: token)
+            case .success(let token): self.createAccount(with: token)
             case .failure(let error): print("Authorisation - Token Fetch Failed: \(error)")
-                //TODO: Handle For User - Notification
+                //TODO: Display Error Notification
             }
+        }
+    }
+    
+    func createAccount(with token: String) {
+        account = APIAccount(service: self.client.service, accessToken: token)
+        do {
+            try account?.save()
+        }
+        catch {
+            print("Account Could not be saved to Keychain")
+            //TODO: Display Error Notification
         }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segues.AuthSegue {
             if let authVC = segue.destination.contents as? AuthWebViewController {
-                authVC.request = Strava.authorize.request
+                authVC.request =  client.oAuthRequest
+            }
+        }
+        
+        if segue.identifier == Segues.DistanceChooserSegue {
+            if let splitVC = segue.destination.contents as? UISplitViewController {
+                if let distancesVC = splitVC.viewControllers[0].contents as? DistanceChooserTableViewController {
+                    distancesVC.runList = self.runList
+                }
             }
         }
     }

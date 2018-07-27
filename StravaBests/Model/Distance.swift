@@ -7,16 +7,21 @@
 //
 
 enum Distance : String, Codable {
+    case fourHundredMeters = "400m"
+    case halfMile = "1/2 mile"
+    case oneKilometer = "1k"
     case oneMile = "1 mile"
     case twoMiles = "2 mile"
     case fiveKilometers = "5k"
     case tenKilometers = "10k"
     case halfMarathon = "Half-Marathon"
     case marathon = "Marathon"
+    
+    static let Meters: [Distance:Double] = [.oneMile: 1609, .twoMiles: 3219, .fiveKilometers: 5000, .tenKilometers: 10000, .halfMarathon: 21097.5, .marathon: 42195]
 
-   //TODO: Swift 4.2 CaseIterable - adds variable all cases
-    static let All: [Distance] = [.oneMile, .twoMiles, .fiveKilometers, .tenKilometers, .halfMarathon, .marathon]
+    static let All: [Distance] = [.fourHundredMeters, .halfMile, .oneKilometer, .oneMile, .twoMiles, .fiveKilometers, .tenKilometers, .halfMarathon, .marathon]
+    
+    static func distances(upto max: Double) -> [Distance] {
+        return Distance.All.filter{ Distance.Meters[$0]! <= max }
+    }
 }
-
-
-

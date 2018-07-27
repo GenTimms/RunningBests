@@ -8,11 +8,28 @@
 
 import UIKit
 
-class DistanceChooserTableViewController: UITableViewController {
+class DistanceChooserTableViewController: UITableViewController, UISplitViewControllerDelegate {
     
-    var distances: [Distance] = Distance.All
- //model info?
+    //TODO: Display custom cell that displays best overall time for that distance - where is this in the strava api? redesign model?
+    lazy var distances: [Distance] = Distance.distances(upto: maxDistance)
+    var runList = [Activity]()
+    var maxDistance: Double {
+        return runList.map{$0.distance}.max() ?? 0.0
+    }
     
+    override func awakeFromNib() {
+        splitViewController?.delegate = self
+    }
+    
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        if let btvc = secondaryViewController as? BestsTableViewController {
+            if btvc.runs == nil {
+                return true
+            }
+        }
+        return false
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = logoutButton
@@ -33,6 +50,7 @@ class DistanceChooserTableViewController: UITableViewController {
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //prepare for segue to bests run list how is model communicated?
+        //fetch runs? how to send off many requests? operations? how to know when finished? Should I use cell for row instead???
     }
     
     // MARK: - Table view data source
@@ -41,8 +59,9 @@ class DistanceChooserTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.distance, for: indexPath)
+        cell.textLabel?.text = distances[indexPath.row].rawValue
+        return cell
     }
     
     // MARK: - Table view delegate

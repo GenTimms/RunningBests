@@ -10,11 +10,16 @@ import Foundation
 
 protocol APIClient {
     
-    var token: String? {get set}
     var service: String { get }
     
-    func fetchToken(accessCode: String, completion: @escaping (Result<String>) -> Void)
+    var token: String? { get set }
+    var oAuthRequest: URLRequest? { get }
     
+    func fetchToken(accessCode: String, completion: @escaping (Result<String>) -> Void)
+    func fetchRunList(completion: @escaping (Result<[Activity]>) -> Void)
+    func fetchRunDetails(for run: Run, completion: @escaping (Result<Run>) -> Void)
+    
+    func fetch<T: Decodable>(with request: URLRequest, parse: @escaping (Data) -> T?, completion: @escaping (Result<T>) -> Void)
 }
 
 extension APIClient {
@@ -42,5 +47,26 @@ extension APIClient {
         }
         return task
     }
+    
+    func fetch<T: Decodable>(with request: URLRequest, parse: @escaping (Data) -> T?, completion: @escaping (Result<T>) -> Void) {
+        
+        let task = jsonTask(request: request) { result in
+            
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error): completion(Result.failure(error))
+                case .success(let data):  do {
+                    if let parseResult = parse(data) {
+                        completion(Result.success(parseResult))
+                    } else {
+                        throw JSONError.parseFailed
+                    }
+                } catch {
+                    completion(Result.failure(error))
+                    }
+                }
+            }
+        }
+        task.resume()
+    }
 }
-

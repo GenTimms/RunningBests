@@ -27,10 +27,6 @@ extension URL {
             return nil
     }
     
-    //getexpiration
-    //geterror
-    
-    
     func begins(with string: String) -> Bool {
         let start = self.absoluteString.components(separatedBy: "/?")
         return start[0] == string

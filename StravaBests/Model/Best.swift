@@ -10,13 +10,11 @@ import Foundation
 
 struct Best: Codable {
     
-    let name: String
-    let distance: Int
+    let distance: Distance
     let time: Int
     
     private enum CodingKeys: String, CodingKey {
-        case name
-        case distance
+        case distance = "name"
         case time = "elapsed_time"
     }
 }
