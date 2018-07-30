@@ -17,12 +17,17 @@ enum AuthWebViewError: Error {
     case sessionFailed(Error)
 }
 
+enum OperationError: Error {
+    case fetchingErrors([(String,Error)])
+}
+
 enum RequestError: Error {
     case responseStatusCode(Int)
     case errorReturned(Error)
     case invalidResponse
     case dataNil
     case invalidRequest
+    case dataEmpty
 }
 
 enum JSONError: Error {

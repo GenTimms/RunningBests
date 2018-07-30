@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -159,20 +160,54 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8ZH-5j-paY">
+                                <rect key="frame" x="142" y="332.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3VT-lg-X3N" userLabel="Retry Stack">
+                                <rect key="frame" x="92" y="249.5" width="137" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQQ-Ri-IHG" userLabel="Fetch Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="137" height="55"/>
+                                        <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="22"/>
+                                        <state key="normal" title="Fetch Runs">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="retryFetch:" destination="si0-3W-AU6" eventType="touchUpInside" id="78N-Ib-RuZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyX-or-Llj" userLabel="Logout Button">
+                                        <rect key="frame" x="0.0" y="55" width="137" height="55"/>
+                                        <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="22"/>
+                                        <state key="normal" title="Log Out">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="logOut:" destination="si0-3W-AU6" eventType="touchUpInside" id="Xlh-B9-xlo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.33635604879999997" green="0.50257998780000002" blue="0.72038424739999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="3VT-lg-X3N" firstAttribute="centerX" secondItem="b8F-fw-h3i" secondAttribute="centerX" id="6WB-Ie-pQ5"/>
                             <constraint firstItem="eLa-dq-CK8" firstAttribute="centerX" secondItem="b8F-fw-h3i" secondAttribute="centerX" id="HUy-8y-d2x"/>
                             <constraint firstItem="eLa-dq-CK8" firstAttribute="centerY" secondItem="b8F-fw-h3i" secondAttribute="centerY" id="Q1n-40-EvQ"/>
                             <constraint firstItem="P3n-vT-Qbj" firstAttribute="centerX" secondItem="b8F-fw-h3i" secondAttribute="centerX" id="Zah-Oo-zCV"/>
                             <constraint firstItem="VSm-jK-60N" firstAttribute="centerX" secondItem="b8F-fw-h3i" secondAttribute="centerX" id="awe-Y5-7ZE"/>
                             <constraint firstItem="P3n-vT-Qbj" firstAttribute="centerY" secondItem="b8F-fw-h3i" secondAttribute="centerY" id="hQ9-c5-AFO"/>
+                            <constraint firstItem="3VT-lg-X3N" firstAttribute="firstBaseline" secondItem="b8F-fw-h3i" secondAttribute="centerY" id="luA-Pp-BFn"/>
+                            <constraint firstItem="8ZH-5j-paY" firstAttribute="top" secondItem="P3n-vT-Qbj" secondAttribute="bottom" constant="25" id="prN-dK-Xbv"/>
                             <constraint firstItem="VSm-jK-60N" firstAttribute="centerY" secondItem="b8F-fw-h3i" secondAttribute="centerY" constant="-100" id="rYE-8E-a9g"/>
+                            <constraint firstItem="8ZH-5j-paY" firstAttribute="centerX" secondItem="b8F-fw-h3i" secondAttribute="centerX" id="w0d-Yq-N0U"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wPI-dQ-Zzd"/>
                     </view>
                     <navigationItem key="navigationItem" id="pvS-mm-9r2"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="8ZH-5j-paY" id="aTo-RQ-ZxW"/>
+                        <outlet property="failedFetchStackView" destination="3VT-lg-X3N" id="lnw-rP-Gmi"/>
                         <outlet property="loginButton" destination="eLa-dq-CK8" id="Vhq-Lx-yoh"/>
                         <outlet property="statusLabel" destination="P3n-vT-Qbj" id="hrf-be-oAG"/>
                         <segue destination="G96-FM-hh2" kind="presentation" identifier="present authwebview" id="8UW-RF-Kzs"/>
@@ -219,7 +254,7 @@
                     <connections>
                         <outlet property="view" destination="h2z-1X-tY4" id="5vA-KW-9Fc"/>
                         <segue destination="sj1-WG-nMz" kind="showDetail" id="eBD-LO-DqG"/>
-                        <segue destination="jmB-Ze-RHA" kind="unwind" identifier="logout" unwindAction="logOutUserWithSegue:" id="6YH-lN-fHG"/>
+                        <segue destination="jmB-Ze-RHA" kind="unwind" identifier="logout" unwindAction="logOutUserWithSegue:" id="QqZ-Bm-GaZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXY-UO-Bq0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -247,6 +282,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="M3g-bt-IvW"/>
+        <segue reference="eBD-LO-DqG"/>
     </inferredMetricsTieBreakers>
 </document>

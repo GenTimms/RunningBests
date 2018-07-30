@@ -10,49 +10,67 @@ import UIKit
 
 class InitialViewController: UIViewController {
 
-    var runList = [Activity]()
-    var client: APIClient = StravaClient()
+    //MARK: - Views
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var failedFetchStackView: UIStackView!
+    
+    private func updateStatus(login: Bool, animating: Bool, message: String?) {
+        
+        failedFetchStackView.isHidden = true
+        loginButton.isHidden = !login
+        statusLabel.isHidden = login
+        
+        statusLabel.text = message != nil  ? message : ""
+        
+        if animating {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+    }
+    
+    private func showRetryStackView() {
+        loginButton.isHidden = true
+        statusLabel.isHidden = true
+        activityIndicator.stopAnimating()
+        failedFetchStackView.isHidden = false
+    }
+    
+    private func displayErrorNotification(description: String, error: Error?) {
+        let details = description + " " + ((error?.localizedDescription) ?? "")
+        print(details)
+        //TODO: Display Notification
+    }
+    
+    //MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadAccount()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        updateStatus(login: true, animating: false, message: "")
+    }
+    
+    //MARK: - Authorization
     var account: APIAccount? {
         didSet {
             if let newAccount = account {
-               client.token = newAccount.accessToken
-                client.fetchRunList { result in
-                    switch result {
-                    case.success(let runs): guard !runs.isEmpty else { print("No Runs"); return } //TODO: Display Error Notification
-                    self.runList = runs
-                    self.performSegue(withIdentifier: Segues.DistanceChooserSegue, sender: self)
-                    case.failure(let error): print("Run List Fetch Failed, Error: \(error)")  //TODO: Display Error Notification
-                    }
-                }
+                client.token = newAccount.accessToken
+                fetchRuns()
+            } else {
+                updateStatus(login: true, animating: false, message: nil)
             }
         }
     }
 
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var statusLabel: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-            loadAccount()
-    }
-    
-    func displayStatus() {
-        statusLabel.isHidden = false
-        loginButton.isHidden = true
-    }
-    
-    func displayLogin() {
-        statusLabel.isHidden = true
-        loginButton.isHidden = false
-    }
-    
-    //MARK: - Authorization
     func loadAccount() {
         if let savedAccount = APIAccount.loadFromKeychain(client.service)  {
             account = savedAccount
-            displayStatus()
         } else {
-        displayLogin()
+            account = nil
         }
     }
     
@@ -64,20 +82,17 @@ class InitialViewController: UIViewController {
         let authWebView = segue.source as! AuthWebViewController
         let result = authWebView.result
         switch result {
-        case .success(let accessCode): print("RESULT: \(accessCode)");
-        displayStatus()
-        getToken(for: accessCode)
-        case .failure(let error): print("Authorisation - User Log in/Access Code Failed: \(error)")
-            //TODO: Display Error Notification
+        case .success(let accessCode): getToken(for: accessCode)
+        case .failure(let error): displayErrorNotification(description: "Authorization: Webview", error: error)
         }
     }
     
     func getToken(for accessCode: String) {
+        updateStatus(login: false, animating: true, message: "Authorizing...")
         client.fetchToken(accessCode: accessCode) { (result) in
             switch result {
             case .success(let token): self.createAccount(with: token)
-            case .failure(let error): print("Authorisation - Token Fetch Failed: \(error)")
-                //TODO: Display Error Notification
+            case .failure(let error): self.displayErrorNotification(description: "Authorization: Token exchange", error: error)
             }
         }
     }
@@ -88,11 +103,46 @@ class InitialViewController: UIViewController {
             try account?.save()
         }
         catch {
-            print("Account Could not be saved to Keychain")
-            //TODO: Display Error Notification
+            displayErrorNotification(description: "Saving Account to Keychain", error: error)
         }
     }
-
+    
+    //Button
+    @IBAction func logOut(_ sender: Any) {
+        logout()
+    }
+    
+    //Unwind Segue
+    @IBAction func logOutUser(segue: UIStoryboardSegue) {
+        logout()
+    }
+    
+    private func logout() {
+        try? account?.delete()
+        account = nil
+    }
+    
+    //MARK: - Fetching
+    var runs: Runs?
+    var client: APIClient = StravaClient()
+    
+    @IBAction func retryFetch(_ sender: Any) {
+        fetchRuns()
+    }
+    
+    private func fetchRuns() {
+        updateStatus(login: false, animating: true, message: "Fetching Runs...")
+        client.fetchRuns() { result in
+            switch result {
+            case.success(let fetchedRuns): self.runs = fetchedRuns; self.performSegue(withIdentifier: Segues.DistanceChooserSegue, sender: self)
+            case.failure(let error):
+                self.displayErrorNotification(description: "Fetching Runs", error: error)
+                self.showRetryStackView()
+            }
+        }
+    }
+    
+    //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segues.AuthSegue {
             if let authVC = segue.destination.contents as? AuthWebViewController {
@@ -102,16 +152,9 @@ class InitialViewController: UIViewController {
         
         if segue.identifier == Segues.DistanceChooserSegue {
             if let splitVC = segue.destination.contents as? UISplitViewController {
-                if let distancesVC = splitVC.viewControllers[0].contents as? DistanceChooserTableViewController {
-                    distancesVC.runList = self.runList
-                }
+                if let distancesVC = splitVC.viewControllers[0].contents as? DistanceChooserTableViewController, let fetchedRuns = runs {
+                    distancesVC.runs = fetchedRuns                }
             }
         }
-    }
-
-    @IBAction func logOutUser(segue: UIStoryboardSegue) {
-        try? account?.delete()
-        account = nil
-        displayLogin()
     }
 }

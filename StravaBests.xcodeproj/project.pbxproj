@@ -45,6 +45,7 @@
 		B45E925720E6CA810095FFA9 /* APIAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E925620E6CA810095FFA9 /* APIAccount.swift */; };
 		B45E925820E6CA850095FFA9 /* APIAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E925620E6CA810095FFA9 /* APIAccount.swift */; };
 		B45E925C20E8F9260095FFA9 /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B45E925B20E8F9260095FFA9 /* Locksmith.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		B46B72F6210F12360078B476 /* Runs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D0C570210B41DD00A05B17 /* Runs.swift */; };
 		B47B2BD220E93A5500E20C4A /* DistanceChooserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47B2BD120E93A5500E20C4A /* DistanceChooserTableViewController.swift */; };
 		B47B2BD420E9459900E20C4A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47B2BD320E9459900E20C4A /* Constants.swift */; };
 		B47BFC332100C62C008A3D95 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47BFC322100C62C008A3D95 /* Activity.swift */; };
@@ -202,7 +203,6 @@
 				B4D0C570210B41DD00A05B17 /* Runs.swift */,
 				B45E921C20DD8A6D0095FFA9 /* Run.swift */,
 				B45AF3FC2101E9DD00777E20 /* Best.swift */,
-				B47BFC322100C62C008A3D95 /* Activity.swift */,
 				B45E922020DD92500095FFA9 /* Distance.swift */,
 				B45E922620DFD0AC0095FFA9 /* BestsTableViewDataSource.swift */,
 			);
@@ -255,6 +255,7 @@
 		B45E923720E1428D0095FFA9 /* Strava */ = {
 			isa = PBXGroup;
 			children = (
+				B47BFC322100C62C008A3D95 /* Activity.swift */,
 				B44888EC20EE441500C643C6 /* StravaClient.swift */,
 				B45E923520E142310095FFA9 /* StravaEndpoint.swift */,
 				B45E922E20E004550095FFA9 /* StravaAuthConfig.swift */,
@@ -457,6 +458,7 @@
 				B45E924820E264F40095FFA9 /* Result.swift in Sources */,
 				B45E924520E264E70095FFA9 /* SFAuthorization.swift in Sources */,
 				B45E924F20E265050095FFA9 /* Distance.swift in Sources */,
+				B46B72F6210F12360078B476 /* Runs.swift in Sources */,
 				B45E924B20E264FB0095FFA9 /* StravaAuthConfig.swift in Sources */,
 				B4EBE9BF20FE45EE0036B409 /* CodableTests.swift in Sources */,
 				B45E924620E264EB0095FFA9 /* Endpoint.swift in Sources */,

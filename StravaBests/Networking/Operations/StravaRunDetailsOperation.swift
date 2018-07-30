@@ -61,7 +61,7 @@ class StravaRunDetailsOperation: Operation {
                 self.isFinished = true
                 self.run.bests = run.bests
             case .failure(let error):
-                print(error) //TODO: Handle Error 
+                self.client.runFetchingErrors.append((self.run.name + " " + self.run.date.description, error))
                 self.isExecuting = false
                 self.isFinished = true
             }

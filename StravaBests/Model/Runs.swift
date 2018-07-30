@@ -10,30 +10,17 @@ import Foundation
 
 struct Runs {
     
-    let runs: [Run]
+    let all: [Run]
     
     init(with runs: [Run]) {
-        self.runs = runs
+        self.all = runs
     }
     
-    func getBests(with client: APIClient, completion: @escaping () -> Void) {
-        let queue = OperationQueue()
-        guard let stravaClient = client as? StravaClient else {
-            print("could not get bests, wrong API Client")
-            return //TODO: Error notification
-        }
-        let operations = runs.map {StravaRunDetailsOperation(run: $0, client: stravaClient)}
-        
-        DispatchQueue.global().async {
-            queue.addOperations(operations, waitUntilFinished: true)
-            DispatchQueue.main.async(execute: completion)
-        }
+    func withBests(for distance: Distance) -> [Run] {
+        return all.filter{$0.bests.contains{$0.distance == distance}}
     }
     
-    
-//    func getRunsWithBests(for distance: Distance) -> [Run] {
-//        return runs.filter(<#T##isIncluded: (Run) throws -> Bool##(Run) throws -> Bool#>)
-//    }
-    
-    
+    var maxDistance: Double {
+        return all.map{$0.distance}.max() ?? 0.0
+    }
 }

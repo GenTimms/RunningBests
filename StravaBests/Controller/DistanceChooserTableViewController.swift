@@ -11,11 +11,9 @@ import UIKit
 class DistanceChooserTableViewController: UITableViewController, UISplitViewControllerDelegate {
     
     //TODO: Display custom cell that displays best overall time for that distance - where is this in the strava api? redesign model?
-    lazy var distances: [Distance] = Distance.distances(upto: maxDistance)
-    var runList = [Activity]()
-    var maxDistance: Double {
-        return runList.map{$0.distance}.max() ?? 0.0
-    }
+    lazy var distances: [Distance] = Distance.distances(upto: runs.maxDistance)
+    var runs = Runs(with: [Run]())
+
     
     override func awakeFromNib() {
         splitViewController?.delegate = self
@@ -33,16 +31,15 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = logoutButton
-        //already there due to nav controller?
+        for run in runs.all {
+            print("Name: \(run.name)")
+            print("Bests: \(run.bests)")
+        }
     }
     
-    lazy var logoutButton: UIBarButtonItem = {
-        let button = UIBarButtonItem()
-        button.action = #selector(self.logout)
-        button.title = "Log out"
-        return button
-    }()
-    
+    lazy var logoutButton: UIBarButtonItem =  UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(DistanceChooserTableViewController.logout))
+        
+
     @objc func logout() {
      performSegue(withIdentifier: "logout", sender: self)
     }

@@ -16,8 +16,7 @@ protocol APIClient {
     var oAuthRequest: URLRequest? { get }
     
     func fetchToken(accessCode: String, completion: @escaping (Result<String>) -> Void)
-    func fetchRunList(completion: @escaping (Result<[Activity]>) -> Void)
-    func fetchRunDetails(for run: Run, completion: @escaping (Result<Run>) -> Void)
+    func fetchRuns(completion: @escaping (Result<Runs>) -> Void)
     
     func fetch<T: Decodable>(with request: URLRequest, parse: @escaping (Data) -> T?, completion: @escaping (Result<T>) -> Void)
 }
