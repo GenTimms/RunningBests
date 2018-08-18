@@ -16,11 +16,17 @@ struct Runs {
         self.all = runs
     }
     
-    func withBests(for distance: Distance) -> [Run] {
-        return all.filter{$0.bests.contains{$0.distance == distance}}
-    }
-    
     var maxDistance: Double {
         return all.map{$0.distance}.max() ?? 0.0
     }
+    
+    func withBests(for distance: Distance) -> [Run] {
+        return all.filter{$0.bests[distance] != nil}
+    }
+    
+    func best(for distance: Distance) -> Run? {
+        let runs = withBests(for: distance)
+        return runs.min(by: { $0.bests[distance]! < $1.bests[distance]!})
+    }
+    
 }

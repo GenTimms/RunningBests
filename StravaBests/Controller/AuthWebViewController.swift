@@ -23,7 +23,27 @@ class AuthWebViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.navigationDelegate = self
-        loadRequest()
+        clean {
+            self.loadRequest()
+        }
+    }
+    
+    private func clean(completion: @escaping () -> Void) {
+//        HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
+//        print("All cookies deleted")
+        
+        let dataStore = WKWebsiteDataStore.default()
+        dataStore.fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
+            records.forEach { record in
+                if record.displayName.contains("strava") {
+                    dataStore.removeData(ofTypes: record.dataTypes, for: [record]) {
+                        print(" Record \(record) deleted")
+                        completion()
+                    }
+                    return
+                }
+            }
+        }
     }
     
     @IBAction func refresh(_ sender: UIBarButtonItem) {

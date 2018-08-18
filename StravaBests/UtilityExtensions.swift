@@ -24,7 +24,7 @@ extension URL {
         if let codeQuery = components?.queryItems?.filter({$0.name == key}).first {
             return codeQuery.value
         }
-            return nil
+        return nil
     }
     
     func begins(with string: String) -> Bool {
@@ -33,7 +33,7 @@ extension URL {
     }
     
 }
-    
+
 extension UIViewController {
     var contents: UIViewController {
         if let navcon = self as? UINavigationController {
@@ -42,4 +42,29 @@ extension UIViewController {
             return self
         }
     }
+    
 }
+extension DateFormatter {
+    static func dateString(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yy"
+        return formatter.string(from: date)
+    }
+    
+    static func timeString(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter.string(from: date)
+    }
+}
+
+extension DateComponentsFormatter {
+    static func timeString(from seconds: Int) -> String {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .positional
+        formatter.allowedUnits = [.hour, .minute, .second]
+        formatter.zeroFormattingBehavior = [.pad]
+        return formatter.string(from: Double(seconds)) ?? ""
+    }
+}
+

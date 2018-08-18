@@ -41,6 +41,7 @@ class InitialViewController: UIViewController {
     private func displayErrorNotification(description: String, error: Error?) {
         let details = description + " " + ((error?.localizedDescription) ?? "")
         print(details)
+        print(error)
         //TODO: Display Notification
     }
     
@@ -58,15 +59,17 @@ class InitialViewController: UIViewController {
     var account: APIAccount? {
         didSet {
             if let newAccount = account {
+                print("TOKEN: \(newAccount.accessToken)")
                 client.token = newAccount.accessToken
                 fetchRuns()
             } else {
+                client.token = nil
                 updateStatus(login: true, animating: false, message: nil)
             }
         }
     }
 
-    func loadAccount() {
+    private func loadAccount() {
         if let savedAccount = APIAccount.loadFromKeychain(client.service)  {
             account = savedAccount
         } else {
@@ -78,6 +81,7 @@ class InitialViewController: UIViewController {
         performSegue(withIdentifier: Segues.AuthSegue, sender: self)
     }
 
+    //Unwind Segue
     @IBAction func getAuthorizationResult(segue: UIStoryboardSegue) {
         let authWebView = segue.source as! AuthWebViewController
         let result = authWebView.result
@@ -87,7 +91,7 @@ class InitialViewController: UIViewController {
         }
     }
     
-    func getToken(for accessCode: String) {
+    private func getToken(for accessCode: String) {
         updateStatus(login: false, animating: true, message: "Authorizing...")
         client.fetchToken(accessCode: accessCode) { (result) in
             switch result {
@@ -97,7 +101,7 @@ class InitialViewController: UIViewController {
         }
     }
     
-    func createAccount(with token: String) {
+    private func createAccount(with token: String) {
         account = APIAccount(service: self.client.service, accessToken: token)
         do {
             try account?.save()
@@ -118,8 +122,18 @@ class InitialViewController: UIViewController {
     }
     
     private func logout() {
+        deauthorise()
         try? account?.delete()
         account = nil
+    }
+    
+    private func deauthorise() {
+        client.deauthorize { result in
+            switch result {
+            case .failure(let error): self.displayErrorNotification(description: "Deauthorization failed", error: error)
+            case .success(let token): print("Successfully deauthorised for \(token)")
+            }
+        }
     }
     
     //MARK: - Fetching

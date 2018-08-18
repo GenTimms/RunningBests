@@ -13,6 +13,7 @@ enum Strava {
     case activity(id: String)
     case authorize
     case token(code: String)
+    case deauthorize(token: String)
 }
 
 extension Strava: Endpoint {
@@ -26,6 +27,7 @@ extension Strava: Endpoint {
         case .activities: return "/api/v3/athlete/activities"
         case .activity(let id): return "/api/v3/activities/\(id)"
         case .authorize: return "/api/v3/oauth/authorize"
+        case .deauthorize: return "/api/v3/oauth/deauthorize"
         case .token: return "/api/v3/oauth/token"
         }
     }
@@ -45,6 +47,10 @@ extension Strava: Endpoint {
                 URLQueryItem(name: "redirect_uri", value: StravaAuthConfig.Redirect),
                 URLQueryItem(name: "response_type", value: "code"),
                 URLQueryItem(name: "scope", value: StravaAuthConfig.Scope)
+            ]
+        case .deauthorize(let token):
+            return [
+                URLQueryItem(name: "access_token", value: token)
             ]
         case .token(let code):
             return [

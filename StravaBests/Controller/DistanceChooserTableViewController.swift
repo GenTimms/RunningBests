@@ -10,8 +10,7 @@ import UIKit
 
 class DistanceChooserTableViewController: UITableViewController, UISplitViewControllerDelegate {
     
-    //TODO: Display custom cell that displays best overall time for that distance - where is this in the strava api? redesign model?
-    lazy var distances: [Distance] = Distance.distances(upto: runs.maxDistance)
+    lazy var distances: [Distance] = Distance.all(upto: runs.maxDistance)
     var runs = Runs(with: [Run]())
 
     
@@ -21,7 +20,7 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
     
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         if let btvc = secondaryViewController as? BestsTableViewController {
-            if btvc.runs == nil {
+            if btvc.runs.isEmpty {
                 return true
             }
         }
@@ -46,8 +45,15 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
     
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //prepare for segue to bests run list how is model communicated?
-        //fetch runs? how to send off many requests? operations? how to know when finished? Should I use cell for row instead???
+        if segue.identifier == Segues.Bests {
+            if let indexPath = sender as? IndexPath {
+                if let bestsVC = segue.destination.contents as? BestsTableViewController {
+                    let distance = distances[indexPath.row]
+                    bestsVC.runs = runs.withBests(for: distance)
+                    bestsVC.distance = distance
+                }
+            }
+        }
     }
     
     // MARK: - Table view data source
@@ -56,13 +62,15 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.distance, for: indexPath)
-        cell.textLabel?.text = distances[indexPath.row].rawValue
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.distance, for: indexPath) as! DistanceCell
+        let distance = distances[indexPath.row]
+        let viewModel = DistanceCellViewModel(distance: distance, bestRun: runs.best(for: distance))
+        cell.configure(with: viewModel)
         return cell
     }
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        performSegue(withIdentifier: Segues.Bests, sender: indexPath)
     }
 }

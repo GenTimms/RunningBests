@@ -17,6 +17,7 @@ protocol APIClient {
     
     func fetchToken(accessCode: String, completion: @escaping (Result<String>) -> Void)
     func fetchRuns(completion: @escaping (Result<Runs>) -> Void)
+    func deauthorize(completion: @escaping (Result<String>) -> Void)
     
     func fetch<T: Decodable>(with request: URLRequest, parse: @escaping (Data) -> T?, completion: @escaping (Result<T>) -> Void)
 }

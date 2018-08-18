@@ -41,21 +41,21 @@ class StravaClientTests: XCTestCase {
         XCTAssertNotNil(run)
     }
     
-    func testFetchActivites_getsActivites() {
-        var activities: [Activity]? = nil
-        let activitiesExpectation = expectation(description: "Fetch")
+    func testFetchRuns_getRuns() {
+        var runs: Runs? = nil
+        let runsExpectation = expectation(description: "Fetch")
         
-        client.fetchRunList { result in
+        client.fetchRuns { result in
             switch result {
-            case .success(let fetchedActivities): print("Success! Activities: \(fetchedActivities)"); activities = fetchedActivities
+            case .success(let fetchedRuns): print("Success! Partial Runs: \(fetchedRuns)"); runs = fetchedRuns
             case .failure(let error): print("Failure! Error: \(error)")
             }
-            activitiesExpectation.fulfill()
+            runsExpectation.fulfill()
         }
         waitForExpectations(timeout: 10) { (error) in
             print("Expectations Fulfilled")
         }
-        XCTAssertNotNil(activities)
+        XCTAssertNotNil(runs)
     }
     
     func fetchToken_getsToken() {

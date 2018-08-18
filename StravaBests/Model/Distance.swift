@@ -21,7 +21,7 @@ enum Distance : String, Codable {
 
     static let All: [Distance] = [.fourHundredMeters, .halfMile, .oneKilometer, .oneMile, .twoMiles, .fiveKilometers, .tenKilometers, .halfMarathon, .marathon]
     
-    static func distances(upto max: Double) -> [Distance] {
+    static func all(upto max: Double) -> [Distance] {
         return Distance.All.filter{ Distance.Meters[$0]! <= max }
     }
 }

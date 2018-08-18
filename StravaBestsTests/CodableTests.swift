@@ -50,21 +50,20 @@ class CodableTests: XCTestCase {
         }
     }
     
-    func testDecodeBestsOnly() {
-        if let path = Bundle.main.path(forResource: "run", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                print("Data: \(data)")
-                  let decoder = JSONDecoder()
-                if let bests = try? decoder.decode( [String: [Best]].self, from: data) {
-                    print("Runs: \(bests)")
-                } else {
-                    throw JSONError.parseFailed
-                }
-            } catch {
-                print("Couldn't get json from file \(error)")
-            }
+    func testEncodeRunToJSON() {
+        let activity = Activity(id: 12345678, name: "Test Activity", date: Date(), distance: 10000, type: "Run")
+        let run = Run(activity: activity)
+        var fastBests = [Distance: Int]()
+        for distance in Distance.all(upto: run.distance) {
+            fastBests[distance] = 10
         }
         
+        run.bests = fastBests
+        
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        encoder.dateEncodingStrategy = .iso8601
+        let json = try? encoder.encode(run)
+        print(String(data: json!, encoding: .utf8)!)
     }
 }
