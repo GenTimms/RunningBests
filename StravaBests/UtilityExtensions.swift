@@ -44,6 +44,7 @@ extension UIViewController {
     }
     
 }
+
 extension DateFormatter {
     static func dateString(from date: Date) -> String {
         let formatter = DateFormatter()
@@ -56,15 +57,33 @@ extension DateFormatter {
         formatter.dateFormat = "HH:mm"
         return formatter.string(from: date)
     }
+    
+    static func dateAndTimeString(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yy  HH:mm"
+        return formatter.string(from: date)
+    }
 }
 
 extension DateComponentsFormatter {
-    static func timeString(from seconds: Int) -> String {
+    static func timeString(from seconds: Int, zeroPadded: Bool) -> String {
+        
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .positional
         formatter.allowedUnits = [.hour, .minute, .second]
-        formatter.zeroFormattingBehavior = [.pad]
+        
+        if zeroPadded {
+            formatter.zeroFormattingBehavior = [.pad]
+        } else {
+            formatter.zeroFormattingBehavior = [.dropLeading]
+        }
         return formatter.string(from: Double(seconds)) ?? ""
     }
 }
+
+
+
+
+
+
 

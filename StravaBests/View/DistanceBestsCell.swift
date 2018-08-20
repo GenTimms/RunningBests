@@ -8,14 +8,14 @@
 
 import UIKit
 
-class RunBestCell: UITableViewCell {
+class DistanceBestsCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timelabel: UILabel!
     @IBOutlet weak var bestLabel: UILabel!
     
-    func configure(with viewModel: RunBestCellViewModel) {
+    func configure(with viewModel: DistanceBestsCellViewModel) {
         self.nameLabel.text = viewModel.runName
         self.dateLabel.text = viewModel.runDate
         self.timelabel.text = viewModel.runTime

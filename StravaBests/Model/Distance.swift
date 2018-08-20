@@ -6,6 +6,11 @@
 //  Copyright © 2018 GMJT. All rights reserved.
 //
 
+enum Unit : String {
+    case miles = "/mi"
+    case km = "/km"
+}
+
 enum Distance : String, Codable {
     case fourHundredMeters = "400m"
     case halfMile = "1/2 mile"
@@ -18,10 +23,25 @@ enum Distance : String, Codable {
     case marathon = "Marathon"
     
     static let Meters: [Distance:Double] = [.fourHundredMeters: 400, .halfMile: 805, .oneKilometer: 1000, .oneMile: 1609, .twoMiles: 3219, .fiveKilometers: 5000, .tenKilometers: 10000, .halfMarathon: 21097.5, .marathon: 42195]
-
+    
     static let All: [Distance] = [.fourHundredMeters, .halfMile, .oneKilometer, .oneMile, .twoMiles, .fiveKilometers, .tenKilometers, .halfMarathon, .marathon]
     
     static func all(upto max: Double) -> [Distance] {
         return Distance.All.filter{ Distance.Meters[$0]! <= max }
+    }
+    
+    //pace and time for whole run length?
+    func pace(for time: Int, unit: Unit) -> Int {
+        switch unit {
+        case .miles: return Int(Double(time) / miles)
+        case .km: return Int(Double(time) / km)
+        }
+    }
+    
+    var miles: Double {
+        return Distance.Meters[self]! / Distance.Meters[.oneMile]!
+    }
+    var km: Double {
+        return Distance.Meters[self]! / Distance.Meters[.oneKilometer]!
     }
 }

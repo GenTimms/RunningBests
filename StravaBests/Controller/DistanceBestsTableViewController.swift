@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BestsTableViewController: UITableViewController {
+class DistanceBestsTableViewController: UITableViewController {
     
     var distance = Distance.oneMile
     var runs = [Run]()
@@ -41,15 +41,21 @@ class BestsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.runBest, for: indexPath) as! RunBestCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.distanceRunBest, for: indexPath) as! DistanceBestsCell
         let run = runs[indexPath.row]
-        let viewModel = RunBestCellViewModel(distance: distance, run: run)
+        let viewModel = DistanceBestsCellViewModel(distance: distance, run: run)
         cell.configure(with: viewModel)
         return cell
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == Segues.runBests {
+            if let cell = sender as? UITableViewCell,
+                let row = tableView.indexPath(for: cell)?.row,
+                let runBestsTBVC = segue.destination as? RunBestsTableViewController {
+                runBestsTBVC.run = runs[row]
+            }
+        }
     }
 }

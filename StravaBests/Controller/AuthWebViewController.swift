@@ -29,8 +29,8 @@ class AuthWebViewController: UIViewController, WKNavigationDelegate {
     }
     
     private func clean(completion: @escaping () -> Void) {
-//        HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
-//        print("All cookies deleted")
+        HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
+        print("All cookies deleted")
         
         let dataStore = WKWebsiteDataStore.default()
         dataStore.fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in

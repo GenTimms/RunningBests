@@ -13,6 +13,7 @@ struct Segues {
     static var AuthUnwind = "unwindWithAuthResult"
     static var DistanceChooserSegue = "Show Distance Chooser"
     static var Bests = "Show Bests"
+    static var runBests = "Show Run Bests"
 }
 
 struct URLKeys {
@@ -23,5 +24,6 @@ struct URLKeys {
 
 struct Cells {
     static var distance = "Distance Cell"
+    static var distanceRunBest = "Distance Run Best Cell"
     static var runBest = "Run Best Cell"
 }

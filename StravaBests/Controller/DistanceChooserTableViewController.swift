@@ -19,7 +19,7 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
     }
     
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-        if let btvc = secondaryViewController as? BestsTableViewController {
+        if let btvc = secondaryViewController as? DistanceBestsTableViewController {
             if btvc.runs.isEmpty {
                 return true
             }
@@ -47,7 +47,7 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segues.Bests {
             if let indexPath = sender as? IndexPath {
-                if let bestsVC = segue.destination.contents as? BestsTableViewController {
+                if let bestsVC = segue.destination.contents as? DistanceBestsTableViewController {
                     let distance = distances[indexPath.row]
                     bestsVC.runs = runs.withBests(for: distance)
                     bestsVC.distance = distance
@@ -62,9 +62,9 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.distance, for: indexPath) as! DistanceCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.distance, for: indexPath) as! DistanceChooserCell
         let distance = distances[indexPath.row]
-        let viewModel = DistanceCellViewModel(distance: distance, bestRun: runs.best(for: distance))
+        let viewModel = DistanceChooserCellViewModel(distance: distance, bestRun: runs.best(for: distance))
         cell.configure(with: viewModel)
         return cell
     }
