@@ -15,6 +15,7 @@ struct Activity: Codable {
     let date: Date
     let distance: Double
     let type: String
+    let time: Int
     
     private enum CodingKeys: String, CodingKey {
         case name
@@ -22,6 +23,7 @@ struct Activity: Codable {
         case id
         case date = "start_date_local"
         case type
+        case time = "elapsed_time"
     }
     
     static func decodeActivities(from data: Data) throws -> [Activity]  {

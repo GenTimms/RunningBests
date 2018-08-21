@@ -30,6 +30,7 @@ class DistanceBestsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = distance.rawValue
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

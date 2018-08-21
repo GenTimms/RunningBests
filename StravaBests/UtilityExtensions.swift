@@ -31,7 +31,6 @@ extension URL {
         let start = self.absoluteString.components(separatedBy: "/?")
         return start[0] == string
     }
-    
 }
 
 extension UIViewController {
@@ -42,7 +41,6 @@ extension UIViewController {
             return self
         }
     }
-    
 }
 
 extension DateFormatter {
@@ -67,7 +65,6 @@ extension DateFormatter {
 
 extension DateComponentsFormatter {
     static func timeString(from seconds: Int, zeroPadded: Bool) -> String {
-        
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .positional
         formatter.allowedUnits = [.hour, .minute, .second]
@@ -81,9 +78,12 @@ extension DateComponentsFormatter {
     }
 }
 
-
-
-
-
-
-
+extension Distance {
+    static func string(meters: Double, unit: Unit) -> String {
+        return String(format: "%.1f", meters/unit.meters) + " " + unit.rawValue
+    }
+    
+    static func pace(time: Int, meters: Double, unit: Unit) -> Int {
+        return Int(Double(time) / (meters/unit.meters))
+    }
+}

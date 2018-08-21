@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="si0-3W-AU6">
-    <device id="retina4_0" orientation="portrait">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,28 +23,28 @@
             <objects>
                 <tableViewController id="sj1-WG-nMz" customClass="DistanceBestsTableViewController" customModule="StravaBests" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0nD-Hm-y8X">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Distance Run Best Cell" rowHeight="45" id="eKY-5A-adj" customClass="DistanceBestsCell" customModule="StravaBests" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="45"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Distance Run Best Cell" rowHeight="50" id="eKY-5A-adj" customClass="DistanceBestsCell" customModule="StravaBests" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="768" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eKY-5A-adj" id="m2a-nb-SN1">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hZV-J9-XnW" userLabel="BestStackView">
-                                            <rect key="frame" x="20" y="2" width="78.5" height="41"/>
+                                            <rect key="frame" x="20" y="3" width="78.5" height="43.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHL-id-Lvc">
-                                                    <rect key="frame" x="0.0" y="0.0" width="78.5" height="21.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="78.5" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" red="0.25557264730000001" green="0.3818742027" blue="0.54736791510000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleAspectFit" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="u44-Lg-yW0">
-                                                    <rect key="frame" x="0.0" y="21.5" width="78.5" height="19.5"/>
+                                                    <rect key="frame" x="0.0" y="24" width="78.5" height="19.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r99-aP-PnS">
                                                             <rect key="frame" x="0.0" y="0.0" width="34.5" height="19.5"/>
@@ -63,7 +63,7 @@
                                             </subviews>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vil-Gt-kPJ">
-                                            <rect key="frame" x="240.5" y="11" width="39.5" height="24"/>
+                                            <rect key="frame" x="688.5" y="12.5" width="39.5" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -108,26 +108,26 @@
             <objects>
                 <tableViewController id="lTw-2Z-xEI" customClass="RunBestsTableViewController" customModule="StravaBests" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uit-ev-1kA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="vsF-jE-GY8">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="vsF-jE-GY8">
+                            <rect key="frame" x="0.0" y="0.0" width="768" height="115"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xIR-Na-GV5">
-                                    <rect key="frame" x="10" y="10" width="300" height="95"/>
+                                    <rect key="frame" x="15" y="10" width="738" height="541"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="No Run 🙁  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ppW-xj-Mzl">
-                                            <rect key="frame" x="65" y="0.0" width="170" height="45"/>
-                                            <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="26"/>
-                                            <color key="textColor" red="0.33635604879999997" green="0.50257998780000002" blue="0.72038424739999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="No Run 🙁  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ppW-xj-Mzl">
+                                            <rect key="frame" x="277.5" y="0.0" width="183" height="491"/>
+                                            <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="28"/>
+                                            <color key="textColor" red="0.29665862147129457" green="0.44326447194269725" blue="0.63536302826872426" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGl-sk-6jh">
-                                            <rect key="frame" x="125" y="45" width="50" height="50"/>
-                                            <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="26"/>
-                                            <color key="textColor" red="0.33635604879999997" green="0.50257998780000002" blue="0.72038424739999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <rect key="frame" x="344" y="491" width="50" height="50"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <color key="textColor" red="0.2966586215" green="0.44326447190000001" blue="0.63536302830000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -135,18 +135,18 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="xIR-Na-GV5" secondAttribute="trailing" constant="10" id="EIn-Gw-2qV"/>
+                                <constraint firstAttribute="trailing" secondItem="xIR-Na-GV5" secondAttribute="trailing" constant="15" id="EIn-Gw-2qV"/>
                                 <constraint firstItem="xIR-Na-GV5" firstAttribute="top" secondItem="vsF-jE-GY8" secondAttribute="top" constant="10" id="gzz-mX-ik5"/>
-                                <constraint firstItem="xIR-Na-GV5" firstAttribute="leading" secondItem="vsF-jE-GY8" secondAttribute="leading" constant="10" id="iAy-cJ-G8v"/>
-                                <constraint firstAttribute="bottom" secondItem="xIR-Na-GV5" secondAttribute="bottom" constant="10" id="xtS-rf-MHt"/>
+                                <constraint firstItem="xIR-Na-GV5" firstAttribute="leading" secondItem="vsF-jE-GY8" secondAttribute="leading" constant="15" id="iAy-cJ-G8v"/>
+                                <constraint firstAttribute="bottom" secondItem="xIR-Na-GV5" secondAttribute="bottom" constant="20" id="xtS-rf-MHt"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Run Best Cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Run Best Cell" id="Vgz-SI-jxl" customClass="RunBestsCell" customModule="StravaBests" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="143" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="143" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vgz-SI-jxl" id="4x5-jc-F6f">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hao-lh-WPk">
@@ -156,13 +156,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pace" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRr-WS-Rys">
-                                            <rect key="frame" x="139" y="10" width="42.5" height="24"/>
+                                            <rect key="frame" x="363" y="10" width="42.5" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehp-C5-U2c">
-                                            <rect key="frame" x="237" y="9" width="43" height="24"/>
+                                            <rect key="frame" x="685" y="9" width="43" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -203,11 +203,11 @@
             <objects>
                 <viewController id="SRK-pG-xUj" customClass="AuthWebViewController" customModule="StravaBests" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="63t-hn-HCi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3m-7U-2qc">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -252,7 +252,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G96-FM-hh2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uai-Cm-kdR">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -282,17 +282,17 @@
             <objects>
                 <viewController id="si0-3W-AU6" customClass="InitialViewController" customModule="StravaBests" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b8F-fw-h3i">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Running Bests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSm-jK-60N">
-                                <rect key="frame" x="32" y="153" width="256" height="62.5"/>
+                                <rect key="frame" x="256" y="381" width="256" height="62.5"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="32"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLa-dq-CK8">
-                                <rect key="frame" x="123" y="253.5" width="74" height="61"/>
+                                <rect key="frame" x="347" y="481.5" width="74" height="61"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="25"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -302,16 +302,16 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetching Runs..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3n-vT-Qbj">
-                                <rect key="frame" x="59.5" y="260.5" width="201.5" height="47"/>
+                                <rect key="frame" x="283.5" y="488.5" width="201.5" height="47"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8ZH-5j-paY">
-                                <rect key="frame" x="141.5" y="332.5" width="37" height="37"/>
+                                <rect key="frame" x="365.5" y="560.5" width="37" height="37"/>
                             </activityIndicatorView>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3VT-lg-X3N" userLabel="Retry Stack">
-                                <rect key="frame" x="91.5" y="249.5" width="137" height="110"/>
+                                <rect key="frame" x="315.5" y="477.5" width="137" height="110"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQQ-Ri-IHG" userLabel="Fetch Button">
                                         <rect key="frame" x="0.0" y="0.0" width="137" height="55"/>
@@ -369,62 +369,42 @@
         <scene sceneID="gsC-lU-pLs">
             <objects>
                 <tableViewController id="94H-sj-YrA" customClass="DistanceChooserTableViewController" customModule="StravaBests" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="h2z-1X-tY4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="h2z-1X-tY4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Distance Cell" rowHeight="72" id="Q5p-lf-p6W" customClass="DistanceChooserCell" customModule="StravaBests">
-                                <rect key="frame" x="0.0" y="28" width="320" height="72"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Distance Cell" rowHeight="50" id="Q5p-lf-p6W" customClass="DistanceChooserCell" customModule="StravaBests">
+                                <rect key="frame" x="0.0" y="28" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q5p-lf-p6W" id="rrs-9V-A4G">
-                                    <rect key="frame" x="0.0" y="0.0" width="286" height="71.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="286" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5K" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQj-fz-61L">
-                                            <rect key="frame" x="30" y="11" width="42" height="50"/>
+                                            <rect key="frame" x="40" y="-0.5" width="30" height="50.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="U3W-ed-ylh"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <color key="textColor" red="0.33635604879999997" green="0.50257998780000002" blue="0.72038424739999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="X9e-R7-hJQ" userLabel="BestStackView">
-                                            <rect key="frame" x="163" y="7" width="81" height="57.5"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efP-Gs-ACC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="81" height="21.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" red="0.33635604879999997" green="0.50257998780000002" blue="0.72038424739999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rG-ek-f0O">
-                                                    <rect key="frame" x="0.0" y="21.5" width="81" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" red="0.33635604879999997" green="0.50257998780000002" blue="0.72038424739999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mH1-uF-kX9">
-                                                    <rect key="frame" x="0.0" y="39.5" width="81" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" red="0.33635604879999997" green="0.50257998780000002" blue="0.72038424739999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efP-Gs-ACC">
+                                            <rect key="frame" x="182" y="14" width="81" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="xQj-fz-61L" firstAttribute="centerY" secondItem="rrs-9V-A4G" secondAttribute="centerY" id="5sP-QY-cjR"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="X9e-R7-hJQ" secondAttribute="trailing" constant="20" id="GYw-pl-6P2"/>
-                                        <constraint firstItem="X9e-R7-hJQ" firstAttribute="centerY" secondItem="rrs-9V-A4G" secondAttribute="centerY" id="LW7-sQ-xbv"/>
-                                        <constraint firstItem="xQj-fz-61L" firstAttribute="leading" secondItem="rrs-9V-A4G" secondAttribute="leading" constant="30" id="c4Q-m8-G7x"/>
-                                        <constraint firstItem="X9e-R7-hJQ" firstAttribute="leading" secondItem="rrs-9V-A4G" secondAttribute="centerX" constant="20" id="hGB-W6-e1s"/>
+                                        <constraint firstItem="efP-Gs-ACC" firstAttribute="centerY" secondItem="rrs-9V-A4G" secondAttribute="centerY" id="X6x-ih-1Aw"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="efP-Gs-ACC" secondAttribute="trailing" constant="15" id="bz8-OP-hk3"/>
+                                        <constraint firstItem="xQj-fz-61L" firstAttribute="leading" secondItem="rrs-9V-A4G" secondAttribute="leading" constant="40" id="c4Q-m8-G7x"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="bestDateLabel" destination="mH1-uF-kX9" id="aNn-Y3-ZDv"/>
-                                    <outlet property="bestNameLabel" destination="6rG-ek-f0O" id="bcD-Rk-pj0"/>
                                     <outlet property="bestTimeLabel" destination="efP-Gs-ACC" id="7WN-WZ-jlc"/>
                                     <outlet property="distanceLabel" destination="xQj-fz-61L" id="DuU-q8-vA6"/>
                                 </connections>

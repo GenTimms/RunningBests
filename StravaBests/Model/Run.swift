@@ -15,6 +15,7 @@ class Run: Codable {
     let name: String
     let date: Date
     let distance: Double
+    let time: Int
     
     //Detailed Run Data
     var bests: [Distance: Int]
@@ -25,6 +26,7 @@ class Run: Codable {
         self.date = run.date
         self.distance = run.distance
         self.bests = run.bests
+        self.time = run.time
     }
     
     init(activity: Activity) {
@@ -32,6 +34,7 @@ class Run: Codable {
         self.name = activity.name
         self.date = activity.date
         self.distance = activity.distance
+        self.time = activity.time
         self.bests = [Distance: Int]()
     }
     
@@ -57,6 +60,7 @@ class Run: Codable {
         name = try values.decode(String.self, forKey: .name)
         date = try values.decode(Date.self, forKey: .date)
         distance = try values.decode(Double.self, forKey: .distance)
+        time = try values.decode(Int.self, forKey: .time)
         
         var bestEfforts = try values.nestedUnkeyedContainer(forKey: .bests)
         var bestsDictionary = [Distance: Int]()
@@ -78,6 +82,7 @@ extension Run {
         case id
         case date = "start_date_local"
         case bests = "best_efforts"
+        case time = "elapsed_time"
     }
     
     private enum BestKeys: String, CodingKey {
@@ -92,6 +97,7 @@ extension Run {
         try container.encode(name, forKey: .name)
         try container.encode(date, forKey: .date)
         try container.encode(distance, forKey: .distance)
+        try container.encode(time, forKey: .time)
         
         var bestsEfforts = container.nestedUnkeyedContainer(forKey: .bests)
         for (distance, time) in bests {

@@ -7,11 +7,25 @@
 //
 
 enum Unit : String {
-    case miles = "/mi"
-    case km = "/km"
+    case miles
+    case km
+    
+    var pace: String {
+        switch self {
+        case .miles: return "/mi"
+        case .km: return "/km"
+        }
+    }
+    
+    var meters: Double {
+        switch self {
+        case .miles: return Distance.oneMile.meters
+        case .km: return Distance.oneKilometer.meters
+        }
+    }
 }
 
-enum Distance : String, Codable {
+enum Distance: String, Codable  {
     case fourHundredMeters = "400m"
     case halfMile = "1/2 mile"
     case oneKilometer = "1k"
@@ -21,27 +35,31 @@ enum Distance : String, Codable {
     case tenKilometers = "10k"
     case halfMarathon = "Half-Marathon"
     case marathon = "Marathon"
-    
-    static let Meters: [Distance:Double] = [.fourHundredMeters: 400, .halfMile: 805, .oneKilometer: 1000, .oneMile: 1609, .twoMiles: 3219, .fiveKilometers: 5000, .tenKilometers: 10000, .halfMarathon: 21097.5, .marathon: 42195]
+
+    var meters: Double {
+        switch self {
+        case .fourHundredMeters: return 400
+        case .halfMile: return 805
+        case .oneKilometer: return 1000
+        case .oneMile: return 1609
+        case .twoMiles: return 3219
+        case .fiveKilometers: return 5000
+        case .tenKilometers: return 10000
+        case .halfMarathon: return 21097.5
+        case .marathon: return 42195
+        }
+    }
     
     static let All: [Distance] = [.fourHundredMeters, .halfMile, .oneKilometer, .oneMile, .twoMiles, .fiveKilometers, .tenKilometers, .halfMarathon, .marathon]
     
     static func all(upto max: Double) -> [Distance] {
-        return Distance.All.filter{ Distance.Meters[$0]! <= max }
+        return Distance.All.filter{ $0.meters <= max }
     }
-    
-    //pace and time for whole run length?
-    func pace(for time: Int, unit: Unit) -> Int {
-        switch unit {
-        case .miles: return Int(Double(time) / miles)
-        case .km: return Int(Double(time) / km)
-        }
-    }
-    
+
     var miles: Double {
-        return Distance.Meters[self]! / Distance.Meters[.oneMile]!
+        return meters / Distance.oneMile.meters
     }
     var km: Double {
-        return Distance.Meters[self]! / Distance.Meters[.oneKilometer]!
+        return meters / Distance.oneKilometer.meters
     }
 }

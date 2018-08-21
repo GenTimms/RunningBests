@@ -43,6 +43,7 @@ class AuthWebViewController: UIViewController, WKNavigationDelegate {
                     return
                 }
             }
+            completion()
         }
     }
     

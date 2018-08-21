@@ -16,11 +16,22 @@ struct RunBestsCellViewModel {
 }
 
 extension RunBestsCellViewModel {
+    
+    init(distance: String, pace: Int, time: Int) {
+        self.distance = distance
+        self.pace = DateComponentsFormatter.timeString(from: pace, zeroPadded: false) + Unit.miles.pace
+        self.time = DateComponentsFormatter.timeString(from: time, zeroPadded: false)
+    }
+    
     init(distance: Distance, run: Run) {
         let time = run.bests[distance]!
-        let pace = distance.pace(for: time, unit: .miles)
-        self.distance = distance.rawValue
-        self.pace = DateComponentsFormatter.timeString(from: pace, zeroPadded: false) + Unit.miles.rawValue
-        self.time = DateComponentsFormatter.timeString(from: time, zeroPadded: false)
+        let pace = Distance.pace(time: time, meters: distance.meters, unit: .miles)
+        self.init(distance: distance.rawValue, pace: pace, time: time)
+    }
+    
+    init(run: Run) {
+        let time = run.time
+        let pace = Distance.pace(time: run.time, meters: run.distance, unit: .miles)
+        self.init(distance: Distance.string(meters: run.distance, unit: .miles), pace: pace, time: time)
     }
 }

@@ -12,14 +12,10 @@ class DistanceChooserCell: UITableViewCell {
 
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var bestTimeLabel: UILabel!
-    @IBOutlet weak var bestNameLabel: UILabel!
-    @IBOutlet weak var bestDateLabel: UILabel!
     
     func configure(with viewModel: DistanceChooserCellViewModel) {
         self.distanceLabel.text = viewModel.distance
         self.bestTimeLabel.text = viewModel.bestTime
-        self.bestNameLabel.text = viewModel.bestName
-        self.bestDateLabel.text = viewModel.bestDate
     }
     
 }

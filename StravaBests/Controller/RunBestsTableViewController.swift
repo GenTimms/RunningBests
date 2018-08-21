@@ -9,7 +9,7 @@
 import UIKit
 
 class RunBestsTableViewController: UITableViewController {
-
+    
     @IBOutlet weak var runTitle: UILabel!
     @IBOutlet weak var runDate: UILabel!
     
@@ -19,11 +19,9 @@ class RunBestsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       setRunTitle()
+        setRunTitle()
         
-        distances = run?.bests.keys.sorted {
-          Distance.Meters[$0]! < Distance.Meters[$1]!
-        } ?? []
+        distances = run?.bests.keys.sorted { $0.meters < $1.meters } ?? []
     }
     
     private func setRunTitle() {
@@ -39,16 +37,20 @@ class RunBestsTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return distances.count
+        return distances.count + 1
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cells.runBest, for: indexPath)
         if let runBestCell = cell as? RunBestsCell, let cellRun = run {
-        runBestCell.configure(with: RunBestsCellViewModel(distance: distances[indexPath.row], run: cellRun))
+            if indexPath.row == distances.count {
+                runBestCell.configure(with: RunBestsCellViewModel(run: cellRun))
+            } else {
+                runBestCell.configure(with: RunBestsCellViewModel(distance: distances[indexPath.row], run: cellRun))
+            }
         }
         return cell
     }
- }
+}
