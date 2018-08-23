@@ -26,7 +26,8 @@ extension RunBestsCellViewModel {
     init(distance: Distance, run: Run) {
         let time = run.bests[distance]!
         let pace = Distance.pace(time: time, meters: distance.meters, unit: .miles)
-        self.init(distance: distance.rawValue, pace: pace, time: time)
+        let distanceString = distance == .twoMiles ? "2 miles" : distance.rawValue
+        self.init(distance: distanceString, pace: pace, time: time)
     }
     
     init(run: Run) {

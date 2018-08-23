@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:StravaBests.xcodeproj">
+      location = "self:/Users/Genni/Documents/Developer/My Apps/StravaBests/RunningBests.xcodeproj">
    </FileRef>
 </Workspace>

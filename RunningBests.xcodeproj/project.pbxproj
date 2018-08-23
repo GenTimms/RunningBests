@@ -84,13 +84,13 @@
 		B45AF3F82101D2E300777E20 /* run.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = run.json; path = ../../../../../Desktop/run.json; sourceTree = "<group>"; };
 		B45AF3FA2101D2ED00777E20 /* activities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = activities.json; sourceTree = "<group>"; };
 		B45AF3FB2101D2ED00777E20 /* run.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = run.json; sourceTree = "<group>"; };
-		B45E91F920DD63D00095FFA9 /* StravaBests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StravaBests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B45E91F920DD63D00095FFA9 /* RunningBests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningBests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45E91FC20DD63D00095FFA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B45E920120DD63D00095FFA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B45E920320DD63D30095FFA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B45E920620DD63D30095FFA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B45E920820DD63D30095FFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B45E920D20DD63D30095FFA9 /* StravaBestsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StravaBestsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B45E920D20DD63D30095FFA9 /* RunningBestsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunningBestsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45E921320DD63D30095FFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B45E921C20DD8A6D0095FFA9 /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		B45E921E20DD8FCF0095FFA9 /* DistanceBestsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceBestsTableViewController.swift; sourceTree = "<group>"; };
@@ -101,13 +101,13 @@
 		B45E923520E142310095FFA9 /* StravaEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaEndpoint.swift; sourceTree = "<group>"; };
 		B45E923820E14F7F0095FFA9 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		B45E923B20E1508F0095FFA9 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		B45E923D20E192A40095FFA9 /* UtilityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UtilityExtensions.swift; path = StravaBests/UtilityExtensions.swift; sourceTree = SOURCE_ROOT; };
+		B45E923D20E192A40095FFA9 /* UtilityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UtilityExtensions.swift; path = RunningBests/UtilityExtensions.swift; sourceTree = SOURCE_ROOT; };
 		B45E924320E263130095FFA9 /* StravaEndpointTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaEndpointTest.swift; sourceTree = "<group>"; };
 		B45E925220E3C3060095FFA9 /* AuthWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthWebViewController.swift; sourceTree = "<group>"; };
 		B45E925620E6CA810095FFA9 /* APIAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAccount.swift; sourceTree = "<group>"; };
 		B45E925B20E8F9260095FFA9 /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = Carthage/Build/iOS/Locksmith.framework; sourceTree = "<group>"; };
 		B47B2BD120E93A5500E20C4A /* DistanceChooserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceChooserTableViewController.swift; sourceTree = "<group>"; };
-		B47B2BD320E9459900E20C4A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = StravaBests/Constants.swift; sourceTree = SOURCE_ROOT; };
+		B47B2BD320E9459900E20C4A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = RunningBests/Constants.swift; sourceTree = SOURCE_ROOT; };
 		B47BFC322100C62C008A3D95 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		B4D0C56B2105E71C00A05B17 /* StravaClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaClientTests.swift; sourceTree = "<group>"; };
 		B4D0C56E210895B600A05B17 /* StravaRunDetailsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaRunDetailsOperation.swift; sourceTree = "<group>"; };
@@ -144,8 +144,8 @@
 		B45E91F020DD63D00095FFA9 = {
 			isa = PBXGroup;
 			children = (
-				B45E91FB20DD63D00095FFA9 /* StravaBests */,
-				B45E921020DD63D30095FFA9 /* StravaBestsTests */,
+				B45E91FB20DD63D00095FFA9 /* RunningBests */,
+				B45E921020DD63D30095FFA9 /* RunningBestsTests */,
 				B45E91FA20DD63D00095FFA9 /* Products */,
 				B45E925A20E8F9240095FFA9 /* Frameworks */,
 			);
@@ -154,13 +154,13 @@
 		B45E91FA20DD63D00095FFA9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B45E91F920DD63D00095FFA9 /* StravaBests.app */,
-				B45E920D20DD63D30095FFA9 /* StravaBestsTests.xctest */,
+				B45E91F920DD63D00095FFA9 /* RunningBests.app */,
+				B45E920D20DD63D30095FFA9 /* RunningBestsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B45E91FB20DD63D00095FFA9 /* StravaBests */ = {
+		B45E91FB20DD63D00095FFA9 /* RunningBests */ = {
 			isa = PBXGroup;
 			children = (
 				B44888E820ED010C00C643C6 /* IndieFlower.ttf */,
@@ -178,10 +178,10 @@
 				B45E922C20E002550095FFA9 /* View */,
 				B45E922520DF7DD10095FFA9 /* Supporting */,
 			);
-			path = StravaBests;
+			path = RunningBests;
 			sourceTree = "<group>";
 		};
-		B45E921020DD63D30095FFA9 /* StravaBestsTests */ = {
+		B45E921020DD63D30095FFA9 /* RunningBestsTests */ = {
 			isa = PBXGroup;
 			children = (
 				B45AF3FA2101D2ED00777E20 /* activities.json */,
@@ -191,7 +191,7 @@
 				B4D0C56B2105E71C00A05B17 /* StravaClientTests.swift */,
 				B45E921320DD63D30095FFA9 /* Info.plist */,
 			);
-			path = StravaBestsTests;
+			path = RunningBestsTests;
 			sourceTree = "<group>";
 		};
 		B45E922220DF7D480095FFA9 /* Networking */ = {
@@ -306,9 +306,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B45E91F820DD63D00095FFA9 /* StravaBests */ = {
+		B45E91F820DD63D00095FFA9 /* RunningBests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B45E921620DD63D40095FFA9 /* Build configuration list for PBXNativeTarget "StravaBests" */;
+			buildConfigurationList = B45E921620DD63D40095FFA9 /* Build configuration list for PBXNativeTarget "RunningBests" */;
 			buildPhases = (
 				B45E91F520DD63D00095FFA9 /* Sources */,
 				B45E91F620DD63D00095FFA9 /* Frameworks */,
@@ -319,14 +319,14 @@
 			);
 			dependencies = (
 			);
-			name = StravaBests;
+			name = RunningBests;
 			productName = StravaBests;
-			productReference = B45E91F920DD63D00095FFA9 /* StravaBests.app */;
+			productReference = B45E91F920DD63D00095FFA9 /* RunningBests.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B45E920C20DD63D30095FFA9 /* StravaBestsTests */ = {
+		B45E920C20DD63D30095FFA9 /* RunningBestsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B45E921920DD63D40095FFA9 /* Build configuration list for PBXNativeTarget "StravaBestsTests" */;
+			buildConfigurationList = B45E921920DD63D40095FFA9 /* Build configuration list for PBXNativeTarget "RunningBestsTests" */;
 			buildPhases = (
 				B45E920920DD63D30095FFA9 /* Sources */,
 				B45E920A20DD63D30095FFA9 /* Frameworks */,
@@ -337,9 +337,9 @@
 			dependencies = (
 				B45E920F20DD63D30095FFA9 /* PBXTargetDependency */,
 			);
-			name = StravaBestsTests;
+			name = RunningBestsTests;
 			productName = StravaBestsTests;
-			productReference = B45E920D20DD63D30095FFA9 /* StravaBestsTests.xctest */;
+			productReference = B45E920D20DD63D30095FFA9 /* RunningBestsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -361,7 +361,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B45E91F420DD63D00095FFA9 /* Build configuration list for PBXProject "StravaBests" */;
+			buildConfigurationList = B45E91F420DD63D00095FFA9 /* Build configuration list for PBXProject "RunningBests" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -374,8 +374,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B45E91F820DD63D00095FFA9 /* StravaBests */,
-				B45E920C20DD63D30095FFA9 /* StravaBestsTests */,
+				B45E91F820DD63D00095FFA9 /* RunningBests */,
+				B45E920C20DD63D30095FFA9 /* RunningBestsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -487,7 +487,7 @@
 /* Begin PBXTargetDependency section */
 		B45E920F20DD63D30095FFA9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B45E91F820DD63D00095FFA9 /* StravaBests */;
+			target = B45E91F820DD63D00095FFA9 /* RunningBests */;
 			targetProxy = B45E920E20DD63D30095FFA9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -639,12 +639,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = StravaBests/Info.plist;
+				INFOPLIST_FILE = RunningBests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gmjt.StravaBests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmjt.RunnningBests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -662,12 +662,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = StravaBests/Info.plist;
+				INFOPLIST_FILE = RunningBests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gmjt.StravaBests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmjt.RunnningBests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -727,7 +727,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B45E91F420DD63D00095FFA9 /* Build configuration list for PBXProject "StravaBests" */ = {
+		B45E91F420DD63D00095FFA9 /* Build configuration list for PBXProject "RunningBests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B45E921420DD63D30095FFA9 /* Debug */,
@@ -736,7 +736,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B45E921620DD63D40095FFA9 /* Build configuration list for PBXNativeTarget "StravaBests" */ = {
+		B45E921620DD63D40095FFA9 /* Build configuration list for PBXNativeTarget "RunningBests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B45E921720DD63D40095FFA9 /* Debug */,
@@ -745,7 +745,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B45E921920DD63D40095FFA9 /* Build configuration list for PBXNativeTarget "StravaBestsTests" */ = {
+		B45E921920DD63D40095FFA9 /* Build configuration list for PBXNativeTarget "RunningBestsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B45E921A20DD63D40095FFA9 /* Debug */,

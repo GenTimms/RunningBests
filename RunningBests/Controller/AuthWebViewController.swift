@@ -69,7 +69,6 @@ class AuthWebViewController: UIViewController, WKNavigationDelegate {
             performSegue(withIdentifier: unwind, sender: self)
             return
         }
-        
         webView.load(authRequest)
     }
 

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="si0-3W-AU6">
-    <device id="ipad9_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -18,42 +19,42 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Strava Bests-->
+        <!--Distance Bests-->
         <scene sceneID="neq-3T-KOE">
             <objects>
-                <tableViewController id="sj1-WG-nMz" customClass="DistanceBestsTableViewController" customModule="StravaBests" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="sj1-WG-nMz" customClass="DistanceBestsTableViewController" customModule="RunningBests" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0nD-Hm-y8X">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Distance Run Best Cell" rowHeight="50" id="eKY-5A-adj" customClass="DistanceBestsCell" customModule="StravaBests" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="768" height="50"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Distance Run Best Cell" rowHeight="50" id="eKY-5A-adj" customClass="DistanceBestsCell" customModule="RunningBests" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eKY-5A-adj" id="m2a-nb-SN1">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="49.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hZV-J9-XnW" userLabel="BestStackView">
-                                            <rect key="frame" x="20" y="3" width="78.5" height="43.5"/>
+                                            <rect key="frame" x="20" y="3" width="78.333333333333329" height="43.333333333333336"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHL-id-Lvc">
-                                                    <rect key="frame" x="0.0" y="0.0" width="78.5" height="24"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="78.333333333333329" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" red="0.25557264730000001" green="0.3818742027" blue="0.54736791510000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleAspectFit" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="u44-Lg-yW0">
-                                                    <rect key="frame" x="0.0" y="24" width="78.5" height="19.5"/>
+                                                    <rect key="frame" x="0.0" y="24" width="78.333333333333329" height="19.333333333333329"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r99-aP-PnS">
-                                                            <rect key="frame" x="0.0" y="0.0" width="34.5" height="19.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="34.333333333333336" height="19.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySa-kU-Z4n">
-                                                            <rect key="frame" x="42.5" y="0.0" width="36" height="19.5"/>
+                                                            <rect key="frame" x="42.333333333333336" y="0.0" width="36.000000000000007" height="19.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -63,7 +64,7 @@
                                             </subviews>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vil-Gt-kPJ">
-                                            <rect key="frame" x="688.5" y="12.5" width="39.5" height="24"/>
+                                            <rect key="frame" x="344.66666666666669" y="12.666666666666664" width="39.333333333333314" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -74,7 +75,7 @@
                                         <constraint firstItem="Vil-Gt-kPJ" firstAttribute="centerY" secondItem="m2a-nb-SN1" secondAttribute="centerY" id="g7l-gT-Ege"/>
                                         <constraint firstItem="hZV-J9-XnW" firstAttribute="leading" secondItem="m2a-nb-SN1" secondAttribute="leading" constant="20" id="lR6-6U-S7v"/>
                                         <constraint firstItem="hZV-J9-XnW" firstAttribute="centerY" secondItem="m2a-nb-SN1" secondAttribute="centerY" id="tJ1-sG-hFE"/>
-                                        <constraint firstAttribute="trailing" secondItem="Vil-Gt-kPJ" secondAttribute="trailing" constant="40" id="u6H-YA-seH"/>
+                                        <constraint firstAttribute="trailing" secondItem="Vil-Gt-kPJ" secondAttribute="trailing" constant="30" id="u6H-YA-seH"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -91,7 +92,7 @@
                             <outlet property="delegate" destination="sj1-WG-nMz" id="u6S-uc-Wjn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Strava Bests" id="IIt-5J-tDi">
+                    <navigationItem key="navigationItem" title="Distance Bests" id="IIt-5J-tDi">
                         <barButtonItem key="rightBarButtonItem" title="Sort" id="q0b-Lx-A0I">
                             <connections>
                                 <action selector="sortButton:" destination="sj1-WG-nMz" id="kA1-Vh-PWI"/>
@@ -101,32 +102,32 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JhN-g3-GiX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1294" y="703"/>
+            <point key="canvasLocation" x="2200" y="702.71739130434787"/>
         </scene>
         <!--Run Bests Table View Controller-->
         <scene sceneID="cCJ-YC-1Vt">
             <objects>
-                <tableViewController id="lTw-2Z-xEI" customClass="RunBestsTableViewController" customModule="StravaBests" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="lTw-2Z-xEI" customClass="RunBestsTableViewController" customModule="RunningBests" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uit-ev-1kA">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="vsF-jE-GY8">
-                            <rect key="frame" x="0.0" y="0.0" width="768" height="115"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="vsF-jE-GY8">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xIR-Na-GV5">
-                                    <rect key="frame" x="15" y="10" width="738" height="541"/>
+                                    <rect key="frame" x="15" y="10" width="384" height="85"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="No Run 🙁  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ppW-xj-Mzl">
-                                            <rect key="frame" x="277.5" y="0.0" width="183" height="491"/>
+                                            <rect key="frame" x="100.66666666666667" y="0.0" width="182.66666666666663" height="35"/>
                                             <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="28"/>
                                             <color key="textColor" red="0.29665862147129457" green="0.44326447194269725" blue="0.63536302826872426" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGl-sk-6jh">
-                                            <rect key="frame" x="344" y="491" width="50" height="50"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <rect key="frame" x="167" y="35" width="50" height="50"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="0.2966586215" green="0.44326447190000001" blue="0.63536302830000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -142,28 +143,28 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Run Best Cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Run Best Cell" id="Vgz-SI-jxl" customClass="RunBestsCell" customModule="StravaBests" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="143" width="768" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Run Best Cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Run Best Cell" id="Vgz-SI-jxl" customClass="RunBestsCell" customModule="RunningBests" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="143" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vgz-SI-jxl" id="4x5-jc-F6f">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hao-lh-WPk">
-                                            <rect key="frame" x="20" y="9.5" width="77" height="24"/>
+                                            <rect key="frame" x="20" y="9.6666666666666643" width="77" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" red="0.25557264730000001" green="0.3818742027" blue="0.54736791510000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRr-WS-Rys">
+                                            <rect key="frame" x="197" y="11.333333333333334" width="40" height="21.666666666666664"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pace" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRr-WS-Rys">
-                                            <rect key="frame" x="363" y="10" width="42.5" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehp-C5-U2c">
-                                            <rect key="frame" x="685" y="9" width="43" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pace" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehp-C5-U2c">
+                                            <rect key="frame" x="354" y="10.333333333333334" width="40" height="21.666666666666664"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -172,15 +173,17 @@
                                         <constraint firstItem="hao-lh-WPk" firstAttribute="leading" secondItem="4x5-jc-F6f" secondAttribute="leading" constant="20" id="4mL-Ia-bTG"/>
                                         <constraint firstItem="hao-lh-WPk" firstAttribute="centerY" secondItem="4x5-jc-F6f" secondAttribute="centerY" id="DDa-oy-FoU"/>
                                         <constraint firstItem="uRr-WS-Rys" firstAttribute="centerY" secondItem="4x5-jc-F6f" secondAttribute="centerY" id="XOX-KA-l3j"/>
-                                        <constraint firstAttribute="trailing" secondItem="Ehp-C5-U2c" secondAttribute="trailing" constant="40" id="jeo-f3-5ZF"/>
-                                        <constraint firstItem="uRr-WS-Rys" firstAttribute="centerX" secondItem="4x5-jc-F6f" secondAttribute="centerX" id="voW-Kw-IbV"/>
+                                        <constraint firstItem="Ehp-C5-U2c" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uRr-WS-Rys" secondAttribute="trailing" constant="8" id="ioc-mv-yBo"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ehp-C5-U2c" secondAttribute="trailing" constant="20" id="jeo-f3-5ZF"/>
+                                        <constraint firstItem="uRr-WS-Rys" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hao-lh-WPk" secondAttribute="trailing" constant="8" symbolic="YES" id="lgg-I0-HAG"/>
+                                        <constraint firstItem="uRr-WS-Rys" firstAttribute="leading" secondItem="4x5-jc-F6f" secondAttribute="centerX" constant="-10" id="voW-Kw-IbV"/>
                                         <constraint firstItem="Ehp-C5-U2c" firstAttribute="centerY" secondItem="4x5-jc-F6f" secondAttribute="centerY" id="yOp-qe-jBU"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="distanceLabel" destination="hao-lh-WPk" id="dUa-cm-X08"/>
-                                    <outlet property="paceLabel" destination="uRr-WS-Rys" id="4cJ-bf-Qvm"/>
-                                    <outlet property="timeLabel" destination="Ehp-C5-U2c" id="bLX-qB-Msk"/>
+                                    <outlet property="paceLabel" destination="Ehp-C5-U2c" id="xPo-fA-a6z"/>
+                                    <outlet property="timeLabel" destination="uRr-WS-Rys" id="qvs-dS-h5Q"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -196,18 +199,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zS8-mA-Wf4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2260.5633802816901" y="701.25"/>
+            <point key="canvasLocation" x="3166.666666666667" y="701.08695652173924"/>
         </scene>
         <!--Auth Web View Controller-->
         <scene sceneID="4jF-E8-azg">
             <objects>
-                <viewController id="SRK-pG-xUj" customClass="AuthWebViewController" customModule="StravaBests" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SRK-pG-xUj" customClass="AuthWebViewController" customModule="RunningBests" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="63t-hn-HCi">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3m-7U-2qc">
-                                <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -252,7 +255,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G96-FM-hh2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uai-Cm-kdR">
-                        <rect key="frame" x="0.0" y="20" width="768" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -270,7 +273,7 @@
                 <splitViewController id="GjQ-Rr-0hM" sceneMemberID="viewController">
                     <connections>
                         <segue destination="khW-IG-pkI" kind="relationship" relationship="masterViewController" id="wKE-55-5tH"/>
-                        <segue destination="sj1-WG-nMz" kind="relationship" relationship="detailViewController" id="M3g-bt-IvW"/>
+                        <segue destination="976-qy-Ovg" kind="relationship" relationship="detailViewController" id="M3g-bt-IvW"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pH4-S0-uwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -280,19 +283,19 @@
         <!--Initial View Controller-->
         <scene sceneID="Gce-8V-lmE">
             <objects>
-                <viewController id="si0-3W-AU6" customClass="InitialViewController" customModule="StravaBests" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="si0-3W-AU6" customClass="InitialViewController" customModule="RunningBests" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b8F-fw-h3i">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Running Bests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSm-jK-60N">
-                                <rect key="frame" x="256" y="381" width="256" height="62.5"/>
+                                <rect key="frame" x="79" y="237.00000000000003" width="256" height="62.333333333333343"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="32"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLa-dq-CK8">
-                                <rect key="frame" x="347" y="481.5" width="74" height="61"/>
+                                <rect key="frame" x="170" y="337.66666666666669" width="74" height="61"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="25"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -302,16 +305,16 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetching Runs..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3n-vT-Qbj">
-                                <rect key="frame" x="283.5" y="488.5" width="201.5" height="47"/>
+                                <rect key="frame" x="106.33333333333333" y="344.66666666666669" width="201.33333333333337" height="47"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8ZH-5j-paY">
-                                <rect key="frame" x="365.5" y="560.5" width="37" height="37"/>
+                                <rect key="frame" x="188.66666666666666" y="416.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3VT-lg-X3N" userLabel="Retry Stack">
-                                <rect key="frame" x="315.5" y="477.5" width="137" height="110"/>
+                                <rect key="frame" x="138.66666666666666" y="333.66666666666669" width="136.99999999999997" height="110"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQQ-Ri-IHG" userLabel="Fetch Button">
                                         <rect key="frame" x="0.0" y="0.0" width="137" height="55"/>
@@ -368,21 +371,21 @@
         <!--Distances-->
         <scene sceneID="gsC-lU-pLs">
             <objects>
-                <tableViewController id="94H-sj-YrA" customClass="DistanceChooserTableViewController" customModule="StravaBests" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="94H-sj-YrA" customClass="DistanceChooserTableViewController" customModule="RunningBests" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="h2z-1X-tY4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Distance Cell" rowHeight="50" id="Q5p-lf-p6W" customClass="DistanceChooserCell" customModule="StravaBests">
-                                <rect key="frame" x="0.0" y="28" width="320" height="50"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Distance Cell" rowHeight="50" id="Q5p-lf-p6W" customClass="DistanceChooserCell" customModule="RunningBests" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q5p-lf-p6W" id="rrs-9V-A4G">
-                                    <rect key="frame" x="0.0" y="0.0" width="286" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="376" height="49.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5K" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQj-fz-61L">
-                                            <rect key="frame" x="40" y="-0.5" width="30" height="50.5"/>
+                                            <rect key="frame" x="30" y="-0.66666666666666785" width="30" height="50.666666666666671"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="U3W-ed-ylh"/>
                                             </constraints>
@@ -391,7 +394,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efP-Gs-ACC">
-                                            <rect key="frame" x="182" y="14" width="81" height="21.5"/>
+                                            <rect key="frame" x="277" y="14.000000000000002" width="81" height="21.666666666666671"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -400,8 +403,9 @@
                                     <constraints>
                                         <constraint firstItem="xQj-fz-61L" firstAttribute="centerY" secondItem="rrs-9V-A4G" secondAttribute="centerY" id="5sP-QY-cjR"/>
                                         <constraint firstItem="efP-Gs-ACC" firstAttribute="centerY" secondItem="rrs-9V-A4G" secondAttribute="centerY" id="X6x-ih-1Aw"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="efP-Gs-ACC" secondAttribute="trailing" constant="15" id="bz8-OP-hk3"/>
-                                        <constraint firstItem="xQj-fz-61L" firstAttribute="leading" secondItem="rrs-9V-A4G" secondAttribute="leading" constant="40" id="c4Q-m8-G7x"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="efP-Gs-ACC" secondAttribute="trailing" constant="10" id="bz8-OP-hk3"/>
+                                        <constraint firstItem="xQj-fz-61L" firstAttribute="leading" secondItem="rrs-9V-A4G" secondAttribute="leading" constant="30" id="c4Q-m8-G7x"/>
+                                        <constraint firstItem="efP-Gs-ACC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xQj-fz-61L" secondAttribute="trailingMargin" id="i7d-3J-dam"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -418,7 +422,7 @@
                     <navigationItem key="navigationItem" title="Distances" id="Bz2-gJ-j4f"/>
                     <connections>
                         <outlet property="view" destination="h2z-1X-tY4" id="5vA-KW-9Fc"/>
-                        <segue destination="sj1-WG-nMz" kind="showDetail" identifier="Show Bests" id="eBD-LO-DqG"/>
+                        <segue destination="976-qy-Ovg" kind="showDetail" identifier="Show Bests" id="eBD-LO-DqG"/>
                         <segue destination="jmB-Ze-RHA" kind="unwind" identifier="logout" unwindAction="logOutUserWithSegue:" id="QqZ-Bm-GaZ"/>
                     </connections>
                 </tableViewController>
@@ -433,7 +437,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="khW-IG-pkI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V0A-8N-kHR">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -444,6 +448,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xe1-2l-E13" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1294" y="-114"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fNb-Wn-vCH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="976-qy-Ovg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5lD-iZ-iMG">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sj1-WG-nMz" kind="relationship" relationship="rootViewController" id="16R-PI-sTp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sub-Nt-pI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1292.753623188406" y="702.71739130434787"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

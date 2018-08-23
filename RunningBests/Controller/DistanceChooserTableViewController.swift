@@ -12,7 +12,6 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
     
     lazy var distances: [Distance] = Distance.all(upto: runs.maxDistance)
     var runs = Runs(with: [Run]())
-
     
     override func awakeFromNib() {
         splitViewController?.delegate = self
@@ -29,10 +28,12 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationItem.leftBarButtonItem = logoutButton
-        for run in runs.all {
-            print("Name: \(run.name)")
-            print("Bests: \(run.bests)")
+
+        if let detailVC = splitViewController?.viewControllers[1].contents as? DistanceBestsTableViewController, let distance = distances.first {
+            detailVC.runs = runs.withBests(for: distance)
+            detailVC.distance = distance
         }
     }
     

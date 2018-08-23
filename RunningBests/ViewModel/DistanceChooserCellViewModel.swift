@@ -15,7 +15,7 @@ struct DistanceChooserCellViewModel {
 
 extension DistanceChooserCellViewModel {
     init(distance: Distance, bestRun: Run?) {
-        self.distance = distance.rawValue
+        self.distance = distance == .twoMiles ? "2 miles" : distance.rawValue
         if let run = bestRun {
             self.bestTime = DateComponentsFormatter.timeString(from: run.bests[distance]!, zeroPadded: true)
         } else {

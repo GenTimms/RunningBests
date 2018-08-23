@@ -41,7 +41,6 @@ class InitialViewController: UIViewController {
     private func displayErrorNotification(description: String, error: Error?) {
         let details = description + " " + ((error?.localizedDescription) ?? "")
         print(details)
-        print(error)
         //TODO: Display Notification
     }
     
