@@ -218,8 +218,8 @@
 		B45E922420DF7DB80095FFA9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B44888E620ECF77400C643C6 /* InitialViewController.swift */,
 				B45E925220E3C3060095FFA9 /* AuthWebViewController.swift */,
+				B44888E620ECF77400C643C6 /* InitialViewController.swift */,
 				B47B2BD120E93A5500E20C4A /* DistanceChooserTableViewController.swift */,
 				B45E921E20DD8FCF0095FFA9 /* DistanceBestsTableViewController.swift */,
 				B4F42B7E21132A0D00821EC4 /* RunBestsTableViewController.swift */,

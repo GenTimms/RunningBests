@@ -12,6 +12,7 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
     
     lazy var distances: [Distance] = Distance.all(upto: runs.maxDistance)
     var runs = Runs(with: [Run]())
+    var client: APIClient?
     
     override func awakeFromNib() {
         splitViewController?.delegate = self
@@ -30,6 +31,7 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
         super.viewDidLoad()
         
         self.navigationItem.leftBarButtonItem = logoutButton
+  
 
         if let detailVC = splitViewController?.viewControllers[1].contents as? DistanceBestsTableViewController, let distance = distances.first {
             detailVC.runs = runs.withBests(for: distance)
@@ -38,10 +40,28 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
     }
     
     lazy var logoutButton: UIBarButtonItem =  UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(DistanceChooserTableViewController.logout))
-        
+    
 
     @objc func logout() {
      performSegue(withIdentifier: "logout", sender: self)
+    }
+    
+    @IBAction func refreshRuns(_ sender: Any? = nil) {
+        guard let refreshControl = sender as? UIRefreshControl else {
+            return
+        }
+        fetchRuns {
+              refreshControl.endRefreshing()
+        }
+    }
+    
+    private func fetchRuns(completion: @escaping () -> Void) {
+        client!.fetchRuns() { result in
+            switch result {
+            case.success(let fetchedRuns): self.runs = fetchedRuns; self.tableView.reloadData(); completion()
+            case.failure(let error): print("Refresh Failed" + error.localizedDescription); completion()
+            }
+        }
     }
     
     //MARK: - Navigation

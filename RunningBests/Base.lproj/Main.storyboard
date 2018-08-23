@@ -420,6 +420,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Distances" id="Bz2-gJ-j4f"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="zJz-tS-SN9">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshRuns:" destination="94H-sj-YrA" eventType="valueChanged" id="OUH-bM-O0z"/>
+                        </connections>
+                    </refreshControl>
                     <connections>
                         <outlet property="view" destination="h2z-1X-tY4" id="5vA-KW-9Fc"/>
                         <segue destination="976-qy-Ovg" kind="showDetail" identifier="Show Bests" id="eBD-LO-DqG"/>

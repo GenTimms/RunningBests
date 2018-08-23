@@ -166,7 +166,9 @@ class InitialViewController: UIViewController {
         if segue.identifier == Segues.DistanceChooserSegue {
             if let splitVC = segue.destination.contents as? UISplitViewController {
                 if let distancesVC = splitVC.viewControllers[0].contents as? DistanceChooserTableViewController, let fetchedRuns = runs {
-                    distancesVC.runs = fetchedRuns                }
+                    distancesVC.runs = fetchedRuns
+                    distancesVC.client = client
+                }
             }
         }
     }
