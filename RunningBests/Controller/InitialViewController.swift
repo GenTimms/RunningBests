@@ -41,7 +41,10 @@ class InitialViewController: UIViewController {
     private func displayErrorNotification(description: String, error: Error?) {
         let details = description + " " + ((error?.localizedDescription) ?? "")
         print(details)
-        //TODO: Display Notification
+        let alert = UIAlertController(title: "Error", message:
+            description, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
     //MARK: - Lifecycle
@@ -86,7 +89,7 @@ class InitialViewController: UIViewController {
         let result = authWebView.result
         switch result {
         case .success(let accessCode): getToken(for: accessCode)
-        case .failure(let error): displayErrorNotification(description: "Authorization: Webview", error: error)
+        case .failure(let error): displayErrorNotification(description: "Authorisation Failed", error: error)
         }
     }
     
@@ -95,7 +98,7 @@ class InitialViewController: UIViewController {
         client.fetchToken(accessCode: accessCode) { (result) in
             switch result {
             case .success(let token): self.createAccount(with: token)
-            case .failure(let error): self.displayErrorNotification(description: "Authorization: Token exchange", error: error)
+            case .failure(let error): self.displayErrorNotification(description: "Authorisation Failed", error: error)
             }
         }
     }
@@ -106,7 +109,7 @@ class InitialViewController: UIViewController {
             try account?.save()
         }
         catch {
-            displayErrorNotification(description: "Saving Account to Keychain", error: error)
+            displayErrorNotification(description: "Login not saved to device", error: error)
         }
     }
     
@@ -149,7 +152,7 @@ class InitialViewController: UIViewController {
             switch result {
             case.success(let fetchedRuns): self.runs = fetchedRuns; self.performSegue(withIdentifier: Segues.DistanceChooserSegue, sender: self)
             case.failure(let error):
-                self.displayErrorNotification(description: "Fetching Runs", error: error)
+                self.displayErrorNotification(description: "Could Not Fetch Runs", error: error)
                 self.showRetryStackView()
             }
         }

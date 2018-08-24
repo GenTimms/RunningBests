@@ -53,6 +53,7 @@ class AuthWebViewController: UIViewController, WKNavigationDelegate {
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         result = Result.failure(AuthWebViewError.cancelled)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         performSegue(withIdentifier: unwind, sender: self)
     }
 

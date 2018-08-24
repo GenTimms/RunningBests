@@ -51,7 +51,8 @@ class CodableTests: XCTestCase {
     }
     
     func testEncodeRunToJSON() {
-        let activity = Activity(id: 12345678, name: "Test Activity", date: Date(), distance: 10000, type: "Run")
+        let activity = Activity(id: 12345678, name: "Test Activity", date: Date(), distance: 10000, type: "Run", time: 4000)
+      
         let run = Run(activity: activity)
         var fastBests = [Distance: Int]()
         for distance in Distance.all(upto: run.distance) {

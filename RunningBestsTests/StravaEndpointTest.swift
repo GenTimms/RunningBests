@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import StravaBests
+@testable import RunningBests
 
 class StravaEndpointTests: XCTestCase {
     

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import StravaBests
+@testable import RunningBests
 
 class StravaClientTests: XCTestCase {
     
@@ -15,7 +15,7 @@ class StravaClientTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        client.token = StravaAuthConfig.PublicAccessToken
+        client.token = "dde0ac948f88d58b4502df112281b76f7d2e375d"
     }
     
     override func tearDown() {
@@ -26,7 +26,7 @@ class StravaClientTests: XCTestCase {
         var run: Run? = nil
         let runExpectation = expectation(description: "Fetch")
         
-        let activity = Activity(id: 1665166078, name: "Trosley 10k", date: Date(), distance: 10164.0, type: "Run")
+        let activity = Activity(id: 1665166078, name: "Trosley 10k", date: Date(), distance: 10164.0, type: "Run", time: 4000)
         let partialRun = Run(activity: activity)
         client.fetchRunDetails(for: partialRun) { result in
             switch result {
