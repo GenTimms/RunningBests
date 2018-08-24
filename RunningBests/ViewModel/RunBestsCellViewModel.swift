@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct RunBestsCellViewModel {
     let distance: String
     let pace: String

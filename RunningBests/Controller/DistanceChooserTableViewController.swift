@@ -20,19 +20,18 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
     
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         if let btvc = secondaryViewController as? DistanceBestsTableViewController {
-            if btvc.runs.isEmpty {
+            if btvc.runs.isEmpty { //TODO: Fix
                 return true
             }
         }
         return false
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.leftBarButtonItem = logoutButton
-  
-
+        
         if let detailVC = splitViewController?.viewControllers[1].contents as? DistanceBestsTableViewController, let distance = distances.first {
             detailVC.runs = runs.withBests(for: distance)
             detailVC.distance = distance
@@ -41,9 +40,9 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
     
     lazy var logoutButton: UIBarButtonItem =  UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(DistanceChooserTableViewController.logout))
     
-
+    
     @objc func logout() {
-     performSegue(withIdentifier: "logout", sender: self)
+        performSegue(withIdentifier: "logout", sender: self)
     }
     
     @IBAction func refreshRuns(_ sender: Any? = nil) {
@@ -51,7 +50,7 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
             return
         }
         fetchRuns {
-              refreshControl.endRefreshing()
+            refreshControl.endRefreshing()
         }
     }
     
@@ -66,7 +65,7 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
     
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Segues.Bests {
+        if segue.identifier == Segues.bests {
             if let indexPath = sender as? IndexPath {
                 if let bestsVC = segue.destination.contents as? DistanceBestsTableViewController {
                     let distance = distances[indexPath.row]
@@ -79,9 +78,9 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return distances.count
+        return distances.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cells.distance, for: indexPath) as! DistanceChooserCell
         let distance = distances[indexPath.row]
@@ -92,6 +91,6 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Segues.Bests, sender: indexPath)
+        performSegue(withIdentifier: Segues.bests, sender: indexPath)
     }
 }

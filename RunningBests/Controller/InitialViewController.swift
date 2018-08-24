@@ -17,11 +17,9 @@ class InitialViewController: UIViewController {
     @IBOutlet weak var failedFetchStackView: UIStackView!
     
     private func updateStatus(login: Bool, animating: Bool, message: String?) {
-        
         failedFetchStackView.isHidden = true
         loginButton.isHidden = !login
         statusLabel.isHidden = login
-        
         statusLabel.text = message != nil  ? message : ""
         
         if animating {
@@ -80,10 +78,10 @@ class InitialViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: UIButton) {
-        performSegue(withIdentifier: Segues.AuthSegue, sender: self)
+        performSegue(withIdentifier: Segues.authSegue, sender: self)
     }
 
-    //Unwind Segue
+    //Unwind Segue from AuthWeViewController
     @IBAction func getAuthorizationResult(segue: UIStoryboardSegue) {
         let authWebView = segue.source as! AuthWebViewController
         let result = authWebView.result
@@ -150,7 +148,7 @@ class InitialViewController: UIViewController {
         updateStatus(login: false, animating: true, message: "Fetching Runs...")
         client.fetchRuns() { result in
             switch result {
-            case.success(let fetchedRuns): self.runs = fetchedRuns; self.performSegue(withIdentifier: Segues.DistanceChooserSegue, sender: self)
+            case.success(let fetchedRuns): self.runs = fetchedRuns; self.performSegue(withIdentifier: Segues.distanceChooserSegue, sender: self)
             case.failure(let error):
                 self.displayErrorNotification(description: "Could Not Fetch Runs", error: error)
                 self.showRetryStackView()
@@ -160,13 +158,13 @@ class InitialViewController: UIViewController {
     
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Segues.AuthSegue {
+        if segue.identifier == Segues.authSegue {
             if let authVC = segue.destination.contents as? AuthWebViewController {
                 authVC.request =  client.oAuthRequest
             }
         }
         
-        if segue.identifier == Segues.DistanceChooserSegue {
+        if segue.identifier == Segues.distanceChooserSegue {
             if let splitVC = segue.destination.contents as? UISplitViewController {
                 if let distancesVC = splitVC.viewControllers[0].contents as? DistanceChooserTableViewController, let fetchedRuns = runs {
                     distancesVC.runs = fetchedRuns

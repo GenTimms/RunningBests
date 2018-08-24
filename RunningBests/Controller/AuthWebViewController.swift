@@ -13,7 +13,7 @@ class AuthWebViewController: UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var webView: WKWebView!
 
-    let unwind = Segues.AuthUnwind
+    let unwind = Segues.authUnwind
     var request: URLRequest? = nil
     lazy var redirect: String? = request?.url?.getQueryValue(for: URLKeys.redirect)
     

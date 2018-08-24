@@ -66,7 +66,6 @@ class StravaRunDetailsOperation: Operation {
                 self.isFinished = true
             }
         }
-        
     }
 }
 

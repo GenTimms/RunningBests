@@ -9,17 +9,11 @@
 import Foundation
 
 struct Segues {
-    static var AuthSegue = "present authwebview"
-    static var AuthUnwind = "unwindWithAuthResult"
-    static var DistanceChooserSegue = "Show Distance Chooser"
-    static var Bests = "Show Bests"
+    static var authSegue = "present authwebview"
+    static var authUnwind = "unwindWithAuthResult"
+    static var distanceChooserSegue = "Show Distance Chooser"
+    static var bests = "Show Bests"
     static var runBests = "Show Run Bests"
-}
-
-struct URLKeys {
-    static var redirect = "redirect_uri"
-    static var code = "code"
-    static var token = "access_token"
 }
 
 struct Cells {

@@ -33,6 +33,22 @@ extension URL {
     }
 }
 
+extension Data {
+    
+    func getJSONValue(for key: String) -> String? {
+        do {
+            let json = try JSONSerialization.jsonObject(with: self, options: []) as? [String: AnyObject]
+            guard let jsonData = json, let value = jsonData[key] as? String else {
+                throw JSONError.parseFailed
+            }
+            return  value
+        }
+        catch {
+            return nil
+        }
+    }
+}
+
 extension UIViewController {
     var contents: UIViewController {
         if let navcon = self as? UINavigationController {

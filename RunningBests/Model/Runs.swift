@@ -28,5 +28,4 @@ struct Runs {
         let runs = withBests(for: distance)
         return runs.min(by: { $0.bests[distance]! < $1.bests[distance]!})
     }
-    
 }

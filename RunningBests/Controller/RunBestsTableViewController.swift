@@ -18,9 +18,7 @@ class RunBestsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setRunTitle()
-        
         distances = run?.bests.keys.sorted { $0.meters < $1.meters } ?? []
     }
     
