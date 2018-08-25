@@ -19,6 +19,5 @@ class RunBestsCell: UITableViewCell {
             self.paceLabel.text = viewModel.pace
             self.timeLabel.text = viewModel.time
         }
-    
 }
     

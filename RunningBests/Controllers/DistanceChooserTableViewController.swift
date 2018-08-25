@@ -12,21 +12,7 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
     
     lazy var distances: [Distance] = Distance.all(upto: runs.maxDistance)
     var runs = Runs(with: [Run]())
-    var client: APIClient?
-    
-    override func awakeFromNib() {
-        splitViewController?.delegate = self
-    }
-    
-    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-        if let btvc = secondaryViewController as? DistanceBestsTableViewController {
-            if btvc.runs.isEmpty { //TODO: Fix
-                return true
-            }
-        }
-        return false
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,12 +24,17 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
         }
     }
     
+    //MARK: - Logout
+    
     lazy var logoutButton: UIBarButtonItem =  UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(DistanceChooserTableViewController.logout))
     
     
     @objc func logout() {
         performSegue(withIdentifier: "logout", sender: self)
     }
+    
+    
+    //MARK: - Refresh
     
     @IBAction func refreshRuns(_ sender: Any? = nil) {
         guard let refreshControl = sender as? UIRefreshControl else {
@@ -54,6 +45,8 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
         }
     }
     
+    var client: APIClient?
+    
     private func fetchRuns(completion: @escaping () -> Void) {
         client!.fetchRuns() { result in
             switch result {
@@ -63,6 +56,19 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
         }
     }
     
+    //MARK: - SplitViewController
+    
+    private var collapseDetailViewController = true
+    
+    override func awakeFromNib() {
+        splitViewController?.delegate = self
+    }
+    
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return collapseDetailViewController
+    }
+    
+    
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segues.bests {
@@ -71,12 +77,13 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
                     let distance = distances[indexPath.row]
                     bestsVC.runs = runs.withBests(for: distance)
                     bestsVC.distance = distance
+                    collapseDetailViewController = false
                 }
             }
         }
     }
     
-    // MARK: - Table view data source
+    // MARK: - TableViewDataSource
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return distances.count
     }
@@ -89,7 +96,7 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
         return cell
     }
     
-    // MARK: - Table view delegate
+    // MARK: - TableViewDelegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: Segues.bests, sender: indexPath)
     }

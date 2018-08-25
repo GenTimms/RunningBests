@@ -174,10 +174,10 @@
 				B45E923D20E192A40095FFA9 /* UtilityExtensions.swift */,
 				B45E922520DF7DD10095FFA9 /* Supporting */,
 				B45E922220DF7D480095FFA9 /* Networking */,
-				B45E922320DF7D860095FFA9 /* Model */,
-				B45E922420DF7DB80095FFA9 /* Controller */,
-				B45E922D20E002E90095FFA9 /* ViewModel */,
-				B45E922C20E002550095FFA9 /* View */,
+				B45E922320DF7D860095FFA9 /* Models */,
+				B45E922420DF7DB80095FFA9 /* Controllers */,
+				B45E922D20E002E90095FFA9 /* CellViewModels */,
+				B45E922C20E002550095FFA9 /* CellViews */,
 			);
 			path = RunningBests;
 			sourceTree = "<group>";
@@ -206,17 +206,17 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		B45E922320DF7D860095FFA9 /* Model */ = {
+		B45E922320DF7D860095FFA9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				B4D0C570210B41DD00A05B17 /* Runs.swift */,
 				B45E921C20DD8A6D0095FFA9 /* Run.swift */,
 				B45E922020DD92500095FFA9 /* Distance.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		B45E922420DF7DB80095FFA9 /* Controller */ = {
+		B45E922420DF7DB80095FFA9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				B45E925220E3C3060095FFA9 /* AuthWebViewController.swift */,
@@ -225,7 +225,7 @@
 				B45E921E20DD8FCF0095FFA9 /* DistanceBestsTableViewController.swift */,
 				B4F42B7E21132A0D00821EC4 /* RunBestsTableViewController.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		B45E922520DF7DD10095FFA9 /* Supporting */ = {
@@ -239,24 +239,24 @@
 			path = Supporting;
 			sourceTree = "<group>";
 		};
-		B45E922C20E002550095FFA9 /* View */ = {
+		B45E922C20E002550095FFA9 /* CellViews */ = {
 			isa = PBXGroup;
 			children = (
 				B4F42B8821132AF800821EC4 /* DistanceChooserCell.swift */,
 				B4F42B8421132A8900821EC4 /* DistanceBestsCell.swift */,
 				B4317DC7212985C40096A644 /* RunBestsCell.swift */,
 			);
-			path = View;
+			path = CellViews;
 			sourceTree = "<group>";
 		};
-		B45E922D20E002E90095FFA9 /* ViewModel */ = {
+		B45E922D20E002E90095FFA9 /* CellViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				B4F42B8021132A4500821EC4 /* DistanceBestsCellViewModel.swift */,
 				B4F42B8621132AE500821EC4 /* DistanceChooserCellViewModel.swift */,
 				B4317DC5212985990096A644 /* RunBestsCellViewModel.swift */,
 			);
-			path = ViewModel;
+			path = CellViewModels;
 			sourceTree = "<group>";
 		};
 		B45E923420E141A90095FFA9 /* Protocols */ = {

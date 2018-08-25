@@ -15,7 +15,7 @@ class StravaClientTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        client.token = "dde0ac948f88d58b4502df112281b76f7d2e375d"
+        client.token = "80e0b3ad850d90fe465db2ac16fbfb588c875e98" //update to current token
     }
     
     override func tearDown() {
@@ -26,7 +26,7 @@ class StravaClientTests: XCTestCase {
         var run: Run? = nil
         let runExpectation = expectation(description: "Fetch")
         
-        let activity = Activity(id: 1665166078, name: "Trosley 10k", date: Date(), distance: 10164.0, type: "Run", time: 4000)
+        let activity = Activity(id: 1748271511, name: "Trosley", date: Date(), distance: 10000.0, type: "Run", time: 4000)
         let partialRun = Run(activity: activity)
         client.fetchRunDetails(for: partialRun) { result in
             switch result {

@@ -33,6 +33,7 @@ class DistanceBestsTableViewController: UITableViewController {
         navigationItem.title = distance.rawValue
     }
     
+    //MARK: - TableViewDataSource
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
