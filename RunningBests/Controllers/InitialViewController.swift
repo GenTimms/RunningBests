@@ -81,7 +81,7 @@ class InitialViewController: UIViewController {
         performSegue(withIdentifier: Segues.authSegue, sender: self)
     }
 
-    //Unwind Segue from AuthWeViewController
+    //Unwind Segue from AuthWebViewController
     @IBAction func getAuthorizationResult(segue: UIStoryboardSegue) {
         let authWebView = segue.source as! AuthWebViewController
         let result = authWebView.result

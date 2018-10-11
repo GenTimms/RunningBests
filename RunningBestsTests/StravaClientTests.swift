@@ -15,7 +15,7 @@ class StravaClientTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        client.token = "80e0b3ad850d90fe465db2ac16fbfb588c875e98" //update to current token
+        client.token = "d461eb6aba68533a303ee76e605d43431012d6e5" //update to current token
     }
     
     override func tearDown() {

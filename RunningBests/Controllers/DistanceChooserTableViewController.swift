@@ -25,7 +25,6 @@ class DistanceChooserTableViewController: UITableViewController, UISplitViewCont
     }
     
     //MARK: - Logout
-    
     lazy var logoutButton: UIBarButtonItem =  UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(DistanceChooserTableViewController.logout))
     
     
